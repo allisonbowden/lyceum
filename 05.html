@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyceum &mdash; Mortality, Fate &amp; Transcendence</title>
+</head>
+<body>
+
+
+<style>
+  .flight-page {
+    --bg: #f4ede0;
+    --paper: #faf5ea;
+    --ink: #2b241c;
+    --text: #2b241c;
+    --text-muted: #6b6255;
+    --accent: #b5502e;
+    --dusk: #6b7d8f;
+    --line: #ddd2bd;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'SF Mono', 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .flight-page a:focus-visible,
+  .flight-page button:focus-visible,
+  .flight-page summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .site-bar {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-bar .mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .site-bar .mark strong { color: var(--text); }
+  .site-bar .progress {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 32px;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 1.08;
+    font-weight: 500;
+    margin: 0 0 20px;
+    max-width: 12ch;
+  }
+  .hero .core-question {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--line);
+  }
+
+  .works {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8px 24px 0;
+    position: relative;
+  }
+  .works::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: repeating-linear-gradient(to bottom, var(--line) 0, var(--line) 4px, transparent 4px, transparent 9px);
+  }
+
+  .work {
+    position: relative;
+    padding: 28px 0 28px 52px;
+  }
+  .work::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 34px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .work-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .work-meta .medium {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .work-meta .dot { opacity: 0.5; }
+  .medium-icon {
+    width: 13px;
+    height: 13px;
+    vertical-align: -2px;
+    margin-right: 4px;
+    color: var(--accent);
+  }
+  .canon-mark {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    border: 1px solid var(--dusk);
+    border-radius: 2px;
+    padding: 1px 5px;
+    margin-left: 3px;
+    cursor: default;
+  }
+  .work h2 {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 4px;
+  }
+  .work .byline {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .work .focus {
+    font-family: var(--sans);
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 58ch;
+    margin: 0 0 14px;
+  }
+  .find-it {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+  }
+  .find-it:hover { border-bottom-color: var(--accent); }
+
+  .link-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .link-row .find-it { margin-top: 0; }
+  .alt-line {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .alt-line a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .art-image {
+    margin-top: 14px;
+    max-width: 480px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .art-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .lecture-embed {
+    margin-top: 14px;
+    max-width: 480px;
+  }
+  .lecture-embed .thumb-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 1px solid var(--line);
+  }
+  .lecture-embed .thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.85;
+  }
+  .lecture-embed .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  .lecture-embed .play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--bg);
+    margin-left: 3px;
+  }
+  .lecture-embed .thumb-label {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .lecture-embed iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 3px;
+    display: block;
+  }
+
+  .podcast-embed {
+    margin-top: 4px;
+    max-width: 480px;
+  }
+  .podcast-embed .pod-thumb {
+    position: relative;
+    height: 64px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .podcast-embed .play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .podcast-embed .play-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--bg);
+    margin-left: 2px;
+  }
+  .podcast-embed .pod-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #fff;
+  }
+  .podcast-embed iframe {
+    width: 100%;
+    height: 175px;
+    border: 0;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .further {
+    max-width: 760px;
+    margin: 8px auto 0;
+    padding: 8px 24px 44px;
+  }
+  .further-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .further-head .eyebrow-alt {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dusk);
+  }
+  .further-head .sub {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .further-list {
+    margin-top: 18px;
+    border-top: 1px dashed var(--line);
+  }
+  .further-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .further-item h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 3px;
+  }
+  .further-item .fi-meta {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .further-item p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 48ch;
+  }
+  .further-item .find-it { color: var(--dusk); flex-shrink: 0; }
+  .further-item .find-it:hover { border-bottom-color: var(--dusk); }
+
+  .further-details summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .further-details summary::-webkit-details-marker { display: none; }
+  .further-head::after {
+    content: "\203A";
+    margin-left: auto;
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1;
+    color: var(--dusk);
+    transition: transform 0.2s ease;
+  }
+  .further-details[open] .further-head::after { transform: rotate(90deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .further-head::after { transition: none; }
+  }
+
+  @media (max-width: 560px) {
+    .further-item { flex-direction: column; }
+  }
+
+  .flight-footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .flight-footer a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    display: block;
+  }
+  .flight-footer a span {
+    display: block;
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--text);
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+  .flight-footer .next { text-align: right; }
+
+  @media (max-width: 480px) {
+    .hero::before { width: 300px; height: 300px; right: -100px; }
+    .work { padding-left: 44px; }
+    .works::before { left: 18px; }
+    .work::before { left: 12px; }
+  }
+</style>
+
+<div class="flight-page">
+
+  <div class="site-bar">
+    <div class="mark"><strong>Lyceum</strong> &middot; a diy liberal arts curriculum</div>
+    <div class="progress">No. 05 / 07</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow-row">
+      <span class="eyebrow">No. 05</span>
+      <span class="how-to">No set order, start wherever looks interesting.</span>
+    </div>
+    <h1>Mortality, Fate &amp; Transcendence</h1>
+    <p class="core-question">How do we face the fact that we'll die, and why should our choices matter anyway?</p>
+  </header>
+
+  <main class="works">
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+        <span class="medium">Lecture</span><span class="dot">&middot;</span><span>Yale</span><span class="dot">&middot;</span><span>50 min</span>
+      </div>
+      <h2>Dying Alone; The Badness of Death <span style="font-size: 16px; color: var(--text-muted); font-family: var(--sans);">&mdash; Death</span></h2>
+      <div class="byline">Shelly Kagan</div>
+      <p class="focus">A warm, surprisingly accessible lecture on one of philosophy's stranger puzzles: can death be "bad" for you, if by the time it happens, there's no you left to be harmed by it?</p>
+      <div class="lecture-embed">
+        <div class="thumb-wrap" data-video-id="yJVpJ588ASc">
+          <img src="https://img.youtube.com/vi/yJVpJ588ASc/hqdefault.jpg" alt="" loading="lazy">
+          <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
+          <div class="thumb-label">Watch here &mdash; 50 min</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"></rect><line x1="7" y1="3" x2="7" y2="21"></line><line x1="17" y1="3" x2="17" y2="21"></line><line x1="2" y1="9" x2="7" y2="9"></line><line x1="2" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="22" y2="9"></line><line x1="17" y1="15" x2="22" y2="15"></line></svg>
+        <span class="medium">Film</span><span class="dot">&middot;</span><span>Modern, 2014</span><span class="dot">&middot;</span><span>2h 29m</span>
+      </div>
+      <h2>Gone Girl</h2>
+      <div class="byline">David Fincher</div>
+      <p class="focus">A wife fakes her own death to punish a husband who stopped playing the part of a devoted spouse. It's dark and cynical, but the question underneath is real: in any long relationship, how much of what you show each other is genuine, and how much is just the role you've agreed to play?</p>
+      <a class="find-it" href="https://www.justwatch.com/us/search?q=Gone%20Girl" target="_blank" rel="noopener">&rarr; Where to watch</a>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="medium">Book</span><span class="dot">&middot;</span><span>Classic, 1866</span><span class="canon-mark" title="On school syllabi &mdash; widely taught, worth knowing even if you skip it">syllabus</span><span class="dot">&middot;</span><span>~14 hr read</span>
+      </div>
+      <h2>Crime and Punishment</h2>
+      <div class="byline">Fyodor Dostoyevsky</div>
+      <p class="focus">A psychological thriller following a young student as his mind collapses under the moral weight of a crime he was convinced was justified &mdash; the murder is only the beginning of what actually destroys him.</p>
+      <div class="link-row">
+                <div class="podcast-embed">
+          <div class="pod-thumb" data-embed-src="https://embed.podcasts.apple.com/us/podcast/crime-and-punishment/id73330895?i=1000456796219">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
+            <div class="pod-label">BBC In Our Time on Crime and Punishment &mdash; 53 min</div>
+          </div>
+        </div>
+        <a class="find-it" href="https://www.gutenberg.org/files/2554/2554-h/2554-h.htm" target="_blank" rel="noopener">&rarr; Read it yourself: full free text</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        <span class="medium">Music</span><span class="dot">&middot;</span><span>1808</span><span class="dot">&middot;</span><span>~32 min</span>
+      </div>
+      <h2>Symphony No. 5</h2>
+      <div class="byline">Ludwig van Beethoven</div>
+      <p class="focus">Four notes, repeated relentlessly, like something pounding at the door. Beethoven wrote it while going deaf himself &mdash; unable to hear the very piece that would outlive him by centuries.</p>
+      <div class="link-row">
+        <a class="find-it" href="https://open.spotify.com/album/1xaLsBz0s2rPS6H4i7xuAb" target="_blank" rel="noopener">&rarr; Listen on Spotify (Karajan)</a>
+        <a class="find-it" href="https://www.britannica.com/topic/Symphony-No-5-in-C-Minor-Op-67" target="_blank" rel="noopener">&rarr; Britannica on the symphony (~3 min read)</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <span class="medium">Art</span><span class="dot">&middot;</span><span>1533</span><span class="canon-mark" title="On school syllabi &mdash; widely taught, worth knowing even if you skip it">syllabus</span><span class="dot">&middot;</span><span>National Gallery, London</span>
+      </div>
+      <h2>The Ambassadors</h2>
+      <div class="byline">Hans Holbein the Younger</div>
+      <p class="focus">Two powerful, successful men, painted with every symbol of their worldly achievement. At their feet is an odd smear that makes no sense head-on &mdash; step to the side, and it resolves into a skull.</p>
+      <div class="art-image">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=900" alt="The Ambassadors by Hans Holbein the Younger" loading="lazy">
+      </div>
+      <a class="find-it" href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors" target="_blank" rel="noopener">&rarr; More from the National Gallery</a>
+    </article>
+
+  </main>
+
+  <section class="further">
+    <details class="further-details">
+    <summary class="further-head">
+      <span class="eyebrow-alt">Further Exploration</span>
+      <span class="sub">optional &mdash; for going deeper</span>
+    </summary>
+    <div class="further-list">
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>The Prophet</h3>
+          <div class="fi-meta">Poetry &middot; Kahlil Gibran &middot; Lebanon, 1923</div>
+          <p>A poet says goodbye to a city, answering questions on love, death, and freedom in twenty-six short sermons. Mortality treated as something to sit with, not solve.</p>
+        </div>
+        <a class="find-it" href="https://search.worldcat.org/search?q=The+Prophet+Kahlil+Gibran" target="_blank" rel="noopener">&rarr; Find it</a>
+      </div>
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>Beloved</h3>
+          <div class="fi-meta">Novel &middot; Toni Morrison &middot; USA, 1987</div>
+          <p>A woman's dead child returns to her, demanding to be reckoned with &mdash; inherited trauma made into an actual, physical ghost.</p>
+        </div>
+        <a class="find-it" href="https://search.worldcat.org/search?q=Beloved+Toni+Morrison" target="_blank" rel="noopener">&rarr; Find it</a>
+      </div>
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>The Seventh Seal</h3>
+          <div class="fi-meta">Film &middot; Ingmar Bergman &middot; Sweden, 1957</div>
+          <p>A knight plays chess with Death to buy one more day of meaning &mdash; the single most literal, most imitated image of bargaining with mortality in cinema.</p>
+        </div>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Seventh%20Seal%201957" target="_blank" rel="noopener">&rarr; Where to watch</a>
+      </div>
+    </div>
+    </details>
+  </section>
+
+  <footer class="flight-footer">
+    <a href="04.html"><span aria-hidden="true">&larr;</span> No. 04<span>Cosmic Awe &amp; Evolution</span></a>
+    <a href="06.html" class="next">No. 06 <span aria-hidden="true">&rarr;</span><span>Hubris, Progress &amp; Nature</span></a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.lecture-embed .thumb-wrap').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var id = el.getAttribute('data-video-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.title = 'Lecture video';
+      el.replaceWith(iframe);
+    });
+  });
+
+  document.querySelectorAll('.podcast-embed .pod-thumb').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var src = el.getAttribute('data-embed-src');
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.allow = 'autoplay *; encrypted-media *; clipboard-write';
+      iframe.title = 'Podcast episode';
+      el.replaceWith(iframe);
+    });
+  });
+</script>
+</body>
+</html>

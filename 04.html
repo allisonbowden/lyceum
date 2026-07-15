@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyceum &mdash; Cosmic Awe &amp; Evolution</title>
+</head>
+<body>
+
+
+<style>
+  .flight-page {
+    --bg: #f4ede0;
+    --paper: #faf5ea;
+    --ink: #2b241c;
+    --text: #2b241c;
+    --text-muted: #6b6255;
+    --accent: #b5502e;
+    --dusk: #6b7d8f;
+    --line: #ddd2bd;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'SF Mono', 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .flight-page a:focus-visible,
+  .flight-page button:focus-visible,
+  .flight-page summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .site-bar {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-bar .mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .site-bar .mark strong { color: var(--text); }
+  .site-bar .progress {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 32px;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 1.08;
+    font-weight: 500;
+    margin: 0 0 20px;
+    max-width: 12ch;
+  }
+  .hero .core-question {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--line);
+  }
+
+  .works {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8px 24px 0;
+    position: relative;
+  }
+  .works::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: repeating-linear-gradient(to bottom, var(--line) 0, var(--line) 4px, transparent 4px, transparent 9px);
+  }
+
+  .work {
+    position: relative;
+    padding: 28px 0 28px 52px;
+  }
+  .work::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 34px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .work-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .work-meta .medium {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .work-meta .dot { opacity: 0.5; }
+  .medium-icon {
+    width: 13px;
+    height: 13px;
+    vertical-align: -2px;
+    margin-right: 4px;
+    color: var(--accent);
+  }
+  .canon-mark {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    border: 1px solid var(--dusk);
+    border-radius: 2px;
+    padding: 1px 5px;
+    margin-left: 3px;
+    cursor: default;
+  }
+  .work h2 {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 4px;
+  }
+  .work .byline {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .work .focus {
+    font-family: var(--sans);
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 58ch;
+    margin: 0 0 14px;
+  }
+  .find-it {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+  }
+  .find-it:hover { border-bottom-color: var(--accent); }
+
+  .link-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .link-row .find-it { margin-top: 0; }
+  .art-image {
+    margin-top: 14px;
+    max-width: 480px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .art-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .lecture-embed {
+    margin-top: 14px;
+    max-width: 480px;
+  }
+  .lecture-embed .thumb-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 1px solid var(--line);
+  }
+  .lecture-embed .thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.85;
+  }
+  .lecture-embed .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  .lecture-embed .play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--bg);
+    margin-left: 3px;
+  }
+  .lecture-embed .thumb-label {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .lecture-embed iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 3px;
+    display: block;
+  }
+
+  .further {
+    max-width: 760px;
+    margin: 8px auto 0;
+    padding: 8px 24px 44px;
+  }
+  .further-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .further-head .eyebrow-alt {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dusk);
+  }
+  .further-head .sub {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .further-list {
+    margin-top: 18px;
+    border-top: 1px dashed var(--line);
+  }
+  .further-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .further-item h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 3px;
+  }
+  .further-item .fi-meta {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .further-item p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 48ch;
+  }
+  .further-item .find-it { color: var(--dusk); flex-shrink: 0; }
+  .further-item .find-it:hover { border-bottom-color: var(--dusk); }
+
+  .further-details summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .further-details summary::-webkit-details-marker { display: none; }
+  .further-head::after {
+    content: "\203A";
+    margin-left: auto;
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1;
+    color: var(--dusk);
+    transition: transform 0.2s ease;
+  }
+  .further-details[open] .further-head::after { transform: rotate(90deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .further-head::after { transition: none; }
+  }
+
+  @media (max-width: 560px) {
+    .further-item { flex-direction: column; }
+  }
+
+  .flight-footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .flight-footer a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    display: block;
+  }
+  .flight-footer a span {
+    display: block;
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--text);
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+  .flight-footer .next { text-align: right; }
+
+  @media (max-width: 480px) {
+    .hero::before { width: 300px; height: 300px; right: -100px; }
+    .work { padding-left: 44px; }
+    .works::before { left: 18px; }
+    .work::before { left: 12px; }
+  }
+</style>
+
+<div class="flight-page">
+
+  <div class="site-bar">
+    <div class="mark"><strong>Lyceum</strong> &middot; a diy liberal arts curriculum</div>
+    <div class="progress">No. 04 / 07</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow-row">
+      <span class="eyebrow">No. 04</span>
+      <span class="how-to">No set order, start wherever looks interesting.</span>
+    </div>
+    <h1>Cosmic Awe &amp; Evolution</h1>
+    <p class="core-question">Where does our behavior actually come from, and how do we find meaning in a universe this vast?</p>
+  </header>
+
+  <main class="works">
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+        <span class="medium">Lecture</span><span class="dot">&middot;</span><span>Stanford</span><span class="dot">&middot;</span><span>1h 37m</span>
+      </div>
+      <h2>Behavioral Evolution <span style="font-size: 16px; color: var(--text-muted); font-family: var(--sans);">&mdash; Human Behavioral Biology</span></h2>
+      <div class="byline">Robert Sapolsky</div>
+      <p class="focus">Sapolsky skips the pop-science version of evolution and goes straight to the actual framework underneath it: game theory, and what it predicts about how humans cooperate and betray each other.</p>
+      <div class="lecture-embed">
+        <div class="thumb-wrap" data-video-id="Y0Oa4Lp5fLE">
+          <img src="https://img.youtube.com/vi/Y0Oa4Lp5fLE/hqdefault.jpg" alt="" loading="lazy">
+          <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
+          <div class="thumb-label">Watch here &mdash; 1h 37m</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"></rect><line x1="7" y1="3" x2="7" y2="21"></line><line x1="17" y1="3" x2="17" y2="21"></line><line x1="2" y1="9" x2="7" y2="9"></line><line x1="2" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="22" y2="9"></line><line x1="17" y1="15" x2="22" y2="15"></line></svg>
+        <span class="medium">Film</span><span class="dot">&middot;</span><span>Classic, 1968</span><span class="canon-mark" title="On school syllabi &mdash; widely taught, worth knowing even if you skip it">syllabus</span><span class="dot">&middot;</span><span>2h 29m</span>
+      </div>
+      <h2>2001: A Space Odyssey</h2>
+      <div class="byline">Stanley Kubrick</div>
+      <p class="focus">A prehistoric man throws a bone into the air &mdash; and in the next shot, it's a spacecraft, millions of years later. One cut, the entire history of human tools. Kubrick spends the rest of the film, mostly in silence, wondering what comes next.</p>
+      <a class="find-it" href="https://www.justwatch.com/us/search?q=2001%20A%20Space%20Odyssey" target="_blank" rel="noopener">&rarr; Where to watch</a>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="medium">Book</span><span class="dot">&middot;</span><span>Modern, 2021</span><span class="dot">&middot;</span><span>~22 hr read</span>
+      </div>
+      <h2>The Dawn of Everything</h2>
+      <div class="byline">David Graeber &amp; David Wengrow</div>
+      <p class="focus">The standard story goes hunter-gatherer, then farmer, then state, in that order. Graeber and Wengrow argue early societies actually experimented with far more political arrangements than that &mdash; and some of them worked.</p>
+      <a class="find-it" href="https://search.worldcat.org/search?q=The+Dawn+of+Everything+Graeber+Wengrow" target="_blank" rel="noopener">&rarr; Find it</a>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        <span class="medium">Music</span><span class="dot">&middot;</span><span>c. 1720</span><span class="dot">&middot;</span><span>~18 min</span>
+      </div>
+      <h2>Cello Suite No. 1 in G Major</h2>
+      <div class="byline">Johann Sebastian Bach</div>
+      <p class="focus">One cellist, one wooden instrument, pure mathematical structure &mdash; and it still holds up completely unchanged three hundred years later.</p>
+      <div class="link-row">
+        <a class="find-it" href="https://open.spotify.com/album/3cvjMNWg7t46NyDZzujfNg" target="_blank" rel="noopener">&rarr; Listen on Spotify (Yo-Yo Ma)</a>
+        <a class="find-it" href="https://www.britannica.com/topic/Suites-for-Unaccompanied-Cello-BWV-1007-1012" target="_blank" rel="noopener">&rarr; Britannica on the suites (~3 min read)</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <span class="medium">Art</span><span class="dot">&middot;</span><span>1818</span><span class="canon-mark" title="On school syllabi &mdash; widely taught, worth knowing even if you skip it">syllabus</span><span class="dot">&middot;</span><span>Hamburger Kunsthalle</span>
+      </div>
+      <h2>Wanderer above the Sea of Fog</h2>
+      <div class="byline">Caspar David Friedrich</div>
+      <p class="focus">A man stands with his back to us, looking out over a sea of fog toward mountains he can't fully see. Every generation stands at that same edge, staring at whatever version of the vast and unknown belongs to them.</p>
+      <div class="art-image">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=900" alt="Wanderer above the Sea of Fog by Caspar David Friedrich" loading="lazy">
+      </div>
+      <a class="find-it" href="https://www.britannica.com/topic/Wanderer-Above-the-Sea-of-Fog" target="_blank" rel="noopener">&rarr; Britannica on the painting (~3 min read)</a>
+    </article>
+
+  </main>
+
+  <section class="further">
+    <details class="further-details">
+    <summary class="further-head">
+      <span class="eyebrow-alt">Further Exploration</span>
+      <span class="sub">optional &mdash; for going deeper</span>
+    </summary>
+    <div class="further-list">
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>Braiding Sweetgrass</h3>
+          <div class="fi-meta">Book &middot; Robin Wall Kimmerer &middot; USA / Potawatomi Nation, 2013 &middot; ~11 hr read</div>
+          <p>Indigenous ecological knowledge braided with Western botany &mdash; a reciprocal answer to where our behaviors come from, instead of a purely evolutionary one.</p>
+        </div>
+        <a class="find-it" href="https://search.worldcat.org/search?q=Braiding+Sweetgrass+Kimmerer" target="_blank" rel="noopener">&rarr; Find it</a>
+      </div>
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>The Tree of Life</h3>
+          <div class="fi-meta">Film &middot; Terrence Malick &middot; USA, 2011 &middot; 2h 19m</div>
+          <p>A single Texas childhood set against an actual cosmic creation sequence &mdash; Kubrick's scale, aimed at one ordinary family instead of the species.</p>
+        </div>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Tree%20of%20Life%202011" target="_blank" rel="noopener">&rarr; Where to watch</a>
+      </div>
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>Sapiens</h3>
+          <div class="fi-meta">Book &middot; Yuval Noah Harari &middot; Israel, 2011 &middot; ~9h 15m read</div>
+          <p>A more deterministic origin story than Graeber and Wengrow's &mdash; read both and decide who's right about what actually shaped us.</p>
+        </div>
+        <a class="find-it" href="https://search.worldcat.org/search?q=Sapiens+Yuval+Noah+Harari" target="_blank" rel="noopener">&rarr; Find it</a>
+      </div>
+    </div>
+    </details>
+  </section>
+
+  <footer class="flight-footer">
+    <a href="03.html"><span aria-hidden="true">&larr;</span> No. 03<span>Power, Justice &amp; The State</span></a>
+    <a href="05.html" class="next">No. 05 <span aria-hidden="true">&rarr;</span><span>Mortality, Fate &amp; Transcendence</span></a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.lecture-embed .thumb-wrap').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var id = el.getAttribute('data-video-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.title = 'Lecture video';
+      el.replaceWith(iframe);
+    });
+  });
+</script>
+</body>
+</html>

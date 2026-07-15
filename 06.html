@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyceum &mdash; Hubris, Progress &amp; Nature</title>
+</head>
+<body>
+
+
+<style>
+  .flight-page {
+    --bg: #f4ede0;
+    --paper: #faf5ea;
+    --ink: #2b241c;
+    --text: #2b241c;
+    --text-muted: #6b6255;
+    --accent: #b5502e;
+    --dusk: #6b7d8f;
+    --line: #ddd2bd;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'SF Mono', 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .flight-page a:focus-visible,
+  .flight-page button:focus-visible,
+  .flight-page summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .site-bar {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-bar .mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .site-bar .mark strong { color: var(--text); }
+  .site-bar .progress {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 32px;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 1.08;
+    font-weight: 500;
+    margin: 0 0 20px;
+    max-width: 12ch;
+  }
+  .hero .core-question {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--line);
+  }
+
+  .works {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8px 24px 0;
+    position: relative;
+  }
+  .works::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: repeating-linear-gradient(to bottom, var(--line) 0, var(--line) 4px, transparent 4px, transparent 9px);
+  }
+
+  .work {
+    position: relative;
+    padding: 28px 0 28px 52px;
+  }
+  .work::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 34px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .work-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .work-meta .medium {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .work-meta .dot { opacity: 0.5; }
+  .medium-icon {
+    width: 13px;
+    height: 13px;
+    vertical-align: -2px;
+    margin-right: 4px;
+    color: var(--accent);
+  }
+  .canon-mark {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    border: 1px solid var(--dusk);
+    border-radius: 2px;
+    padding: 1px 5px;
+    margin-left: 3px;
+    cursor: default;
+  }
+  .work h2 {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 4px;
+  }
+  .work .byline {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .work .focus {
+    font-family: var(--sans);
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 58ch;
+    margin: 0 0 14px;
+  }
+  .find-it {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+  }
+  .find-it:hover { border-bottom-color: var(--accent); }
+
+  .link-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .link-row .find-it { margin-top: 0; }
+  .alt-line {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .alt-line a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .art-image {
+    margin-top: 14px;
+    max-width: 480px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .art-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .lecture-embed {
+    margin-top: 14px;
+    max-width: 480px;
+  }
+  .lecture-embed .thumb-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 1px solid var(--line);
+  }
+  .lecture-embed .thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.85;
+  }
+  .lecture-embed .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  .lecture-embed .play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--bg);
+    margin-left: 3px;
+  }
+  .lecture-embed .thumb-label {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .lecture-embed iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 3px;
+    display: block;
+  }
+
+  .podcast-embed {
+    margin-top: 4px;
+    max-width: 480px;
+  }
+  .podcast-embed .pod-thumb {
+    position: relative;
+    height: 64px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .podcast-embed .play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .podcast-embed .play-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--bg);
+    margin-left: 2px;
+  }
+  .podcast-embed .pod-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #fff;
+  }
+  .podcast-embed iframe {
+    width: 100%;
+    height: 175px;
+    border: 0;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .further {
+    max-width: 760px;
+    margin: 8px auto 0;
+    padding: 8px 24px 44px;
+  }
+  .further-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .further-head .eyebrow-alt {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dusk);
+  }
+  .further-head .sub {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .further-list {
+    margin-top: 18px;
+    border-top: 1px dashed var(--line);
+  }
+  .further-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .further-item h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 3px;
+  }
+  .further-item .fi-meta {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .further-item p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 48ch;
+  }
+  .further-item .find-it { color: var(--dusk); flex-shrink: 0; }
+  .further-item .find-it:hover { border-bottom-color: var(--dusk); }
+
+  .further-details summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .further-details summary::-webkit-details-marker { display: none; }
+  .further-head::after {
+    content: "\203A";
+    margin-left: auto;
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1;
+    color: var(--dusk);
+    transition: transform 0.2s ease;
+  }
+  .further-details[open] .further-head::after { transform: rotate(90deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .further-head::after { transition: none; }
+  }
+
+  @media (max-width: 560px) {
+    .further-item { flex-direction: column; }
+  }
+
+  .flight-footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .flight-footer a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    display: block;
+  }
+  .flight-footer a span {
+    display: block;
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--text);
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+  .flight-footer .next { text-align: right; }
+
+  @media (max-width: 480px) {
+    .hero::before { width: 300px; height: 300px; right: -100px; }
+    .work { padding-left: 44px; }
+    .works::before { left: 18px; }
+    .work::before { left: 12px; }
+  }
+</style>
+
+<div class="flight-page">
+
+  <div class="site-bar">
+    <div class="mark"><strong>Lyceum</strong> &middot; a diy liberal arts curriculum</div>
+    <div class="progress">No. 06 / 07</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow-row">
+      <span class="eyebrow">No. 06</span>
+      <span class="how-to">No set order, start wherever looks interesting.</span>
+    </div>
+    <h1>Hubris, Progress &amp; Nature</h1>
+    <p class="core-question">What happens when our technology moves faster than our understanding of nature &mdash; and how far is too far when we start playing creator?</p>
+  </header>
+
+  <main class="works">
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+        <span class="medium">Lecture</span><span class="dot">&middot;</span><span>Stanford</span><span class="dot">&middot;</span><span>1h 39m</span>
+      </div>
+      <h2>Behavioral Genetics I <span style="font-size: 16px; color: var(--text-muted); font-family: var(--sans);">&mdash; Human Behavioral Biology</span></h2>
+      <div class="byline">Robert Sapolsky</div>
+      <p class="focus">You don't need to build a robot to play god &mdash; Sapolsky shows how genes and environment already tangle together in ways no simple "nature vs. nurture" chart can capture.</p>
+      <div class="lecture-embed">
+        <div class="thumb-wrap" data-video-id="e0WZx7lUOrY">
+          <img src="https://img.youtube.com/vi/e0WZx7lUOrY/hqdefault.jpg" alt="" loading="lazy">
+          <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
+          <div class="thumb-label">Watch here &mdash; 1h 39m</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"></rect><line x1="7" y1="3" x2="7" y2="21"></line><line x1="17" y1="3" x2="17" y2="21"></line><line x1="2" y1="9" x2="7" y2="9"></line><line x1="2" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="22" y2="9"></line><line x1="17" y1="15" x2="22" y2="15"></line></svg>
+        <span class="medium">Film</span><span class="dot">&middot;</span><span>Modern, 2014</span><span class="dot">&middot;</span><span>1h 48m</span>
+      </div>
+      <h2>Ex Machina</h2>
+      <div class="byline">Alex Garland</div>
+      <p class="focus">A programmer is invited to test whether an AI is truly conscious &mdash; and slowly realizes he might be the one being tested.</p>
+      <a class="find-it" href="https://www.justwatch.com/us/search?q=Ex%20Machina%202014" target="_blank" rel="noopener">&rarr; Where to watch</a>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="medium">Book</span><span class="dot">&middot;</span><span>Classic, 1818</span><span class="canon-mark" title="On school syllabi &mdash; widely taught, worth knowing even if you skip it">syllabus</span><span class="dot">&middot;</span><span>~5 hr read</span>
+      </div>
+      <h2>Frankenstein</h2>
+      <div class="byline">Mary Shelley</div>
+      <p class="focus">One of the first great warnings about playing god with science. It asks what a creator owes to whatever they bring to life, and what happens when they walk away from that responsibility.</p>
+      <div class="link-row">
+                <div class="podcast-embed">
+          <div class="pod-thumb" data-embed-src="https://embed.podcasts.apple.com/us/podcast/frankenstein/id73330895?i=1000438236187">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
+            <div class="pod-label">BBC In Our Time on Frankenstein &mdash; 55 min</div>
+          </div>
+        </div>
+        <a class="find-it" href="https://www.gutenberg.org/files/84/84-h/84-h.htm" target="_blank" rel="noopener">&rarr; Read it yourself: full free text</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        <span class="medium">Music</span><span class="dot">&middot;</span><span>1969</span><span class="dot">&middot;</span><span>~16 min</span>
+      </div>
+      <h2>Abbey Road (Side B Medley)</h2>
+      <div class="byline">The Beatles</div>
+      <p class="focus">Sixteen minutes stitched together from studio fragments, using recording technology pushed further than anyone had tried before &mdash; the last thing the four of them recorded together as a band.</p>
+      <div class="link-row">
+        <a class="find-it" href="https://open.spotify.com/album/0ETFjACtuP2ADo6LFhL6HN" target="_blank" rel="noopener">&rarr; Listen on Spotify</a>
+        <a class="find-it" href="https://thelondonmagazine.org/essay-unmitigated-disaster-the-beatles-abbey-road-by-kenneth-womack/" target="_blank" rel="noopener">&rarr; Scholarly essay on the album (~10 min read)</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-meta">
+        <svg class="medium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <span class="medium">Art</span><span class="dot">&middot;</span><span>1844</span><span class="canon-mark" title="On school syllabi &mdash; widely taught, worth knowing even if you skip it">syllabus</span><span class="dot">&middot;</span><span>National Gallery, London</span>
+      </div>
+      <h2>Rain, Steam and Speed &mdash; The Great Western Railway</h2>
+      <div class="byline">J. M. W. Turner</div>
+      <p class="focus">A train barrels through the frame so fast it's dissolving the landscape around it. Turner hid something in the blur: a hare, racing the train, now almost invisible under centuries of paint.</p>
+      <div class="art-image">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=900" alt="Rain, Steam and Speed by J.M.W. Turner" loading="lazy">
+      </div>
+      <a class="find-it" href="https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway" target="_blank" rel="noopener">&rarr; More from the National Gallery</a>
+    </article>
+
+  </main>
+
+  <section class="further">
+    <details class="further-details">
+    <summary class="further-head">
+      <span class="eyebrow-alt">Further Exploration</span>
+      <span class="sub">optional &mdash; for going deeper</span>
+    </summary>
+    <div class="further-list">
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>Princess Mononoke</h3>
+          <div class="fi-meta">Film &middot; Hayao Miyazaki &middot; Japan, 1997 &middot; 2h 14m</div>
+          <p>An animated epic that refuses to make either industry or nature the villain &mdash; hubris here is thinking the fight has a clean winner.</p>
+        </div>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=Princess%20Mononoke" target="_blank" rel="noopener">&rarr; Where to watch</a>
+      </div>
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>Never Let Me Go</h3>
+          <div class="fi-meta">Novel &middot; Kazuo Ishiguro &middot; UK, 2005 &middot; ~5 hr read</div>
+          <p>A quieter, sadder cousin of Ex Machina &mdash; what a created being owes its maker, told from the created being's side.</p>
+        </div>
+        <a class="find-it" href="https://search.worldcat.org/search?q=Never+Let+Me+Go+Kazuo+Ishiguro" target="_blank" rel="noopener">&rarr; Find it</a>
+      </div>
+      <div class="further-item">
+        <div class="fi-left">
+          <h3>Unbowed</h3>
+          <div class="fi-meta">Memoir &middot; Wangari Maathai &middot; Kenya, 2006 &middot; ~7 hr read</div>
+          <p>A Nobel laureate's account of replanting a continent one tree at a time &mdash; what it looks like to repair hubris instead of just diagnosing it.</p>
+        </div>
+        <a class="find-it" href="https://search.worldcat.org/search?q=Unbowed+Wangari+Maathai" target="_blank" rel="noopener">&rarr; Find it</a>
+      </div>
+    </div>
+    </details>
+  </section>
+
+  <footer class="flight-footer">
+    <a href="05.html"><span aria-hidden="true">&larr;</span> No. 05<span>Mortality, Fate &amp; Transcendence</span></a>
+    <a href="07.html" class="next">No. 07 <span aria-hidden="true">&rarr;</span><span>The Stranger, The Self &amp; The Other</span></a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.lecture-embed .thumb-wrap').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var id = el.getAttribute('data-video-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.title = 'Lecture video';
+      el.replaceWith(iframe);
+    });
+  });
+
+  document.querySelectorAll('.podcast-embed .pod-thumb').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var src = el.getAttribute('data-embed-src');
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.allow = 'autoplay *; encrypted-media *; clipboard-write';
+      iframe.title = 'Podcast episode';
+      el.replaceWith(iframe);
+    });
+  });
+</script>
+</body>
+</html>
