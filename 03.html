@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23f4ede0%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2247%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2242%22%20font-weight%3D%22600%22%20fill%3D%22%23b5502e%22%20text-anchor%3D%22middle%22%3EL%3C/text%3E%3C/svg%3E">
 <title>Lyceum &mdash; Power, Justice &amp; The State</title>
 </head>
 <body>
@@ -245,6 +246,22 @@
   .art-image img {
     width: 100%;
     height: auto;
+    display: block;
+  }
+  .art-audio {
+    margin-top: 10px;
+    max-width: 480px;
+  }
+  .art-audio .audio-caption {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .art-audio audio {
+    width: 100%;
     display: block;
   }
 
@@ -533,6 +550,10 @@
       <p class="focus">Socrates, tried and legally condemned by his own city for asking too many questions, reaches for the poison himself rather than renounce what he believes, while the men around him can barely watch. The state can make something legal, and that doesn't make it right.</p>
       <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=900" alt="The Death of Socrates by Jacques-Louis David" loading="lazy">
+      </div>
+      <div class="art-audio">
+        <span class="audio-caption">Listen: The Met's own audio guide on the painting</span>
+        <audio controls preload="none" src="https://cdn.sanity.io/files/cctd4ker/production/e29f58e7d0a3b0c19612c738dd7f4d05e831b814.mp3"></audio>
       </div>
       <a class="find-it" href="https://www.metmuseum.org/art/collection/search/436105" target="_blank" rel="noopener">&rarr; More from The Met</a>
     </article>
