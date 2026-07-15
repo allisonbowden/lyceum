@@ -544,7 +544,12 @@
       <p class="focus">A beautifully analog electronic album that forces synthetic sound to mimic, chase, and struggle toward human warmth &mdash; illusion reaching for the real thing.</p>
       <div class="link-row">
         <a class="find-it" href="https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa" target="_blank" rel="noopener">&rarr; Listen on Spotify</a>
-        <div class="alt-line">&rarr; NPR Fresh Air on the album (~8 min) &mdash; <a href="https://podcasts.apple.com/podcast/214089682?mt=2&at=11l79Y&ct=nprdirectory" target="_blank" rel="noopener">Apple Podcasts</a> &middot; <a href="https://open.spotify.com/show/0HF5T1BVjaUR6dMlAamdB5" target="_blank" rel="noopener">Spotify</a></div>
+        <div class="podcast-embed">
+          <div class="pod-thumb" data-embed-src="https://www.npr.org/player/embed/185839045/185839046" data-embed-height="264">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
+            <div class="pod-label">NPR Fresh Air on the album &mdash; 8 min</div>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -625,10 +630,12 @@
   document.querySelectorAll('.podcast-embed .pod-thumb').forEach(function (el) {
     el.addEventListener('click', function () {
       var src = el.getAttribute('data-embed-src');
+      var height = el.getAttribute('data-embed-height');
       var iframe = document.createElement('iframe');
       iframe.src = src;
       iframe.allow = 'autoplay *; encrypted-media *; clipboard-write';
       iframe.title = 'Podcast episode';
+      if (height) { iframe.style.height = height + 'px'; }
       el.replaceWith(iframe);
     });
   });
