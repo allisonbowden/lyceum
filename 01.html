@@ -316,6 +316,23 @@
     display: block;
   }
 
+  .art-audio {
+    margin-top: 10px;
+    max-width: 480px;
+  }
+  .art-audio .audio-caption {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .art-audio audio {
+    width: 100%;
+    display: block;
+  }
+
   .podcast-embed {
     margin-top: 4px;
     max-width: 480px;
@@ -496,6 +513,10 @@
           <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
           <div class="thumb-label">Watch here &mdash; 43 min</div>
         </div>
+      </div>
+      <div class="art-audio">
+        <span class="audio-caption">Or listen here</span>
+        <audio controls preload="none" src="https://oyc.yale.edu/sites/default/files/courses/spring11/phil181/mp3/phil181_02_011311.mp3"></audio>
       </div>
     </article>
 
