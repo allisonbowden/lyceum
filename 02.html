@@ -302,39 +302,6 @@
     margin-top: 4px;
     max-width: 480px;
   }
-  .podcast-embed .pod-thumb {
-    position: relative;
-    height: 64px;
-    border-radius: 3px;
-    cursor: pointer;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    gap: 12px;
-  }
-  .podcast-embed .play-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .podcast-embed .play-btn svg {
-    width: 16px;
-    height: 16px;
-    fill: var(--bg);
-    margin-left: 2px;
-  }
-  .podcast-embed .pod-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: #fff;
-  }
   .podcast-embed iframe {
     width: 100%;
     height: 175px;
@@ -517,10 +484,7 @@
       <p class="focus">The most powerful man alive kept a private notebook reminding himself to stay humble. He never meant for anyone else to read it.</p>
       <div class="link-row">
                 <div class="podcast-embed">
-          <div class="pod-thumb" data-embed-src="https://embed.podcasts.apple.com/us/podcast/marcus-aurelius/id73330895?i=1000510599570">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
-            <div class="pod-label">BBC In Our Time on Meditations &mdash; 53 min</div>
-          </div>
+          <iframe src="https://embed.podcasts.apple.com/us/podcast/marcus-aurelius/id73330895?i=1000510599570" title="BBC In Our Time on Meditations &mdash; 53 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
         </div>
         <a class="find-it" href="https://www.gutenberg.org/files/2680/2680-h/2680-h.htm" target="_blank" rel="noopener">&rarr; Read it yourself: full free text</a>
       </div>
@@ -611,16 +575,6 @@
     });
   });
 
-  document.querySelectorAll('.podcast-embed .pod-thumb').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var src = el.getAttribute('data-embed-src');
-      var iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.allow = 'autoplay *; encrypted-media *; clipboard-write';
-      iframe.title = 'Podcast episode';
-      el.replaceWith(iframe);
-    });
-  });
 </script>
 </body>
 </html>

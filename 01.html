@@ -302,39 +302,6 @@
     margin-top: 4px;
     max-width: 480px;
   }
-  .podcast-embed .pod-thumb {
-    position: relative;
-    height: 64px;
-    border-radius: 3px;
-    cursor: pointer;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    gap: 12px;
-  }
-  .podcast-embed .play-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .podcast-embed .play-btn svg {
-    width: 16px;
-    height: 16px;
-    fill: var(--bg);
-    margin-left: 2px;
-  }
-  .podcast-embed .pod-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: #fff;
-  }
   .podcast-embed iframe {
     width: 100%;
     height: 175px;
@@ -525,10 +492,7 @@
       <p class="focus">Prisoners chained in a cave mistake shadows on the wall for reality itself. This single chapter, the most famous part of the whole book, asks what happens the moment one of them turns around and sees the fire behind him. You don't need the rest of The Republic to get the idea.</p>
       <div class="link-row">
         <div class="podcast-embed">
-          <div class="pod-thumb" data-embed-src="https://embed.podcasts.apple.com/us/podcast/platos-republic/id73330895?i=1000389342687">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
-            <div class="pod-label">BBC In Our Time on the Cave &mdash; 49 min</div>
-          </div>
+          <iframe src="https://embed.podcasts.apple.com/us/podcast/platos-republic/id73330895?i=1000389342687" title="BBC In Our Time on the Cave &mdash; 49 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
         </div>
         <a class="find-it" href="https://www.gutenberg.org/files/55201/55201-h/55201-h.htm" target="_blank" rel="noopener">&rarr; Read it yourself: full free text (Book VII)</a>
       </div>
@@ -544,16 +508,10 @@
       <p class="focus">A beautifully analog electronic album that forces synthetic sound to mimic, chase, and struggle toward human warmth: illusion reaching for the real thing.</p>
       <div class="link-row">
         <div class="podcast-embed">
-          <div class="pod-thumb" data-embed-src="https://open.spotify.com/embed/album/4m2880jivSbbyEGAKfITCa" data-embed-height="152">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
-            <div class="pod-label">Listen on Spotify</div>
-          </div>
+          <iframe src="https://open.spotify.com/embed/album/4m2880jivSbbyEGAKfITCa" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
         <div class="podcast-embed">
-          <div class="pod-thumb" data-embed-src="https://www.npr.org/player/embed/185839045/185839046" data-embed-height="264">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
-            <div class="pod-label">NPR Fresh Air on the album &mdash; 8 min</div>
-          </div>
+          <iframe src="https://www.npr.org/player/embed/185839045/185839046" title="NPR Fresh Air on the album &mdash; 8 min" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 264px;"></iframe>
         </div>
       </div>
     </article>
@@ -635,18 +593,6 @@
     });
   });
 
-  document.querySelectorAll('.podcast-embed .pod-thumb').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var src = el.getAttribute('data-embed-src');
-      var height = el.getAttribute('data-embed-height');
-      var iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.allow = 'autoplay *; encrypted-media *; clipboard-write';
-      iframe.title = 'Podcast episode';
-      if (height) { iframe.style.height = height + 'px'; }
-      el.replaceWith(iframe);
-    });
-  });
 </script>
 
 </body>
