@@ -102,7 +102,7 @@
     font-size: 44px;
     line-height: 1.1;
     font-weight: 500;
-    margin: 0 0 20px;
+    margin: 0;
     max-width: 14ch;
   }
   .hero .intro {
@@ -153,10 +153,25 @@
 
   .medium-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 14px;
     margin-top: 18px;
   }
+  @media (max-width: 560px) {
+    .medium-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  }
+  .start-btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 22px;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+  }
+  .start-btn:hover { background: var(--accent); color: var(--bg); }
   .medium-grid .m-item {
     display: flex;
     align-items: center;
@@ -295,13 +310,13 @@
       <div class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Music</div>
       <div class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Art</div>
     </div>
-    <p class="muted" style="margin-top: 16px;">Every work also carries a rough time estimate &mdash; a reading time, a runtime, a listen length &mdash; so you can pick based on how much time you actually have.</p>
+    <p class="muted" style="margin-top: 16px;">Every work also carries a rough time estimate (a reading time, a runtime, a listen length) so you can pick based on how much time you actually have.</p>
   </section>
 
   <section class="section">
     <div class="s-eyebrow">The lectures</div>
     <h2>Why university courses</h2>
-    <p>The lecture in each theme comes from an actual recorded course &mdash; Michael Sandel's <em>Justice</em> at Harvard, Shelly Kagan's <em>Death</em> at Yale, Tamar Gendler's <em>Philosophy and the Science of Human Nature</em> at Yale, Robert Sapolsky's <em>Human Behavioral Biology</em> at Stanford. These universities recorded the full courses and released them free, taught by people who've spent their careers on the subject.</p>
+    <p>The lecture in each theme comes from an actual recorded course: Michael Sandel's <em>Justice</em> at Harvard, Shelly Kagan's <em>Death</em> at Yale, Tamar Gendler's <em>Philosophy and the Science of Human Nature</em> at Yale, Robert Sapolsky's <em>Human Behavioral Biology</em> at Stanford. The universities recorded the full courses and released them free. Every one is taught by someone who has spent a career on the subject.</p>
   </section>
 
   <section class="section">
@@ -314,9 +329,9 @@
   <section class="section">
     <div class="s-eyebrow">The badge</div>
     <h2>What "syllabus" means</h2>
-    <p>A handful of works in each theme, the ones marked "Classic," also carry a small tag:</p>
+    <p>Works marked "Classic" also carry a small tag:</p>
     <div class="example-mark">Classic, 1871&ndash;72 <span class="canon-demo">syllabus</span></div>
-    <p>It means we checked: this is a work genuinely assigned in university courses. It's there so that even if you never read Middlemarch, you know it's one of the books that comes up if you're in a room with people who did. Each classic book also links to a quick summary and a discussion of it, for anyone who wants to know it without reading the whole thing.</p>
+    <p>It means we checked: this is a work genuinely assigned in university courses. It's there so that even if you never read Middlemarch, you know it's one of the books that comes up if you're in a room with people who did. Each classic book also links to a discussion of it, for anyone who wants to know it without reading the whole thing.</p>
   </section>
 
   <section class="section">
@@ -324,15 +339,15 @@
     <h2>Where the links go</h2>
     <p>Every link under a work points to a source with a named author and an editorial process behind it, roughly in this order:</p>
     <div class="source-list">
-      <div class="s-row"><span class="s-tag">Primary</span><span class="s-desc">The museum that actually owns and studies the artwork &mdash; the Met, LACMA, the National Gallery. Their curators work directly with the physical piece, in a way no secondhand account can match.</span></div>
-      <div class="s-row"><span class="s-tag">Scholarly</span><span class="s-desc">Published academic writing &mdash; a university press book, a named historian's essay &mdash; when it exists and is accessible.</span></div>
+      <div class="s-row"><span class="s-tag">Primary</span><span class="s-desc">The museum that actually owns and studies the artwork: the Met, LACMA, the National Gallery. Their curators work directly with the physical piece, in a way no secondhand account can match.</span></div>
+      <div class="s-row"><span class="s-tag">Scholarly</span><span class="s-desc">Published academic writing, like a university press book or a named historian's essay, when it exists and is accessible.</span></div>
       <div class="s-row"><span class="s-tag">Edited</span><span class="s-desc">Journalism and criticism with an editorial process behind it: BBC's In Our Time, NPR, Rolling Stone, Britannica.</span></div>
     </div>  </section>
 
   <section class="section">
     <div class="s-eyebrow">Ready</div>
-    <h2>Start reading</h2>
-    <p><a href="themes.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 2px;">&rarr; The Seven Themes</a></p>
+    <h2>Start anywhere</h2>
+    <p><a class="start-btn" href="themes.html">The Seven Themes &rarr;</a></p>
   </section>
 
 </div>
