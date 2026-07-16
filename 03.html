@@ -128,6 +128,19 @@
   .theme-nav-item.active {
     background: var(--bg);
   }
+  .theme-nav-item.visited .t-title::after {
+    content: " \2022";
+    color: var(--accent);
+  }
+  .theme-nav-item .t-mini {
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+    align-self: center;
+  }
   .theme-nav-item .t-num {
     font-family: var(--mono);
     font-size: 11px;
@@ -173,6 +186,21 @@
     background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
     pointer-events: none;
   }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=600");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.16;
+    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+    mask-image: radial-gradient(circle, black 30%, transparent 70%);
+    pointer-events: none;
+  }
   .hero .eyebrow-row {
     display: flex;
     align-items: baseline;
@@ -200,6 +228,13 @@
     font-weight: 500;
     margin: 0 0 20px;
     max-width: 12ch;
+  }
+  .hero .time-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin: 0;
   }
   .hero .core-question {
     font-family: var(--serif);
@@ -551,7 +586,7 @@
   .flight-footer .next { text-align: right; }
 
   @media (max-width: 480px) {
-    .hero::before { width: 300px; height: 300px; right: -100px; }
+    .hero::before, .hero::after { width: 300px; height: 300px; right: -100px; }
     .work { padding-left: 44px; }
     .works::before { left: 18px; }
     .work::before { left: 12px; }
@@ -567,13 +602,13 @@
     <div class="theme-nav" data-open="false">
       <button class="theme-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">No. 03 / 07 <svg viewBox="0 0 24 24"><polygon points="6,9 12,15 18,9"></polygon></svg></button>
       <div class="theme-nav-menu">
-        <a class="theme-nav-item" href="01.html"><span class="t-num">01</span><span class="t-title">Truth, Illusion &amp; Deception</span></a>
-        <a class="theme-nav-item" href="02.html"><span class="t-num">02</span><span class="t-title">The Individual &amp; The Collective</span></a>
-        <a class="theme-nav-item active" href="03.html"><span class="t-num">03</span><span class="t-title">Power, Justice &amp; The State</span></a>
-        <a class="theme-nav-item" href="04.html"><span class="t-num">04</span><span class="t-title">Cosmic Awe &amp; Evolution</span></a>
-        <a class="theme-nav-item" href="05.html"><span class="t-num">05</span><span class="t-title">Mortality, Fate &amp; Transcendence</span></a>
-        <a class="theme-nav-item" href="06.html"><span class="t-num">06</span><span class="t-title">Hubris, Progress &amp; Nature</span></a>
-        <a class="theme-nav-item" href="07.html"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
+        <a class="theme-nav-item" href="01.html"><img class="t-mini" src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="" loading="lazy"><span class="t-num">01</span><span class="t-title">Truth, Illusion &amp; Deception</span></a>
+        <a class="theme-nav-item" href="02.html"><img class="t-mini" src="https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg?width=600" alt="" loading="lazy"><span class="t-num">02</span><span class="t-title">The Individual &amp; The Collective</span></a>
+        <a class="theme-nav-item active" href="03.html"><img class="t-mini" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=600" alt="" loading="lazy"><span class="t-num">03</span><span class="t-title">Power, Justice &amp; The State</span></a>
+        <a class="theme-nav-item" href="04.html"><img class="t-mini" src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=600" alt="" loading="lazy"><span class="t-num">04</span><span class="t-title">Cosmic Awe &amp; Evolution</span></a>
+        <a class="theme-nav-item" href="05.html"><img class="t-mini" src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=600" alt="" loading="lazy"><span class="t-num">05</span><span class="t-title">Mortality, Fate &amp; Transcendence</span></a>
+        <a class="theme-nav-item" href="06.html"><img class="t-mini" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=600" alt="" loading="lazy"><span class="t-num">06</span><span class="t-title">Hubris, Progress &amp; Nature</span></a>
+        <a class="theme-nav-item" href="07.html"><img class="t-mini" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=600" alt="" loading="lazy"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
         <div class="theme-nav-divider"></div>
         <a class="theme-nav-meta" href="about.html">How this works</a>
         <a class="theme-nav-meta" href="why.html">Why liberal arts</a>
@@ -588,6 +623,7 @@
     </div>
     <h1>Power, Justice &amp; The State</h1>
     <p class="core-question">Who gets to make the rules for everyone else, and what do you do when they're wrong?</p>
+    <p class="time-note">All five works &asymp; 9.5 hr, or &asymp; 8 hr if you skip the book</p>
   </header>
 
   <main class="works">
@@ -751,6 +787,21 @@
       nav.querySelector('.theme-nav-btn').setAttribute('aria-expanded', 'false');
     });
   });
+
+  try {
+    var visited = JSON.parse(localStorage.getItem('lyceum-visited') || '[]');
+    var here = location.pathname.split('/').pop();
+    if (here && visited.indexOf(here) === -1) {
+      visited.push(here);
+      localStorage.setItem('lyceum-visited', JSON.stringify(visited));
+    }
+    document.querySelectorAll('.theme-nav-item').forEach(function (a) {
+      if (visited.indexOf(a.getAttribute('href')) !== -1 && !a.classList.contains('active')) {
+        a.classList.add('visited');
+      }
+    });
+  } catch (e) {}
+
 </script>
 </body>
 </html>

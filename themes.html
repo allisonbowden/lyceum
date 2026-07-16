@@ -124,12 +124,20 @@
   }
   .theme-list a {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 16px;
-    padding: 18px 0;
+    padding: 14px 0;
     border-bottom: 1px dashed var(--line);
     text-decoration: none;
     color: var(--text);
+  }
+  .theme-list .t-thumb {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
   }
   .theme-list a:hover .t-title { color: var(--accent); }
   .theme-list .t-num {
@@ -181,13 +189,13 @@
 
   <div class="theme-index">
     <div class="theme-list">
-      <a href="01.html"><span class="t-num">01</span><span class="t-title">Truth, Illusion &amp; Deception</span></a>
-      <a href="02.html"><span class="t-num">02</span><span class="t-title">The Individual &amp; The Collective</span></a>
-      <a href="03.html"><span class="t-num">03</span><span class="t-title">Power, Justice &amp; The State</span></a>
-      <a href="04.html"><span class="t-num">04</span><span class="t-title">Cosmic Awe &amp; Evolution</span></a>
-      <a href="05.html"><span class="t-num">05</span><span class="t-title">Mortality, Fate &amp; Transcendence</span></a>
-      <a href="06.html"><span class="t-num">06</span><span class="t-title">Hubris, Progress &amp; Nature</span></a>
-      <a href="07.html"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
+      <a href="01.html"><img class="t-thumb" src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="" loading="lazy"><span class="t-num">01</span><span class="t-title">Truth, Illusion &amp; Deception</span></a>
+      <a href="02.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg?width=600" alt="" loading="lazy"><span class="t-num">02</span><span class="t-title">The Individual &amp; The Collective</span></a>
+      <a href="03.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=600" alt="" loading="lazy"><span class="t-num">03</span><span class="t-title">Power, Justice &amp; The State</span></a>
+      <a href="04.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=600" alt="" loading="lazy"><span class="t-num">04</span><span class="t-title">Cosmic Awe &amp; Evolution</span></a>
+      <a href="05.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=600" alt="" loading="lazy"><span class="t-num">05</span><span class="t-title">Mortality, Fate &amp; Transcendence</span></a>
+      <a href="06.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=600" alt="" loading="lazy"><span class="t-num">06</span><span class="t-title">Hubris, Progress &amp; Nature</span></a>
+      <a href="07.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=600" alt="" loading="lazy"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
     </div>
   </div>
 
