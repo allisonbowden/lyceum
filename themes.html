@@ -60,6 +60,9 @@
   }
   .site-bar .mark strong { color: var(--text); }
   .site-bar .mark a:hover strong { color: var(--accent); }
+  @media (max-width: 480px) {
+    .site-bar .tagline { display: none; }
+  }
   .site-bar .progress {
     font-family: var(--mono);
     font-size: 12px;
@@ -166,7 +169,7 @@
 <div class="flight-page">
 
   <div class="site-bar">
-    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a> &middot; a diy liberal arts curriculum</div>
+    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
     <div class="progress">Themes</div>
   </div>
 

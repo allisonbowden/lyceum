@@ -63,6 +63,9 @@
   }
   .site-bar .mark strong { color: var(--text); }
   .site-bar .mark a:hover strong { color: var(--accent); }
+  @media (max-width: 480px) {
+    .site-bar .tagline { display: none; }
+  }
   .site-bar .progress {
     font-family: var(--mono);
     font-size: 12px;
@@ -272,7 +275,7 @@
 <div class="flight-page">
 
   <div class="site-bar">
-    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a> &middot; a diy liberal arts curriculum</div>
+    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
     <div class="progress">About</div>
   </div>
 
@@ -285,7 +288,7 @@
   <section class="section">
     <div class="s-eyebrow">Structure</div>
     <h2>Five mediums, one theme</h2>
-    <p>Each of the seven themes pairs the same five things: a <strong>lecture</strong>, a <strong>film</strong>, a <strong>book</strong>, an <strong>album</strong>, and a <strong>work of art</strong>. A lecture reasons through an idea. A film dramatizes it. A book spends hundreds of pages inside one person's head. An album makes you feel it. A painting freezes it into one image. Together, they cover a theme from five different angles instead of one.</p>
+    <p>Each of the seven themes pairs the same five things: a <strong>lecture</strong>, a <strong>film</strong>, a <strong>book</strong>, a piece of <strong>music</strong>, and a <strong>work of art</strong>. A lecture reasons through an idea. A film dramatizes it. A book spends hundreds of pages inside one person's head. Music makes you feel it. A painting freezes it into one image. Together, they cover a theme from five different angles instead of one.</p>
     <div class="medium-grid">
       <div class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>Lecture</div>
       <div class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"></rect><line x1="7" y1="3" x2="7" y2="21"></line><line x1="17" y1="3" x2="17" y2="21"></line><line x1="2" y1="9" x2="7" y2="9"></line><line x1="2" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="22" y2="9"></line><line x1="17" y1="15" x2="22" y2="15"></line></svg>Film</div>

@@ -63,6 +63,9 @@
   }
   .site-bar .mark strong { color: var(--text); }
   .site-bar .mark a:hover strong { color: var(--accent); }
+  @media (max-width: 480px) {
+    .site-bar .tagline { display: none; }
+  }
   .site-bar .progress {
     font-family: var(--mono);
     font-size: 12px;
@@ -135,6 +138,23 @@
   .theme-nav-item .t-title {
     font-family: var(--serif);
     font-size: 14.5px;
+  }
+  .theme-nav-divider {
+    border-top: 1px solid var(--line);
+    margin: 6px 4px;
+  }
+  .theme-nav-meta {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .theme-nav-meta:hover {
+    background: var(--bg);
+    color: var(--accent);
   }
 
   .hero {
@@ -552,7 +572,7 @@
 <div class="flight-page">
 
   <div class="site-bar">
-    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a> &middot; a diy liberal arts curriculum</div>
+    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
     <div class="theme-nav" data-open="false">
       <button class="theme-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">No. 01 / 07 <svg viewBox="0 0 24 24"><polygon points="6,9 12,15 18,9"></polygon></svg></button>
       <div class="theme-nav-menu">
@@ -563,6 +583,9 @@
         <a class="theme-nav-item" href="05.html"><span class="t-num">05</span><span class="t-title">Mortality, Fate &amp; Transcendence</span></a>
         <a class="theme-nav-item" href="06.html"><span class="t-num">06</span><span class="t-title">Hubris, Progress &amp; Nature</span></a>
         <a class="theme-nav-item" href="07.html"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
+        <div class="theme-nav-divider"></div>
+        <a class="theme-nav-meta" href="about.html">How this works</a>
+        <a class="theme-nav-meta" href="why.html">Why liberal arts</a>
       </div>
     </div>
   </div>
