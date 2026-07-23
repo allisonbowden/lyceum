@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23f4ede0%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2247%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2242%22%20font-weight%3D%22600%22%20fill%3D%22%23b5502e%22%20text-anchor%3D%22middle%22%3EL%3C/text%3E%3C/svg%3E">
+<title>Lyceum &mdash; All The Works</title>
+<meta name="description" content="Every lecture, film, book, piece of music, and work of art across all seven themes, in one list.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lyceum — All The Works">
+<meta property="og:description" content="Every lecture, film, book, piece of music, and work of art across all seven themes, in one list.">
+<meta property="og:image" content="https://allisonbowden.github.io/lyceum/og-image.png">
+<meta property="og:url" content="https://allisonbowden.github.io/lyceum/works.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lyceum — All The Works">
+<meta name="twitter:description" content="Every lecture, film, book, piece of music, and work of art across all seven themes, in one list.">
+<meta name="twitter:image" content="https://allisonbowden.github.io/lyceum/og-image.png">
+</head>
+<body>
+<style>
+  .flight-page {
+    --bg: #f4ede0;
+    --ink: #2b241c;
+    --text: #2b241c;
+    --text-muted: #6b6255;
+    --accent: #b5502e;
+    --dusk: #6b7d8f;
+    --line: #ddd2bd;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'SF Mono', 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .flight-page a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .site-bar {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-bar .mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .site-bar .mark strong { color: var(--text); }
+  .site-bar .mark a:hover strong { color: var(--accent); }
+  @media (max-width: 480px) {
+    .site-bar .tagline { display: none; }
+  }
+  .site-bar .progress {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .hero {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 28px;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 0 0 20px;
+    max-width: 14ch;
+  }
+  .hero .intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin: 0;
+    padding-left: 16px;
+    border-left: 2px solid var(--line);
+  }
+
+  .section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 8px 24px 32px;
+  }
+  .section .s-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin-bottom: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+  }
+
+  .w-list {
+    border-top: 1px dashed var(--line);
+  }
+  .w-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+    text-decoration: none;
+    color: var(--text);
+  }
+  .w-list a:hover .w-title { color: var(--accent); }
+  .w-list .w-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--dusk);
+    flex-shrink: 0;
+    width: 20px;
+  }
+  .w-list .w-text { min-width: 0; }
+  .w-list .w-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    transition: color 0.15s ease;
+  }
+  .w-list .w-byline {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .flight-footer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 56px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .flight-footer a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+  }
+  .flight-footer a:hover { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    .hero::before { width: 300px; height: 300px; right: -100px; }
+  }
+</style>
+
+<div class="flight-page">
+
+  <div class="site-bar">
+    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
+    <div class="progress">All the works</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Contents</div>
+    <h1>All The Works</h1>
+    <p class="intro">Every lecture, film, book, piece of music, and work of art across all seven themes, in one list.</p>
+  </header>
+
+  <section class="section">
+    <div class="s-eyebrow">Lectures</div>
+    <div class="w-list">
+      <a href="01.html"><span class="w-num">01</span><span class="w-text"><span class="w-title">The Ring of Gyges: Morality and Hypocrisy</span><span class="w-byline">Tamar Gendler</span></span></a>
+      <a href="02.html"><span class="w-num">02</span><span class="w-text"><span class="w-title">Contract &amp; Commonwealth: Thomas Hobbes</span><span class="w-byline">Tamar Gendler</span></span></a>
+      <a href="03.html"><span class="w-num">03</span><span class="w-text"><span class="w-title">The Moral Side of Murder</span><span class="w-byline">Michael Sandel</span></span></a>
+      <a href="04.html"><span class="w-num">04</span><span class="w-text"><span class="w-title">Behavioral Evolution</span><span class="w-byline">Robert Sapolsky</span></span></a>
+      <a href="05.html"><span class="w-num">05</span><span class="w-text"><span class="w-title">Dying Alone; The Badness of Death</span><span class="w-byline">Shelly Kagan</span></span></a>
+      <a href="06.html"><span class="w-num">06</span><span class="w-text"><span class="w-title">Industrial Revolutions</span><span class="w-byline">John Merriman</span></span></a>
+      <a href="07.html"><span class="w-num">07</span><span class="w-text"><span class="w-title">Aggression, III</span><span class="w-byline">Robert Sapolsky</span></span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">Films</div>
+    <div class="w-list">
+      <a href="01.html"><span class="w-num">01</span><span class="w-text"><span class="w-title">Rear Window</span><span class="w-byline">Alfred Hitchcock</span></span></a>
+      <a href="02.html"><span class="w-num">02</span><span class="w-text"><span class="w-title">The Social Network</span><span class="w-byline">David Fincher</span></span></a>
+      <a href="03.html"><span class="w-num">03</span><span class="w-text"><span class="w-title">The Godfather, Parts I &amp; II</span><span class="w-byline">Francis Ford Coppola</span></span></a>
+      <a href="04.html"><span class="w-num">04</span><span class="w-text"><span class="w-title">2001: A Space Odyssey</span><span class="w-byline">Stanley Kubrick</span></span></a>
+      <a href="05.html"><span class="w-num">05</span><span class="w-text"><span class="w-title">Ikiru</span><span class="w-byline">Akira Kurosawa</span></span></a>
+      <a href="06.html"><span class="w-num">06</span><span class="w-text"><span class="w-title">Ex Machina</span><span class="w-byline">Alex Garland</span></span></a>
+      <a href="07.html"><span class="w-num">07</span><span class="w-text"><span class="w-title">Parasite</span><span class="w-byline">Bong Joon Ho</span></span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">Books</div>
+    <div class="w-list">
+      <a href="01.html"><span class="w-num">01</span><span class="w-text"><span class="w-title">The Republic (Book VII, "The Allegory of the Cave")</span><span class="w-byline">Plato</span></span></a>
+      <a href="02.html"><span class="w-num">02</span><span class="w-text"><span class="w-title">Meditations</span><span class="w-byline">Marcus Aurelius</span></span></a>
+      <a href="03.html"><span class="w-num">03</span><span class="w-text"><span class="w-title">The Prince</span><span class="w-byline">Niccol&ograve; Machiavelli</span></span></a>
+      <a href="04.html"><span class="w-num">04</span><span class="w-text"><span class="w-title">The Dawn of Everything</span><span class="w-byline">David Graeber &amp; David Wengrow</span></span></a>
+      <a href="05.html"><span class="w-num">05</span><span class="w-text"><span class="w-title">Crime and Punishment</span><span class="w-byline">Fyodor Dostoyevsky</span></span></a>
+      <a href="06.html"><span class="w-num">06</span><span class="w-text"><span class="w-title">Frankenstein</span><span class="w-byline">Mary Shelley</span></span></a>
+      <a href="07.html"><span class="w-num">07</span><span class="w-text"><span class="w-title">Middlemarch</span><span class="w-byline">George Eliot</span></span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">Music</div>
+    <div class="w-list">
+      <a href="01.html"><span class="w-num">01</span><span class="w-text"><span class="w-title">Random Access Memories</span><span class="w-byline">Daft Punk</span></span></a>
+      <a href="02.html"><span class="w-num">02</span><span class="w-text"><span class="w-title">The Dark Side of the Moon</span><span class="w-byline">Pink Floyd</span></span></a>
+      <a href="03.html"><span class="w-num">03</span><span class="w-text"><span class="w-title">Zombie</span><span class="w-byline">Fela Kuti &amp; Africa 70</span></span></a>
+      <a href="04.html"><span class="w-num">04</span><span class="w-text"><span class="w-title">Cello Suite No. 1 in G Major</span><span class="w-byline">Johann Sebastian Bach</span></span></a>
+      <a href="05.html"><span class="w-num">05</span><span class="w-text"><span class="w-title">Symphony No. 5</span><span class="w-byline">Ludwig van Beethoven</span></span></a>
+      <a href="06.html"><span class="w-num">06</span><span class="w-text"><span class="w-title">The Rite of Spring</span><span class="w-byline">Igor Stravinsky</span></span></a>
+      <a href="07.html"><span class="w-num">07</span><span class="w-text"><span class="w-title">To Pimp a Butterfly</span><span class="w-byline">Kendrick Lamar</span></span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">Art</div>
+    <div class="w-list">
+      <a href="01.html"><span class="w-num">01</span><span class="w-text"><span class="w-title">The Treachery of Images</span><span class="w-byline">Ren&eacute; Magritte</span></span></a>
+      <a href="02.html"><span class="w-num">02</span><span class="w-text"><span class="w-title">A Sunday on La Grande Jatte</span><span class="w-byline">Georges Seurat</span></span></a>
+      <a href="03.html"><span class="w-num">03</span><span class="w-text"><span class="w-title">The Death of Socrates</span><span class="w-byline">Jacques-Louis David</span></span></a>
+      <a href="04.html"><span class="w-num">04</span><span class="w-text"><span class="w-title">Wanderer above the Sea of Fog</span><span class="w-byline">Caspar David Friedrich</span></span></a>
+      <a href="05.html"><span class="w-num">05</span><span class="w-text"><span class="w-title">The Ambassadors</span><span class="w-byline">Hans Holbein the Younger</span></span></a>
+      <a href="06.html"><span class="w-num">06</span><span class="w-text"><span class="w-title">Rain, Steam and Speed</span><span class="w-byline">J. M. W. Turner</span></span></a>
+      <a href="07.html"><span class="w-num">07</span><span class="w-text"><span class="w-title">Olympia</span><span class="w-byline">&Eacute;douard Manet</span></span></a>
+    </div>
+  </section>
+
+  <div class="flight-footer">
+    <a href="index.html"><span aria-hidden="true">&larr;</span> Home</a>
+    <a href="themes.html">The seven themes</a>
+    <a href="about.html">About this curriculum</a>
+    <a href="why.html">Why liberal arts</a>
+  </div>
+
+</div>
+</body></html>
