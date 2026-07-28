@@ -348,7 +348,14 @@
     letter-spacing: 0.04em;
     color: var(--accent);
     margin-bottom: 6px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .link-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
   .podcast-embed iframe {
     width: 100%;
@@ -609,8 +616,8 @@
       <div class="byline">Stanley Kubrick</div>
       <p class="focus">A prehistoric man throws a bone into the air, and in the next shot, it's a spacecraft, millions of years later. One cut, the entire history of human tools. Kubrick spends the rest of the film, mostly in silence, wondering what comes next.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.justwatch.com/us/search?q=2001%20A%20Space%20Odyssey" target="_blank" rel="noopener">&rarr; Where to watch</a>
-        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-2001-a-space-odyssey-1968" target="_blank" rel="noopener">&rarr; Roger Ebert's review (~8 min read)</a>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=2001%20A%20Space%20Odyssey" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"></polygon></svg>Where to watch</a>
+        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-2001-a-space-odyssey-1968" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Roger Ebert's review (~8 min read)</a>
       </div>
     </article>
 
@@ -623,9 +630,9 @@
       <div class="byline">David Graeber &amp; David Wengrow</div>
       <p class="focus">The standard story goes hunter-gatherer, then farmer, then state, in that order. Graeber and Wengrow argue early societies actually experimented with far more political arrangements than that, and some of them worked.</p>
       <div class="link-row">
-        <a class="find-it" href="https://search.worldcat.org/search?q=The+Dawn+of+Everything+Graeber+Wengrow" target="_blank" rel="noopener">&rarr; Find it</a>
+        <a class="find-it" href="https://search.worldcat.org/search?q=The+Dawn+of+Everything+Graeber+Wengrow" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Find it</a>
         <div class="podcast-embed">
-          <span class="pod-caption">Or, skip the book: David Wengrow on The Michael Shermer Show (1h 33m)</span>
+          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>David Wengrow on The Michael Shermer Show (1h 33m)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/237-david-wengrow-on-the-dawn-of-everything-a/id1352860989?i=1000545682160" title="David Wengrow on The Dawn of Everything &mdash; 1h 33m" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
         </div>
       </div>
@@ -641,10 +648,10 @@
       <p class="focus">One cellist, one wooden instrument, pure mathematical structure, and it still holds up completely unchanged three hundred years later.</p>
       <div class="link-row">
         <div class="podcast-embed">
-          <span class="pod-caption">Listen to the recording (Yo-Yo Ma)</span>
+          <span class="pod-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Listen to the recording (Yo-Yo Ma)</span>
           <iframe src="https://open.spotify.com/embed/album/3cvjMNWg7t46NyDZzujfNg" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <a class="find-it" href="https://www.britannica.com/topic/Suites-for-Unaccompanied-Cello-BWV-1007-1012" target="_blank" rel="noopener">&rarr; Britannica on the suites (~3 min read)</a>
+        <a class="find-it" href="https://www.britannica.com/topic/Suites-for-Unaccompanied-Cello-BWV-1007-1012" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Britannica on the suites (~3 min read)</a>
       </div>
     </article>
 
@@ -659,7 +666,7 @@
       <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=900" alt="Wanderer above the Sea of Fog by Caspar David Friedrich" loading="lazy">
       </div>
-      <a class="find-it" href="https://www.britannica.com/topic/Wanderer-Above-the-Sea-of-Fog" target="_blank" rel="noopener">&rarr; Britannica on the painting (~3 min read)</a>
+      <a class="find-it" href="https://www.britannica.com/topic/Wanderer-Above-the-Sea-of-Fog" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Britannica on the painting (~3 min read)</a>
     </article>
 
   </main>
