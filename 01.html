@@ -128,10 +128,6 @@
   .theme-nav-item.active {
     background: var(--bg);
   }
-  .theme-nav-item.visited .t-title::after {
-    content: " \2022";
-    color: var(--accent);
-  }
   .theme-nav-item .t-mini {
     width: 26px;
     height: 26px;
@@ -808,19 +804,6 @@
     });
   });
 
-  try {
-    var visited = JSON.parse(localStorage.getItem('lyceum-visited') || '[]');
-    var here = location.pathname.split('/').pop();
-    if (here && visited.indexOf(here) === -1) {
-      visited.push(here);
-      localStorage.setItem('lyceum-visited', JSON.stringify(visited));
-    }
-    document.querySelectorAll('.theme-nav-item').forEach(function (a) {
-      if (visited.indexOf(a.getAttribute('href')) !== -1 && !a.classList.contains('active')) {
-        a.classList.add('visited');
-      }
-    });
-  } catch (e) {}
 
 
 </script></body>
