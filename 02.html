@@ -338,6 +338,11 @@
     margin-top: 14px;
   }
   .link-row .find-it { margin-top: 0; }
+  .link-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .alt-line {
     font-family: var(--mono);
     font-size: 11.5px;
@@ -672,8 +677,8 @@
       <div class="byline">David Fincher</div>
       <p class="focus">He builds a tool that connects a billion people, and loses every real friendship he has doing it. It's the same question this theme keeps asking: how much do you owe the people who helped you get there, once you don't need them anymore?</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Social%20Network" target="_blank" rel="noopener"><span class="pill pill-accent">watch</span>Where to watch</a>
-        <a class="find-it" href="https://www.rogerebert.com/reviews/the-social-network-2010" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Roger Ebert's review (~6 min read)</a>
+        <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Social%20Network" target="_blank" rel="noopener">Where to watch</a></div>
+        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rogerebert.com/reviews/the-social-network-2010" target="_blank" rel="noopener">Roger Ebert's review (~6 min read)</a></div>
       </div>
     </article>
 
@@ -686,7 +691,7 @@
       <div class="byline">Marcus Aurelius</div>
       <p class="focus">The most powerful man alive kept a private notebook reminding himself to stay humble. He never meant for anyone else to read it.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.gutenberg.org/files/2680/2680-h/2680-h.htm" target="_blank" rel="noopener"><span class="pill pill-accent">read</span>Read it yourself: full free text</a>
+        <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/2680/2680-h/2680-h.htm" target="_blank" rel="noopener">Read it yourself: full free text</a></div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Peter Adamson (King's College London) on Marcus Aurelius, from History of Philosophy Without Any Gaps (23 min)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/hop-067-the-philosopher-king-marcus-aurelius/id396903391?i=1000340827954" title="Peter Adamson on Marcus Aurelius &mdash; 23 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
@@ -708,7 +713,7 @@
           <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the album</span>
           <iframe src="https://open.spotify.com/embed/album/4LH4d3cOWNNsVw41Gqt2kv" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <a class="find-it" href="https://www.rollingstone.com/music/music-album-reviews/dark-side-of-the-moon-255381/" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Rolling Stone on the album (~4 min read)</a>
+        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rollingstone.com/music/music-album-reviews/dark-side-of-the-moon-255381/" target="_blank" rel="noopener">Rolling Stone on the album (~4 min read)</a></div>
       </div>
     </article>
 
@@ -724,8 +729,8 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg?width=900" alt="A Sunday on La Grande Jatte by Georges Seurat" loading="lazy">
       </div>
       <div class="link-row">
-        <a class="find-it" href="https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884" target="_blank" rel="noopener"><span class="pill pill-accent">view</span>More from the Art Institute of Chicago</a>
-        <a class="find-it" href="https://smarthistory.org/georges-seurat-a-sunday-on-la-grande-jatte-1884/" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Smarthistory on the painting (~5 min)</a>
+        <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884" target="_blank" rel="noopener">More from the Art Institute of Chicago</a></div>
+        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://smarthistory.org/georges-seurat-a-sunday-on-la-grande-jatte-1884/" target="_blank" rel="noopener">Smarthistory on the painting (~5 min)</a></div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Tamar Avishai on La Grande Jatte, from The Lonely Palette podcast (32 min)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/the-lonely-palette/id1110780638?i=1000682916094" title="Tamar Avishai on La Grande Jatte &mdash; 32 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>

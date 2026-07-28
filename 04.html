@@ -338,6 +338,11 @@
     margin-top: 14px;
   }
   .link-row .find-it { margin-top: 0; }
+  .link-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .podcast-embed {
     margin-top: 4px;
     max-width: 480px;
@@ -632,8 +637,8 @@
       <div class="byline">Stanley Kubrick</div>
       <p class="focus">A prehistoric man throws a bone into the air, and in the next shot, it's a spacecraft, millions of years later. One cut, the entire history of human tools. Kubrick spends the rest of the film, mostly in silence, wondering what comes next.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.justwatch.com/us/search?q=2001%20A%20Space%20Odyssey" target="_blank" rel="noopener"><span class="pill pill-accent">watch</span>Where to watch</a>
-        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-2001-a-space-odyssey-1968" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Roger Ebert's review (~8 min read)</a>
+        <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=2001%20A%20Space%20Odyssey" target="_blank" rel="noopener">Where to watch</a></div>
+        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-2001-a-space-odyssey-1968" target="_blank" rel="noopener">Roger Ebert's review (~8 min read)</a></div>
       </div>
     </article>
 
@@ -646,7 +651,7 @@
       <div class="byline">David Graeber &amp; David Wengrow</div>
       <p class="focus">The standard story goes hunter-gatherer, then farmer, then state, in that order. Graeber and Wengrow argue early societies actually experimented with far more political arrangements than that, and some of them worked.</p>
       <div class="link-row">
-        <a class="find-it" href="https://search.worldcat.org/search?q=The+Dawn+of+Everything+Graeber+Wengrow" target="_blank" rel="noopener"><span class="pill pill-accent">read</span>Find it</a>
+        <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://search.worldcat.org/search?q=The+Dawn+of+Everything+Graeber+Wengrow" target="_blank" rel="noopener">Find it</a></div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-dusk">deeper</span>David Wengrow on The Michael Shermer Show (1h 33m)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/237-david-wengrow-on-the-dawn-of-everything-a/id1352860989?i=1000545682160" title="David Wengrow on The Dawn of Everything &mdash; 1h 33m" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
@@ -667,7 +672,7 @@
           <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the recording (Yo-Yo Ma)</span>
           <iframe src="https://open.spotify.com/embed/album/3cvjMNWg7t46NyDZzujfNg" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <a class="find-it" href="https://www.britannica.com/topic/Suites-for-Unaccompanied-Cello-BWV-1007-1012" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Britannica on the suites (~3 min read)</a>
+        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.britannica.com/topic/Suites-for-Unaccompanied-Cello-BWV-1007-1012" target="_blank" rel="noopener">Britannica on the suites (~3 min read)</a></div>
       </div>
     </article>
 
@@ -682,7 +687,7 @@
       <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=900" alt="Wanderer above the Sea of Fog by Caspar David Friedrich" loading="lazy">
       </div>
-      <a class="find-it" href="https://www.britannica.com/topic/Wanderer-Above-the-Sea-of-Fog" target="_blank" rel="noopener"><span class="pill pill-accent">view</span>Britannica on the painting (~3 min read)</a>
+      <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.britannica.com/topic/Wanderer-Above-the-Sea-of-Fog" target="_blank" rel="noopener">Britannica on the painting (~3 min read)</a></div>
     </article>
 
   </main>
