@@ -452,10 +452,23 @@
     align-items: center;
     gap: 6px;
   }
-  .link-icon {
-    width: 14px;
-    height: 14px;
+  .pill {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
     flex-shrink: 0;
+  }
+  .pill-accent {
+    color: var(--bg);
+    background: var(--accent);
+  }
+  .pill-dusk {
+    color: var(--dusk);
+    border: 1px solid var(--dusk);
+    padding: 1px 6px;
   }
   .podcast-embed iframe {
     width: 100%;
@@ -633,7 +646,7 @@
       <div class="byline">Shelly Kagan</div>
       <p class="focus">A warm, surprisingly accessible lecture on one of philosophy's stranger puzzles: can death be "bad" for you, if by the time it happens, there's no you left to be harmed by it?</p>
       <div class="lecture-embed">
-        <span class="audio-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"></polygon></svg>Watch here</span>
+        <span class="audio-caption"><span class="pill pill-accent">watch</span>Watch here</span>
         <div class="thumb-wrap" data-video-id="yJVpJ588ASc">
           <img src="https://img.youtube.com/vi/yJVpJ588ASc/hqdefault.jpg" alt="" loading="lazy">
           <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
@@ -641,7 +654,7 @@
         </div>
       </div>
       <div class="art-audio">
-        <span class="audio-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Listen here (lock your phone and keep listening)</span>
+        <span class="audio-caption"><span class="pill pill-accent">listen</span>Listen here (lock your phone and keep listening)</span>
         <audio controls preload="none" src="https://oyc.yale.edu/sites/default/files/courses/spring07/phil176/mp3/phil176_16_030807.mp3"></audio>
       </div>
     </article>
@@ -655,8 +668,8 @@
       <div class="byline">Akira Kurosawa</div>
       <p class="focus">A bureaucrat learns he has terminal cancer, months to live, after thirty years spent quietly stamping paperwork nobody needed stamped. What he does with the time left isn't a bucket list. It's one small, real thing, built for people he'll never meet.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.justwatch.com/us/search?q=Ikiru%201952" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"></polygon></svg>Where to watch</a>
-        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-ikiru-1952" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Roger Ebert's review (~6 min read)</a>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=Ikiru%201952" target="_blank" rel="noopener"><span class="pill pill-accent">watch</span>Where to watch</a>
+        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-ikiru-1952" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Roger Ebert's review (~6 min read)</a>
       </div>
     </article>
 
@@ -669,9 +682,9 @@
       <div class="byline">Fyodor Dostoyevsky</div>
       <p class="focus">A psychological thriller following a young student as his mind collapses under the moral weight of a crime he was convinced was justified: the murder is only the beginning of what actually destroys him.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.gutenberg.org/files/2554/2554-h/2554-h.htm" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Read it yourself: full free text</a>
+        <a class="find-it" href="https://www.gutenberg.org/files/2554/2554-h/2554-h.htm" target="_blank" rel="noopener"><span class="pill pill-accent">read</span>Read it yourself: full free text</a>
         <div class="podcast-embed">
-          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Jessica Hooten Wilson (University of Dallas) on Crime and Punishment, from The Great Books podcast (31 min)</span>
+          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Jessica Hooten Wilson (University of Dallas) on Crime and Punishment, from The Great Books podcast (31 min)</span>
           <audio controls preload="none" src="https://locator.simplecastcdn.com/d2bfa057-89e7-4cfe-9fec-ae7b103b7c0e/a6945446-ce97-44fa-af4d-605d90cce989.mp3"></audio>
         </div>
       </div>
@@ -687,10 +700,10 @@
       <p class="focus">Four notes, repeated relentlessly, like something pounding at the door. Beethoven wrote it while going deaf himself, unable to hear the very piece that would outlive him by centuries.</p>
       <div class="link-row">
         <div class="podcast-embed">
-          <span class="pod-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Listen to the recording (Karajan)</span>
+          <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the recording (Karajan)</span>
           <iframe src="https://open.spotify.com/embed/album/1xaLsBz0s2rPS6H4i7xuAb" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <a class="find-it" href="https://www.britannica.com/topic/Symphony-No-5-in-C-Minor-Op-67" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Britannica on the symphony (~3 min read)</a>
+        <a class="find-it" href="https://www.britannica.com/topic/Symphony-No-5-in-C-Minor-Op-67" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Britannica on the symphony (~3 min read)</a>
       </div>
     </article>
 
@@ -706,8 +719,8 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=900" alt="The Ambassadors by Hans Holbein the Younger" loading="lazy">
       </div>
       <div class="link-row">
-        <a class="find-it" href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>More from the National Gallery</a>
-        <a class="find-it" href="https://smarthistory.org/hans-holbein-the-younger-the-ambassadors/" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Smarthistory on the painting (~5 min)</a>
+        <a class="find-it" href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors" target="_blank" rel="noopener"><span class="pill pill-accent">view</span>More from the National Gallery</a>
+        <a class="find-it" href="https://smarthistory.org/hans-holbein-the-younger-the-ambassadors/" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Smarthistory on the painting (~5 min)</a>
       </div>
     </article>
 

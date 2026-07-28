@@ -452,10 +452,23 @@
     align-items: center;
     gap: 6px;
   }
-  .link-icon {
-    width: 14px;
-    height: 14px;
+  .pill {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
     flex-shrink: 0;
+  }
+  .pill-accent {
+    color: var(--bg);
+    background: var(--accent);
+  }
+  .pill-dusk {
+    color: var(--dusk);
+    border: 1px solid var(--dusk);
+    padding: 1px 6px;
   }
   .podcast-embed iframe {
     width: 100%;
@@ -647,10 +660,10 @@
       <div class="byline">Francis Ford Coppola</div>
       <p class="focus">A son takes over the family business and slowly becomes everything his father swore he'd never be. Watched together, the two films ask a harder question than the first one alone: how does a good man become a bad one, one reasonable decision at a time?</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Godfather" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"></polygon></svg>Where to watch</a>
-        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-the-godfather-1972" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Roger Ebert's review (~7 min read)</a>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Godfather" target="_blank" rel="noopener"><span class="pill pill-accent">watch</span>Where to watch</a>
+        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-the-godfather-1972" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Roger Ebert's review (~7 min read)</a>
         <div class="podcast-embed">
-          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Jon Lewis (Oregon State) on The Godfather Part I, from the Bloomsbury Academic Podcast (29 min)</span>
+          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Jon Lewis (Oregon State) on The Godfather Part I, from the Bloomsbury Academic Podcast (29 min)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/bloomsbury-academic-podcast/id1506067299?i=1000582651809" title="Jon Lewis on The Godfather Part I &mdash; 29 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
           <div class="alt-line"><a href="https://podcasts.apple.com/us/podcast/bloomsbury-academic-podcast/id1506067299?i=1000583029371" target="_blank" rel="noopener">Also: Part II, on the film's legacy (34 min)</a></div>
         </div>
@@ -666,10 +679,10 @@
       <div class="byline">Niccol&ograve; Machiavelli</div>
       <p class="focus">Machiavelli asks a blunt question: should a leader be good, or just look good? His answer: if you can't have both, choose feared over loved. Five hundred years later, ask yourself: does any leader you actually admire disagree?</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.gutenberg.org/files/1232/1232-h/1232-h.htm" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Read it yourself: full free text</a>
-        <a class="find-it" href="https://podcasts.apple.com/us/podcast/the-prince-by-niccol%C3%B2-machiavelli/id866418980" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>Or listen to the audiobook: full text narrated (&asymp;3h 26m)</a>
+        <a class="find-it" href="https://www.gutenberg.org/files/1232/1232-h/1232-h.htm" target="_blank" rel="noopener"><span class="pill pill-accent">read</span>Read it yourself: full free text</a>
+        <a class="find-it" href="https://podcasts.apple.com/us/podcast/the-prince-by-niccol%C3%B2-machiavelli/id866418980" target="_blank" rel="noopener"><span class="pill pill-dusk">listen</span>Or listen to the audiobook: full text narrated (&asymp;3h 26m)</a>
         <div class="podcast-embed">
-          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Peter Adamson (King's College London) on Machiavelli, from the History of Philosophy Without Any Gaps podcast (21 min)</span>
+          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Peter Adamson (King's College London) on Machiavelli, from the History of Philosophy Without Any Gaps podcast (21 min)</span>
           <iframe src="https://embed.podcasts.apple.com/ie/podcast/hop-349-no-more-mr-nice-guy-machiavelli/id396903391?i=1000474848208" title="Peter Adamson on Machiavelli &mdash; 21 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
           <div class="alt-line"><a href="https://open.spotify.com/episode/7fo5FgkuGEs7dcQXtcchqB" target="_blank" rel="noopener">Also on Spotify</a></div>
         </div>
@@ -686,11 +699,11 @@
       <p class="focus">A song that compares Nigerian soldiers to mindless "zombies" blindly following orders, deliberately unsubtle. In response, the military raided Kuti's compound; his mother died from injuries she suffered in that raid. This is what it can cost to challenge power directly.</p>
       <div class="link-row">
         <div class="podcast-embed">
-          <span class="pod-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Listen to the track</span>
+          <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the track</span>
           <iframe src="https://open.spotify.com/embed/track/2r0KlAVemiB1TyTqgCh5ve" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
                 <div class="podcast-embed">
-          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Listen to NPR Fresh Air on the politics behind the song (48 min)</span>
+          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Listen to NPR Fresh Air on the politics behind the song (48 min)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/fela-kuti-and-the-music-of-political-resistance/id214089682?i=1000749472839" title="NPR Fresh Air on Fela Kuti &mdash; 48 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
         </div>
       </div>
@@ -708,12 +721,12 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=900" alt="The Death of Socrates by Jacques-Louis David" loading="lazy">
       </div>
       <div class="art-audio">
-        <span class="audio-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Listen: The Met's own audio guide on the painting</span>
+        <span class="audio-caption"><span class="pill pill-accent">listen</span>Listen: The Met's own audio guide on the painting</span>
         <audio controls preload="none" src="https://cdn.sanity.io/files/cctd4ker/production/e29f58e7d0a3b0c19612c738dd7f4d05e831b814.mp3"></audio>
       </div>
       <div class="link-row">
-        <a class="find-it" href="https://www.metmuseum.org/art/collection/search/436105" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>More from The Met</a>
-        <a class="find-it" href="https://smarthistory.org/jacques-louis-david-the-death-of-socrates/" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Smarthistory on the painting (~5 min)</a>
+        <a class="find-it" href="https://www.metmuseum.org/art/collection/search/436105" target="_blank" rel="noopener"><span class="pill pill-accent">view</span>More from The Met</a>
+        <a class="find-it" href="https://smarthistory.org/jacques-louis-david-the-death-of-socrates/" target="_blank" rel="noopener"><span class="pill pill-dusk">review</span>Smarthistory on the painting (~5 min)</a>
       </div>
     </article>
 
