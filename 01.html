@@ -434,7 +434,14 @@
     letter-spacing: 0.04em;
     color: var(--accent);
     margin-bottom: 6px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .link-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
   .art-audio audio {
     width: 100%;
@@ -451,7 +458,9 @@
     letter-spacing: 0.04em;
     color: var(--accent);
     margin-bottom: 6px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
   .podcast-embed iframe {
     width: 100%;
@@ -637,7 +646,7 @@
       <div class="byline">Tamar Gendler</div>
       <p class="focus">Imagine a ring that makes you invisible. Would you still act the same way? Plato uses this to ask whether you're good because you choose to be, or just because someone's watching.</p>
       <div class="lecture-embed">
-        <span class="audio-caption">Watch here</span>
+        <span class="audio-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"></polygon></svg>Watch here</span>
         <div class="thumb-wrap" data-video-id="xTGc1Pyp-Jc">
           <img src="https://img.youtube.com/vi/xTGc1Pyp-Jc/hqdefault.jpg" alt="" loading="lazy">
           <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
@@ -645,7 +654,7 @@
         </div>
       </div>
       <div class="art-audio">
-        <span class="audio-caption">Listen here (lock your phone and keep listening)</span>
+        <span class="audio-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Listen here (lock your phone and keep listening)</span>
         <audio controls preload="none" src="https://oyc.yale.edu/sites/default/files/courses/spring11/phil181/mp3/phil181_02_011311.mp3"></audio>
       </div>
     </article>
@@ -659,10 +668,10 @@
       <div class="byline">Alfred Hitchcock</div>
       <p class="focus">A man stuck in a wheelchair spies on his neighbors through a window, piecing together fragments into a theory: one of them is a murderer. He might be right, or he might just want it to be true.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.justwatch.com/us/search?q=Rear%20Window%201954" target="_blank" rel="noopener">&rarr; Where to watch</a>
-        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-rear-window-1954" target="_blank" rel="noopener">&rarr; Roger Ebert's review (~6 min read)</a>
+        <a class="find-it" href="https://www.justwatch.com/us/search?q=Rear%20Window%201954" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"></polygon></svg>Where to watch</a>
+        <a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-rear-window-1954" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Roger Ebert's review (~6 min read)</a>
         <div class="podcast-embed">
-          <span class="pod-caption">Or, go deeper: Barry McCrea (Notre Dame) on Rear Window, from The ThinkND Podcast (39 min)</span>
+          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Barry McCrea (Notre Dame) on Rear Window, from The ThinkND Podcast (39 min)</span>
           <iframe src="https://embed.podcasts.apple.com/us/podcast/literature-film-in-lockdown-part-3-hitchcock-rear/id1544472057?i=1000552685148" title="Barry McCrea on Rear Window &mdash; 39 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
         </div>
       </div>
@@ -677,9 +686,9 @@
       <div class="byline">Plato</div>
       <p class="focus">Prisoners chained in a cave mistake shadows on the wall for reality itself. This single chapter, the most famous part of the whole book, asks what happens the moment one of them turns around and sees the fire behind him. You don't need the rest of The Republic to get the idea.</p>
       <div class="link-row">
-        <a class="find-it" href="https://www.gutenberg.org/files/55201/55201-h/55201-h.htm" target="_blank" rel="noopener">&rarr; Read it yourself: full free text (Book VII)</a>
+        <a class="find-it" href="https://www.gutenberg.org/files/55201/55201-h/55201-h.htm" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Read it yourself: full free text (Book VII)</a>
         <div class="podcast-embed">
-          <span class="pod-caption">Or, skip the book: Peter Adamson (King's College London) on the Cave allegory, from History of Philosophy Without Any Gaps (18 min)</span>
+          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"></path><rect x="2" y="14" width="5" height="7" rx="2"></rect><rect x="17" y="14" width="5" height="7" rx="2"></rect></svg>Peter Adamson (King's College London) on the Cave allegory, from History of Philosophy Without Any Gaps (18 min)</span>
           <audio controls preload="none" src="https://hopwag.podbean.com/mf/feed/hbd39m/HoP_026_Aint_No_Sunshine_The_Cave_Allegory_of_Platos_Republic.mp3"></audio>
           <div class="alt-line"><a href="https://open.spotify.com/episode/0SiAnKP4oicKdGn40bcyHB" target="_blank" rel="noopener">Also on Spotify</a></div>
         </div>
@@ -696,11 +705,11 @@
       <p class="focus">An electronic duo built their whole career on synthesizers, then made an album with real musicians and real instruments instead, chasing a human warmth machines can't quite fake.</p>
       <div class="link-row">
         <div class="podcast-embed">
-          <span class="pod-caption">Listen to the album</span>
+          <span class="pod-caption"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Listen to the album</span>
           <iframe src="https://open.spotify.com/embed/album/4m2880jivSbbyEGAKfITCa" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
         <div class="podcast-embed">
-          <span class="pod-caption">Listen to NPR Fresh Air's review of the album (8 min)</span>
+          <span class="pod-caption"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Listen to NPR Fresh Air's review of the album (8 min)</span>
           <iframe src="https://www.npr.org/player/embed/185839045/185839046" title="NPR Fresh Air on the album &mdash; 8 min" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 300px;"></iframe>
         </div>
       </div>
@@ -718,8 +727,8 @@
         <img src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="The Treachery of Images by Ren&eacute; Magritte" loading="lazy">
       </div>
       <div class="link-row">
-        <a class="find-it" href="https://collections.lacma.org/object/31931" target="_blank" rel="noopener">&rarr; More from LACMA</a>
-        <a class="find-it" href="https://smarthistory.org/rene-magritte-the-treachery-of-images-ceci-nest-pas-une-pipe/" target="_blank" rel="noopener">&rarr; Smarthistory on the painting (~5 min)</a>
+        <a class="find-it" href="https://collections.lacma.org/object/31931" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>More from LACMA</a>
+        <a class="find-it" href="https://smarthistory.org/rene-magritte-the-treachery-of-images-ceci-nest-pas-une-pipe/" target="_blank" rel="noopener"><svg class="link-icon" style="color: var(--dusk);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15,9 22,9.5 16.5,14 18,21 12,17.5 6,21 7.5,14 2,9.5 9,9"></polygon></svg>Smarthistory on the painting (~5 min)</a>
       </div>
     </article>
 
