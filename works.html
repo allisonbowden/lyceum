@@ -133,7 +133,7 @@
   }
   .w-list a {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 16px;
     padding: 14px 0;
     border-bottom: 1px dashed var(--line);
@@ -154,6 +154,14 @@
     object-fit: cover;
     border-radius: 3px;
     border: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+  .w-list .w-thumb-empty {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background: var(--line);
+    opacity: 0.35;
     flex-shrink: 0;
   }
   .w-list .w-text { min-width: 0; }
@@ -233,13 +241,13 @@
   <section class="section">
     <div class="s-eyebrow">Films</div>
     <div class="w-list">
-      <a href="01.html"><span class="w-num">01</span><span class="w-text"><span class="w-title">Rear Window<span class="w-classic">classic</span></span><span class="w-byline">Alfred Hitchcock</span></span></a>
-      <a href="02.html"><span class="w-num">02</span><span class="w-text"><span class="w-title">The Social Network</span><span class="w-byline">David Fincher</span></span></a>
-      <a href="03.html"><span class="w-num">03</span><span class="w-text"><span class="w-title">The Godfather, Parts I &amp; II<span class="w-classic">classic</span></span><span class="w-byline">Francis Ford Coppola</span></span></a>
-      <a href="04.html"><span class="w-num">04</span><span class="w-text"><span class="w-title">2001: A Space Odyssey<span class="w-classic">classic</span></span><span class="w-byline">Stanley Kubrick</span></span></a>
-      <a href="05.html"><span class="w-num">05</span><span class="w-text"><span class="w-title">Ikiru</span><span class="w-byline">Akira Kurosawa</span></span></a>
-      <a href="06.html"><span class="w-num">06</span><span class="w-text"><span class="w-title">Ex Machina</span><span class="w-byline">Alex Garland</span></span></a>
-      <a href="07.html"><span class="w-num">07</span><span class="w-text"><span class="w-title">Parasite</span><span class="w-byline">Bong Joon Ho</span></span></a>
+      <a href="01.html"><span class="w-num">01</span><img class="w-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Rear_Window_film_poster.jpg/250px-Rear_Window_film_poster.jpg" alt="" loading="lazy"><span class="w-text"><span class="w-title">Rear Window<span class="w-classic">classic</span></span><span class="w-byline">Alfred Hitchcock</span></span></a>
+      <a href="02.html"><span class="w-num">02</span><span class="w-thumb-empty"></span><span class="w-text"><span class="w-title">The Social Network</span><span class="w-byline">David Fincher</span></span></a>
+      <a href="03.html"><span class="w-num">03</span><span class="w-thumb-empty"></span><span class="w-text"><span class="w-title">The Godfather, Parts I &amp; II<span class="w-classic">classic</span></span><span class="w-byline">Francis Ford Coppola</span></span></a>
+      <a href="04.html"><span class="w-num">04</span><span class="w-thumb-empty"></span><span class="w-text"><span class="w-title">2001: A Space Odyssey<span class="w-classic">classic</span></span><span class="w-byline">Stanley Kubrick</span></span></a>
+      <a href="05.html"><span class="w-num">05</span><img class="w-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ikiru_poster.jpg/250px-Ikiru_poster.jpg" alt="" loading="lazy"><span class="w-text"><span class="w-title">Ikiru</span><span class="w-byline">Akira Kurosawa</span></span></a>
+      <a href="06.html"><span class="w-num">06</span><span class="w-thumb-empty"></span><span class="w-text"><span class="w-title">Ex Machina</span><span class="w-byline">Alex Garland</span></span></a>
+      <a href="07.html"><span class="w-num">07</span><span class="w-thumb-empty"></span><span class="w-text"><span class="w-title">Parasite</span><span class="w-byline">Bong Joon Ho</span></span></a>
     </div>
   </section>
 
