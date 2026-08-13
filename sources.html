@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23f4ede0%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2247%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2242%22%20font-weight%3D%22600%22%20fill%3D%22%23b5502e%22%20text-anchor%3D%22middle%22%3EL%3C/text%3E%3C/svg%3E">
+<title>Lyceum &mdash; Sources</title>
+<meta name="description" content="Every third-party podcast, video, and review used across the site, and why each one was chosen.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lyceum — Sources">
+<meta property="og:description" content="Every third-party podcast, video, and review used across the site, and why each one was chosen.">
+<meta property="og:image" content="https://allisonbowden.github.io/lyceum/og-image.png">
+<meta property="og:url" content="https://allisonbowden.github.io/lyceum/sources.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lyceum — Sources">
+<meta name="twitter:description" content="Every third-party podcast, video, and review used across the site, and why each one was chosen.">
+<meta name="twitter:image" content="https://allisonbowden.github.io/lyceum/og-image.png">
+</head>
+<body>
+
+
+<style>
+  .flight-page {
+    --bg: #f4ede0;
+    --paper: #faf5ea;
+    --ink: #2b241c;
+    --text: #2b241c;
+    --text-muted: #6b6255;
+    --accent: #b5502e;
+    --dusk: #6b7d8f;
+    --line: #ddd2bd;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'SF Mono', 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .flight-page a:focus-visible,
+  .flight-page button:focus-visible,
+  .flight-page summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .site-bar {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-bar .mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .site-bar .mark strong { color: var(--text); }
+  .site-bar .mark a:hover strong { color: var(--accent); }
+  @media (max-width: 480px) {
+    .site-bar .tagline { display: none; }
+  }
+  .site-bar .progress {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .hero {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 28px;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 0 0 16px;
+    max-width: 14ch;
+  }
+  .hero .intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin: 0;
+    padding-left: 16px;
+    border-left: 2px solid var(--line);
+  }
+
+  .section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-top: 1px solid var(--line);
+  }
+  .section .s-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0 0 6px;
+    max-width: 26ch;
+  }
+  .section .s-sub {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+    max-width: 58ch;
+  }
+
+  .src-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .src-item {
+    padding-bottom: 22px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .src-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .src-item .src-name {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  .src-item .src-name a {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .src-item .src-name a:hover { color: var(--accent); }
+  .src-item .src-name a::after {
+    content: " \2197";
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--dusk);
+  }
+  .src-item .src-why {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text);
+    max-width: 58ch;
+    margin: 0 0 8px;
+  }
+  .src-item .src-used {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+  }
+  .src-item .src-used a {
+    color: var(--dusk);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .src-item .src-used a:hover { color: var(--accent); }
+
+  .start-btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 22px;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+  }
+  .start-btn:hover { background: var(--accent); color: var(--bg); }
+
+  @media (max-width: 480px) {
+    .hero::before { width: 300px; height: 300px; right: -100px; }
+  }
+</style>
+
+<div class="flight-page">
+
+  <div class="site-bar">
+    <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
+    <div class="progress">Sources</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Reference</div>
+    <h1>Sources</h1>
+    <p class="intro">Every podcast, video, and review linked from a work on this site, and why each one earned a spot here.</p>
+  </header>
+
+  <section class="section">
+    <div class="s-eyebrow">Go deeper</div>
+    <h2>Podcasts &amp; video analysis</h2>
+    <p class="s-sub">The "deeper" pill on a work points to one of these. Every host below has a real, checkable credential in the subject &mdash; a professorship, a curatorship, or a career built on it &mdash; not just a strong opinion.</p>
+    <div class="src-list">
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://historyofphilosophy.net/" target="_blank" rel="noopener">History of Philosophy Without Any Gaps</a></div>
+        <p class="src-why">Hosted by <strong>Peter Adamson</strong>, Professor of Philosophy at LMU Munich and King's College London. A long-running, chapter-by-chapter survey of the entire history of philosophy, chosen because Adamson is a working academic explaining primary texts directly, not summarizing secondhand.</p>
+        <div class="src-used">Used on <a href="01.html">Truth, Illusion &amp; Deception</a> (Plato's Cave), <a href="02.html">Individual &amp; Collective</a> (Marcus Aurelius), <a href="03.html">Power, Justice &amp; State</a> (Machiavelli)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://think.nd.edu/" target="_blank" rel="noopener">The ThinkND Podcast</a></div>
+        <p class="src-why">Notre Dame's own public scholarship platform. The Rear Window episode features <strong>Barry McCrea</strong>, a Notre Dame professor of literature, chosen for a genuine close reading of the film rather than a general recap.</p>
+        <div class="src-used">Used on <a href="01.html">Truth, Illusion &amp; Deception</a> (Rear Window)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.thelonelypalette.com/" target="_blank" rel="noopener">The Lonely Palette</a></div>
+        <p class="src-why">Hosted by <strong>Tamar Avishai</strong>, an art historian (Tufts, former Harvard teaching fellow) who dedicates a full episode to one painting at a time. Chosen over general survey podcasts because it goes deep on a single work instead of skimming many.</p>
+        <div class="src-used">Used on <a href="02.html">Individual &amp; Collective</a> (Seurat, <em>La Grande Jatte</em>)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.bloomsbury.com/us/discover/bloomsbury-academic-podcast/" target="_blank" rel="noopener">Bloomsbury Academic Podcast</a></div>
+        <p class="src-why">Interviews the actual authors of Bloomsbury's academic film-studies books. The Godfather episodes feature <strong>Jon Lewis</strong>, University Distinguished Professor of Film Studies at Oregon State and author of the BFI Film Classics volume on this exact film &mdash; about as direct a source as a podcast can be.</p>
+        <div class="src-used">Used on <a href="03.html">Power, Justice &amp; State</a> (The Godfather)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.nationalreview.com/podcasts/the-great-books/" target="_blank" rel="noopener">The Great Books</a> (National Review)</div>
+        <p class="src-why">A different named scholar discusses each novel: <strong>Jessica Hooten Wilson</strong> (University of Dallas) on <em>Crime and Punishment</em>, <strong>Amy Sturgis</strong> on <em>Frankenstein</em>, <strong>Dwight Lindley</strong> (Hillsdale College) on <em>Middlemarch</em>. Chosen because it's built for exactly this use case: an accessible way into a long novel without having to read it first.</p>
+        <div class="src-used">Used on <a href="05.html">Mortality, Fate &amp; Transcendence</a>, <a href="06.html">Hubris, Progress &amp; Nature</a>, <a href="07.html">The Stranger, The Self &amp; The Other</a></div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.hrp.org.uk/" target="_blank" rel="noopener">Historic Royal Palaces Podcast</a></div>
+        <p class="src-why">The official podcast of the UK charity that runs Hampton Court Palace and the Tower of London. Chosen because Holbein's <em>The Ambassadors</em> hangs in the National Gallery, but its Tudor court context is exactly what this institution specializes in.</p>
+        <div class="src-used">Used on <a href="05.html">Mortality, Fate &amp; Transcendence</a> (Holbein, <em>The Ambassadors</em>)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.artcuriouspodcast.com/" target="_blank" rel="noopener">ArtCurious</a></div>
+        <p class="src-why">Hosted by <strong>Jennifer Dasal</strong>, a curator at the North Carolina Museum of Art. The "Shock Art" episode covering Manet's <em>Olympia</em> was chosen for its focus on exactly why the painting scandalized its first audience, not just a biography of the painter.</p>
+        <div class="src-used">Used on <a href="07.html">The Stranger, The Self &amp; The Other</a> (Manet, <em>Olympia</em>)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://exhibitiononscreen.com/painting-of-the-week/" target="_blank" rel="noopener">Painting of the Week</a></div>
+        <p class="src-why">Hosted by <strong>Phil Grabsky</strong>, a BAFTA-winning documentarian behind the <em>Exhibition on Screen</em> film series. Chosen for Turner's <em>Rain, Steam and Speed</em> because each episode is a focused, single-painting close read rather than a general art-history survey.</p>
+        <div class="src-used">Used on <a href="06.html">Hubris, Progress &amp; Nature</a> (Turner, <em>Rain, Steam and Speed</em>)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://smarthistory.org/" target="_blank" rel="noopener">Smarthistory</a> (video)</div>
+        <p class="src-why">Founded and narrated by <strong>Dr. Beth Harris</strong> and <strong>Dr. Steven Zucker</strong>, art historians who built Smarthistory as an open, museum-partnered alternative to a paywalled textbook. Used as an embedded video rather than a text link on works where they'd made a video, since hearing two historians actually look at the painting beats a written summary.</p>
+        <div class="src-used">Used on <a href="01.html">Truth, Illusion &amp; Deception</a> (Magritte), <a href="03.html">Power, Justice &amp; State</a> (David, <em>The Death of Socrates</em>)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.npr.org/programs/fresh-air/" target="_blank" rel="noopener">NPR Fresh Air</a></div>
+        <p class="src-why">NPR's long-running interview and culture program, chosen where it had an episode that placed a specific work in its real political or cultural context &mdash; Fela Kuti's music and the Nigerian state, or an album's reception on release &mdash; better than a standard studio-recording review could.</p>
+        <div class="src-used">Used on <a href="01.html">Truth, Illusion &amp; Deception</a> (Daft Punk review), <a href="03.html">Power, Justice &amp; State</a> (Fela Kuti, <em>Zombie</em>)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://dissectpodcast.com/" target="_blank" rel="noopener">Dissect</a></div>
+        <p class="src-why">A single podcast season is devoted to one album, track by track. Chosen for Kendrick Lamar's <em>To Pimp a Butterfly</em> because a 20-plus episode close reading of a concept album is a level of depth nothing else offered matched.</p>
+        <div class="src-used">Used on <a href="07.html">The Stranger, The Self &amp; The Other</a> (Kendrick Lamar, <em>To Pimp a Butterfly</em>)</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">Quick take</div>
+    <h2>Reviews &amp; criticism</h2>
+    <p class="s-sub">The "review" pill points here &mdash; a short, credentialed take on whether a work holds up, for when you want a few minutes of context, not a deep dive.</p>
+    <div class="src-list">
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.rogerebert.com/" target="_blank" rel="noopener">RogerEbert.com</a></div>
+        <p class="src-why">Roger Ebert's own reviews where he wrote one, and his successor critics (Matt Zoller Seitz, Brian Tallerico, and others) where he didn't. Chosen because it's the most consistently well-written, opinionated, and honest film criticism freely available online, on almost every film on this site.</p>
+        <div class="src-used">Used across every film entry, all seven themes</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://smarthistory.org/" target="_blank" rel="noopener">Smarthistory</a> (text)</div>
+        <p class="src-why">The same Beth Harris / Steven Zucker team as above, in short written form for artworks that don't have (or didn't need) a full embedded video review.</p>
+        <div class="src-used">Used across most art entries</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.rollingstone.com/" target="_blank" rel="noopener">Rolling Stone</a></div>
+        <p class="src-why">Chosen for Pink Floyd's <em>The Dark Side of the Moon</em> as the outlet with the deepest institutional history of writing about this specific record.</p>
+        <div class="src-used">Used on <a href="02.html">Individual &amp; Collective</a> (Pink Floyd)</div>
+      </div>
+
+      <div class="src-item">
+        <div class="src-name"><a href="https://www.britannica.com/" target="_blank" rel="noopener">Encyclopaedia Britannica</a></div>
+        <p class="src-why">Used where a short, reliably fact-checked reference entry was the right amount of context &mdash; classical music and a handful of paintings without a dedicated critical writeup elsewhere.</p>
+        <div class="src-used">Used on several music and art entries, <a href="04.html">Cosmic Awe &amp; Evolution</a> through <a href="06.html">Hubris, Progress &amp; Nature</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">The work itself</div>
+    <h2>Museums &amp; primary sources</h2>
+    <p class="s-sub">The "view" pill always points to the institution that actually owns and studies the piece &mdash; the closest thing to a primary source a website link can offer.</p>
+    <p style="font-family: var(--sans); font-size: 14.5px; line-height: 1.6; color: var(--text); max-width: 58ch; margin: 0;">The Metropolitan Museum of Art, LACMA, the Art Institute of Chicago, the National Gallery (London), and the Mus&eacute;e d'Orsay each hold one of the paintings covered here, and each entry links directly to that museum's own collection page for it.</p>
+  </section>
+
+  <section class="section">
+    <div class="s-eyebrow">Ready</div>
+    <h2>Back to the curriculum</h2>
+    <p><a class="start-btn" href="themes.html">The Seven Themes &rarr;</a></p>
+    <p style="margin-top: 14px;"><a href="about.html" style="font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.03em; color: var(--accent); text-decoration: underline; text-underline-offset: 2px;">&rarr; About this curriculum</a></p>
+  </section>
+
+</div>
+</body>
+</html>
