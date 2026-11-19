@@ -632,6 +632,16 @@
   .src-play:focus-visible, .src-read:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .src-play-ic { font-size: 9px; line-height: 1; }
   .src-sep { color: var(--text-muted); }
+  .src-app {
+    position: relative;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .src-app::after { content: ""; position: absolute; inset: -12px -6px; }
   .src-meta { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
   .src-alt { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
   .src-loaded { max-width: 560px; margin-bottom: 10px; }
@@ -875,6 +885,7 @@
       <div class="zone">
         <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/145/145-h/145-h.htm" target="_blank" rel="noopener">Read it yourself: full free text (~22 hr read)</a></div>
+        <div class="link-line"><span class="pill pill-accent">listen</span><a class="find-it" href="https://librivox.org/middlemarch-version-2-by-george-eliot/" target="_blank" rel="noopener">Or the audiobook, narrated by Margaret Espaillat (&asymp;35h)</a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -913,7 +924,7 @@
             <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Dissect</span></div>
             <div class="src-ep">Episode 1: Wesley&rsquo;s Theory (a 20+ episode, track-by-track season)</div>
             <div class="src-who">A single podcast season devoted to one album, track by track</div>
-            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/wesleys-theory-by-kendrick-lamar/id1143845868?i=1000374732562" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 30 min</button></div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/wesleys-theory-by-kendrick-lamar/id1143845868?i=1000374732562" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 30 min</button> <a class="src-app" href="https://podcasts.apple.com/us/podcast/wesleys-theory-by-kendrick-lamar/id1143845868?i=1000374732562" target="_blank" rel="noopener">Open in Apple Podcasts</a></div>
           </div>
         </div>
       </div>
@@ -951,7 +962,7 @@
             <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">ArtCurious</span></div>
             <div class="src-ep">&ldquo;Shock Art&rdquo; (Manet&rsquo;s Olympia)</div>
             <div class="src-who">Jennifer Dasal, curator, North Carolina Museum of Art</div>
-            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/artcurious-podcast/id1142736861?i=1000421850481" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 26 min</button></div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/artcurious-podcast/id1142736861?i=1000421850481" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 26 min</button> <a class="src-app" href="https://podcasts.apple.com/us/podcast/artcurious-podcast/id1142736861?i=1000421850481" target="_blank" rel="noopener">Open in Apple Podcasts</a></div>
           </div>
         </div>
       </div>
