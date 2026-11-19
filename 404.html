@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23f4ede0%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2247%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2242%22%20font-weight%3D%22600%22%20fill%3D%22%23b5502e%22%20text-anchor%3D%22middle%22%3EL%3C/text%3E%3C/svg%3E">
+<title>Lyceum &mdash; Page not found</title>
+<meta name="robots" content="noindex">
+</head>
+<body>
+
+<style>
+  .flight-page {
+    --bg: #f4ede0;
+    --paper: #faf5ea;
+    --ink: #2b241c;
+    --text: #2b241c;
+    --text-muted: #6b6255;
+    --accent: #b5502e;
+    --dusk: #6b7d8f;
+    --line: #ddd2bd;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'SF Mono', 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .flight-page a:focus-visible,
+  .flight-page button:focus-visible,
+  .flight-page summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .site-bar {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-bar .mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .site-bar .mark strong { color: var(--text); }
+  .site-bar .mark a:hover strong { color: var(--accent); }
+  @media (max-width: 480px) {
+    .site-bar .tagline { display: none; }
+  }
+  .site-bar .progress {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .theme-nav { position: relative; }
+  .theme-nav-btn {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 0;
+  }
+  .theme-nav-btn svg { width: 10px; height: 10px; fill: var(--accent); transition: transform 0.15s ease; }
+  .theme-nav[data-open="true"] .theme-nav-btn svg { transform: rotate(180deg); }
+  .theme-nav-menu {
+    position: absolute;
+    top: 26px;
+    right: 0;
+    background: var(--paper, var(--bg));
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+    min-width: 250px;
+    padding: 6px;
+    z-index: 20;
+    display: none;
+  }
+  .theme-nav[data-open="true"] .theme-nav-menu { display: block; }
+  .theme-nav-item {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .theme-nav-item:hover { background: var(--bg); }
+  .theme-nav-item .t-num { font-family: var(--mono); font-size: 11px; color: var(--dusk, #6b7d8f); width: 18px; flex-shrink: 0; }
+  .theme-nav-item .t-title { font-family: var(--serif); font-size: 14.5px; }
+  .theme-nav-divider { border-top: 1px solid var(--line); margin: 6px 4px; }
+  .theme-nav-meta {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .theme-nav-meta:hover { background: var(--bg); color: var(--accent); }
+  .theme-nav-meta.active { color: var(--text); background: var(--bg); }
+
+  .hero {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 28px;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(181, 80, 46, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 0;
+    max-width: 14ch;
+  }
+  .hero .intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin: 0;
+    padding-left: 16px;
+    border-left: 2px solid var(--line);
+  }
+
+  .section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-top: 1px solid var(--line);
+  }
+  .section .s-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0 0 14px;
+    max-width: 26ch;
+  }
+  .section p {
+    font-family: var(--sans);
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 62ch;
+    margin: 0 0 14px;
+  }
+  .section p:last-child { margin-bottom: 0; }
+  .section p.muted { color: var(--text-muted); }
+  .section strong { color: var(--ink); font-weight: 600; }
+
+  .medium-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 560px) {
+    .medium-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  }
+  .flight-footer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 56px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .flight-footer a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .flight-footer a:hover { color: var(--accent); }
+
+  .start-btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 22px;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+  }
+  .start-btn:hover { background: var(--accent); color: var(--bg); }
+  .medium-grid .m-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+  .medium-grid svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
+
+  .example-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin: 14px 0;
+    padding: 10px 14px;
+    border: 1px dashed var(--line);
+    border-radius: 3px;
+  }
+  .example-mark .canon-demo {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    border: 1px solid var(--dusk);
+    border-radius: 2px;
+    padding: 1px 5px;
+  }
+
+  .source-list {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .source-list .s-row {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .source-list .s-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 100px;
+  }
+  .source-list .s-desc { color: var(--text-muted); }
+
+  .theme-index {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px 24px 56px;
+    border-top: 1px solid var(--line);
+  }
+  .theme-index .s-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin-bottom: 8px;
+  }
+  .theme-index h2 {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+  .theme-list {
+    border-top: 1px dashed var(--line);
+  }
+  .theme-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--line);
+    text-decoration: none;
+    color: var(--text);
+  }
+  .theme-list a:hover .t-title { color: var(--accent); }
+  .theme-list .t-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--dusk);
+    flex-shrink: 0;
+    width: 24px;
+  }
+  .theme-list .t-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    transition: color 0.15s ease;
+  }
+
+  @media (max-width: 480px) {
+    .hero::before { width: 300px; height: 300px; right: -100px; }
+    .source-list .s-row { flex-direction: column; gap: 2px; }
+    .source-list .s-tag { width: auto; }
+  }
+</style>
+<div class="flight-page">
+
+  <div class="site-bar">
+    <div class="mark"><a href="/lyceum/" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
+    <div class="progress">404</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Not found</div>
+    <h1>That page isn't here</h1>
+    <p class="intro">The link may be old or mistyped. Here's where the rest of the curriculum lives.</p>
+  </header>
+
+  <section class="section">
+    <p><a class="start-btn" href="/lyceum/themes.html">The map &rarr;</a></p>
+  </section>
+
+  <div class="flight-footer">
+    <a href="/lyceum/"><span aria-hidden="true">&larr;</span> Home</a>
+    <a href="/lyceum/about.html">About</a>
+    <a href="/lyceum/works.html">All the works</a>
+    <a href="/lyceum/why.html">Why liberal arts</a>
+    <a href="/lyceum/sources.html">Sources</a>
+  </div>
+
+</div>
+</body>
+</html>
