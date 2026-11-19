@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://allisonbowden.github.io/lyceum/themes.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23f4ede0%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2247%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2242%22%20font-weight%3D%22600%22%20fill%3D%22%23b5502e%22%20text-anchor%3D%22middle%22%3EL%3C/text%3E%3C/svg%3E">
-<title>Lyceum &mdash; The Seven Themes</title>
-<meta name="description" content="Jump straight to any theme, in any order.">
+<title>Lyceum &mdash; Seven Questions, Five Ways In</title>
+<meta name="description" content="Seven questions, five ways in: every theme and every work on one page.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lyceum — The Seven Themes">
-<meta property="og:description" content="Jump straight to any theme, in any order.">
+<meta property="og:description" content="Seven questions, five ways in: every theme and every work on one page.">
 <meta property="og:image" content="https://allisonbowden.github.io/lyceum/og-image.png">
 <meta property="og:url" content="https://allisonbowden.github.io/lyceum/themes.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lyceum — The Seven Themes">
-<meta name="twitter:description" content="Jump straight to any theme, in any order.">
+<meta name="twitter:description" content="Seven questions, five ways in: every theme and every work on one page.">
 <meta name="twitter:image" content="https://allisonbowden.github.io/lyceum/og-image.png">
 </head>
 <body>
@@ -126,6 +126,47 @@
   .theme-nav-meta:hover { background: var(--bg); color: var(--accent); }
   .theme-nav-meta.active { color: var(--text); background: var(--bg); }
 
+  .flight-page .site-bar, .flight-page .hero { max-width: 1040px; }
+  .map { max-width: 1040px; margin: 0 auto; padding: 0 24px 24px; }
+  .map-controls { margin-bottom: 14px; }
+  .map-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .map-chips button {
+    min-height: 40px; padding: 0 16px; border-radius: 20px;
+    border: 1px solid var(--line); background: transparent; color: var(--text);
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em; cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .map-chips button:hover { border-color: var(--accent); }
+  .map-chips button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .map-chips button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .map-status { font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em; color: var(--dusk, #6b7d8f); margin: 0; min-height: 18px; }
+  .m-cols, .m-row { display: grid; grid-template-columns: 210px 1fr; gap: 14px; }
+  .m-cols { padding: 0 0 6px; }
+  .m-cols div { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .m-cols span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+  .m-row { padding: 14px 0; border-top: 1px dashed var(--line); }
+  .m-head { padding-right: 6px; }
+  .m-theme { display: flex; gap: 10px; align-items: baseline; text-decoration: none; color: var(--text); }
+  .m-theme:hover .m-name { color: var(--accent); }
+  .m-num { font-family: var(--mono); font-size: 11px; color: var(--dusk, #6b7d8f); }
+  .m-name { font-family: var(--serif); font-size: 18px; line-height: 1.2; transition: color 0.15s ease; }
+  .m-q { font-family: var(--serif); font-style: italic; font-size: 13.5px; line-height: 1.45; color: var(--text-muted); margin: 8px 0 0 26px; }
+  .m-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .m-tiles li { display: flex; }
+  .m-tile { display: block; flex: 1; min-width: 0; text-decoration: none; color: var(--text); background: #faf5ea; border: 1px solid var(--line); border-radius: 4px; padding: 7px; transition: border-color 0.15s ease, opacity 0.15s ease; }
+  .m-tile:hover { border-color: var(--accent); }
+  .m-tile img { display: block; width: 100%; height: 64px; object-fit: cover; object-position: center 20%; border-radius: 2px; margin-bottom: 6px; background: var(--line); }
+  .m-kind { display: none; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .m-title { display: block; font-family: var(--serif); font-size: 12.5px; line-height: 1.25; }
+  .m-dur { display: block; font-family: var(--mono); font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+  .m-tiles li.dim .m-tile { opacity: 0.3; }
+  @media (max-width: 860px) {
+    .m-cols { display: none; }
+    .m-row { grid-template-columns: 1fr; gap: 10px; padding: 18px 0; }
+    .m-tiles { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); }
+    .m-kind { display: block; margin-bottom: 2px; }
+    .m-q { margin-left: 0; }
+  }
   .hero {
     max-width: 700px;
     margin: 0 auto;
@@ -235,7 +276,7 @@
   <div class="site-bar">
     <div class="mark"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>Lyceum</strong></a><span class="tagline"> &middot; a diy liberal arts curriculum</span></div>
     <div class="theme-nav" data-open="false">
-      <button class="theme-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">Themes <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,9 12,15 18,9"></polygon></svg></button>
+      <button class="theme-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">The map <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,9 12,15 18,9"></polygon></svg></button>
       <div class="theme-nav-menu">
         <a class="theme-nav-item" href="01.html"><span class="t-num">01</span><span class="t-title">Truth, Illusion &amp; Deception</span></a>
         <a class="theme-nav-item" href="02.html"><span class="t-num">02</span><span class="t-title">The Individual &amp; The Collective</span></a>
@@ -246,7 +287,7 @@
         <a class="theme-nav-item" href="07.html"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
         <div class="theme-nav-divider"></div>
         <a class="theme-nav-meta" href="index.html">Home</a>
-        <a class="theme-nav-meta active" href="themes.html" aria-current="page">All seven themes</a>
+        <a class="theme-nav-meta active" href="themes.html" aria-current="page">The map</a>
         <a class="theme-nav-meta" href="works.html">All the works</a>
         <a class="theme-nav-meta" href="about.html">About</a>
         <a class="theme-nav-meta" href="why.html">Why liberal arts</a>
@@ -256,21 +297,114 @@
   </div>
 
   <header class="hero">
-    <div class="eyebrow">Contents</div>
-    <h1>The Seven Themes</h1>
-    <p class="intro">Jump straight to any theme, in any order.</p>
+    <div class="eyebrow">Overview</div>
+    <h1>Seven questions, five ways in</h1>
+    <p class="intro">Read across a row to follow one question. Read down a column to learn it one way. Start anywhere.</p>
   </header>
 
-  <div class="theme-index">
-    <div class="theme-list">
-      <a href="01.html"><img class="t-thumb" src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="" loading="lazy"><span class="t-num">01</span><span class="t-title">Truth, Illusion &amp; Deception</span></a>
-      <a href="02.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg?width=600" alt="" loading="lazy"><span class="t-num">02</span><span class="t-title">The Individual &amp; The Collective</span></a>
-      <a href="03.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=600" alt="" loading="lazy"><span class="t-num">03</span><span class="t-title">Power, Justice &amp; The State</span></a>
-      <a href="04.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=600" alt="" loading="lazy"><span class="t-num">04</span><span class="t-title">Cosmic Awe &amp; Evolution</span></a>
-      <a href="05.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=600" alt="" loading="lazy"><span class="t-num">05</span><span class="t-title">Mortality, Fate &amp; Transcendence</span></a>
-      <a href="06.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=600" alt="" loading="lazy"><span class="t-num">06</span><span class="t-title">Hubris, Progress &amp; Nature</span></a>
-      <a href="07.html"><img class="t-thumb" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=600" alt="" loading="lazy"><span class="t-num">07</span><span class="t-title">The Stranger, The Self &amp; The Other</span></a>
+  <div class="map">
+    <div class="map-controls">
+      <div class="map-chips" role="group" aria-label="Highlight a medium">
+        <button type="button" data-k="Lecture" aria-pressed="false">Lectures</button>
+        <button type="button" data-k="Film" aria-pressed="false">Films</button>
+        <button type="button" data-k="Book" aria-pressed="false">Books</button>
+        <button type="button" data-k="Music" aria-pressed="false">Music</button>
+        <button type="button" data-k="Art" aria-pressed="false">Art</button>
+      </div>
+      <p class="map-status" id="map-status" role="status" aria-live="polite"></p>
     </div>
+    <div class="m-cols" aria-hidden="true"><span></span><div><span>Lecture</span><span>Film</span><span>Book</span><span>Music</span><span>Art</span></div></div>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="01.html"><span class="m-num">01</span><span class="m-name">Truth, Illusion &amp; Deception</span></a>
+          <p class="m-q">How do we know what's real when someone else controls what we're shown, and how do we handle seeing things differently than we expected?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="01.html#w1"><img src="https://img.youtube.com/vi/xTGc1Pyp-Jc/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">The Ring of Gyges: Morality and Hypocrisy</span><span class="m-dur">43 min</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="01.html#w2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Rear_Window_film_poster.jpg/250px-Rear_Window_film_poster.jpg" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">Rear Window</span><span class="m-dur">1h 52m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="01.html#w3"><img src="https://covers.openlibrary.org/b/id/15223028-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">The Republic</span><span class="m-dur">~20 min read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="01.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">Random Access Memories</span><span class="m-dur">1h 14m</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="01.html#w5"><img src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">The Treachery of Images</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="02.html"><span class="m-num">02</span><span class="m-name">The Individual &amp; The Collective</span></a>
+          <p class="m-q">How much do we owe the people around us, and how much do we get to keep for our own ambitions?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="02.html#w1"><img src="https://img.youtube.com/vi/UTUDf7SYl1k/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">Contract &amp; Commonwealth: Thomas Hobbes</span><span class="m-dur">46 min</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="02.html#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/The_Social_Network_film_poster.png/250px-The_Social_Network_film_poster.png" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">The Social Network</span><span class="m-dur">2h 0m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="02.html#w3"><img src="https://covers.openlibrary.org/b/id/211529-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">Meditations</span><span class="m-dur">~2–4 hr read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="02.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3e/76/b0/3e76b0e3-762b-2286-a019-8afb19cee541/886445635829.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">The Dark Side of the Moon</span><span class="m-dur">43 min</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="02.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">A Sunday on La Grande Jatte</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="03.html"><span class="m-num">03</span><span class="m-name">Power, Justice &amp; The State</span></a>
+          <p class="m-q">Who gets to make the rules for everyone else, and what do you do when they're wrong?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="03.html#w1"><img src="https://img.youtube.com/vi/kBdfcR-8hEY/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">The Moral Side of Murder</span><span class="m-dur">55 min</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="03.html#w2"><img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">The Godfather, Parts I &amp; II</span><span class="m-dur">6h 17m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="03.html#w3"><img src="https://covers.openlibrary.org/b/id/12726168-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">The Prince</span><span class="m-dur">~2 hr read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="03.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6b/aa/9b/6baa9b5e-d508-63ac-7327-e29043205984/720841206194_Cover.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">Zombie</span><span class="m-dur">12 min</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="03.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">The Death of Socrates</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="04.html"><span class="m-num">04</span><span class="m-name">Cosmic Awe &amp; Evolution</span></a>
+          <p class="m-q">Where does our behavior actually come from, and how do we find meaning in a universe this vast?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="04.html#w1"><img src="https://img.youtube.com/vi/Y0Oa4Lp5fLE/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">Behavioral Evolution</span><span class="m-dur">1h 37m</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="04.html#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/2001_A_Space_Odyssey_%281968%29.png/250px-2001_A_Space_Odyssey_%281968%29.png" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">2001: A Space Odyssey</span><span class="m-dur">2h 29m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="04.html#w3"><img src="https://covers.openlibrary.org/b/id/11359192-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">The Dawn of Everything</span><span class="m-dur">~22 hr read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="04.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0c/f5/ed/0cf5ed24-02ba-03f4-8c83-ff41dcba5be3/884977621860.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">Cello Suite No. 1 in G Major</span><span class="m-dur">~18 min</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="04.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">Wanderer above the Sea of Fog</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="05.html"><span class="m-num">05</span><span class="m-name">Mortality, Fate &amp; Transcendence</span></a>
+          <p class="m-q">How do we face the fact that we'll die, and why should our choices matter anyway?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="05.html#w1"><img src="https://img.youtube.com/vi/yJVpJ588ASc/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">Dying Alone; The Badness of Death</span><span class="m-dur">50 min</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="05.html#w2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ikiru_poster.jpg/250px-Ikiru_poster.jpg" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">Ikiru</span><span class="m-dur">2h 23m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="05.html#w3"><img src="https://covers.openlibrary.org/b/id/13116014-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">Crime and Punishment</span><span class="m-dur">~14 hr read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="05.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/94/58/f2/9458f2e8-ea9d-b384-6a52-6d976d5ebc9c/00028943900423.rgb.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">Symphony No. 5</span><span class="m-dur">~32 min</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="05.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">The Ambassadors</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="06.html"><span class="m-num">06</span><span class="m-name">Hubris, Progress &amp; Nature</span></a>
+          <p class="m-q">What happens when our technology moves faster than our understanding of nature, and how far is too far when we start playing creator?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="06.html#w1"><img src="https://img.youtube.com/vi/JX0uusVkJcI/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">Industrial Revolutions</span><span class="m-dur">48 min</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="06.html#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Ex-machina-uk-poster.jpg/250px-Ex-machina-uk-poster.jpg" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">Ex Machina</span><span class="m-dur">1h 48m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="06.html#w3"><img src="https://covers.openlibrary.org/b/id/12356249-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">Frankenstein</span><span class="m-dur">~5 hr read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="06.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/ea/cf/e4/eacfe414-f451-e251-d06c-94a544a60bf8/886443827165.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">The Rite of Spring</span><span class="m-dur">~34 min</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="06.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">Rain, Steam and Speed</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
+      <section class="m-row">
+        <div class="m-head">
+          <a class="m-theme" href="07.html"><span class="m-num">07</span><span class="m-name">The Stranger, The Self &amp; The Other</span></a>
+          <p class="m-q">Where do we draw the line between "us" and "them," and how do we react when someone crosses it?</p>
+        </div>
+        <ul class="m-tiles">
+          <li data-kind="Lecture"><a class="m-tile" href="07.html#w1"><img src="https://img.youtube.com/vi/EtVfoIkVSu8/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">Aggression, III</span><span class="m-dur">1h 41m</span></a></li>
+          <li data-kind="Film"><a class="m-tile" href="07.html#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Parasite_%282019_film%29.png/250px-Parasite_%282019_film%29.png" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">Parasite</span><span class="m-dur">2h 12m</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="07.html#w3"><img src="https://covers.openlibrary.org/b/id/252882-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">Middlemarch</span><span class="m-dur">~22 hr read</span></a></li>
+          <li data-kind="Music"><a class="m-tile" href="07.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b5/a6/91/b5a69171-5232-3d5b-9c15-8963802f83dd/15UMGIM15814.rgb.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">To Pimp a Butterfly</span><span class="m-dur">1h 19m</span></a></li>
+          <li data-kind="Art"><a class="m-tile" href="07.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">Olympia</span><span class="m-dur">Look</span></a></li>
+        </ul>
+      </section>
   </div>
 
   <div class="flight-footer">
@@ -305,6 +439,26 @@
       nav.querySelector('.theme-nav-btn').setAttribute('aria-expanded', 'false');
     });
   });
+</script>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.map-chips button'));
+    var items = Array.prototype.slice.call(document.querySelectorAll('.m-tiles li'));
+    var status = document.getElementById('map-status');
+    var on = {};
+    function render() {
+      var picked = buttons.filter(function (b) { return on[b.dataset.k]; }).map(function (b) { return b.dataset.k; });
+      items.forEach(function (li) { li.classList.toggle('dim', picked.length > 0 && picked.indexOf(li.dataset.kind) === -1); });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', on[b.dataset.k] ? 'true' : 'false'); });
+      if (!picked.length) { status.textContent = 'Showing all 35 works across seven themes'; return; }
+      var n = picked.map(function (k) { return k.toLowerCase() + 's'; });
+      var phrase = n.length > 1 ? n.slice(0, -1).join(', ') + ' and ' + n[n.length - 1] : n[0];
+      status.textContent = 'Highlighting ' + phrase + ' \u00b7 ' + (picked.length * 7) + ' works';
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { on[b.dataset.k] = !on[b.dataset.k]; render(); }); });
+    render();
+  })();
 </script>
 
 <style>
