@@ -566,6 +566,13 @@
     margin: 0 0 8px;
   }
   .zone .link-line { margin-bottom: 6px; }
+  .take-btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 8px; }
+  .take-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; box-sizing: border-box; padding: 0 16px; border: 1px solid var(--accent); border-radius: 22px; color: var(--accent); font-family: var(--mono); font-size: 13px; line-height: 1.2; text-decoration: none; background: transparent; }
+  .take-btn .d { color: var(--text-muted); }
+  .take-btn:hover { background: var(--accent); color: var(--bg); }
+  .take-btn:hover .d { color: var(--bg); }
+  .take-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 600px) { .take-btn { min-height: 44px; } }
   .src-row {
     display: flex;
     gap: 12px;
@@ -852,7 +859,7 @@
       <p class="focus">A bureaucrat learns he has terminal cancer, months to live, after thirty years spent quietly stamping paperwork nobody needed stamped. What he does with the time left isn't a bucket list. It's one small, real thing, built for people he'll never meet.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=Ikiru%201952" target="_blank" rel="noopener">Find it (2h 23m)</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.justwatch.com/us/search?q=Ikiru%201952" target="_blank" rel="noopener">↗ Watch <span class="d">&middot; 2h 23m</span></a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -878,8 +885,7 @@
       <p class="focus">A psychological thriller following a young student as his mind collapses under the moral weight of a crime he was convinced was justified: the murder is only the beginning of what actually destroys him.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/2554/2554-h/2554-h.htm" target="_blank" rel="noopener">Full free text (~14 hr read)</a></div>
-        <div class="link-line"><span class="pill pill-accent">listen</span><a class="find-it" href="https://librivox.org/crime-and-punishment-version-2-by-fyodor-dostoyevsky/" target="_blank" rel="noopener">Or the audiobook, narrated by Expatriate (&asymp;19h 52m)</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.gutenberg.org/files/2554/2554-h/2554-h.htm" target="_blank" rel="noopener">↗ Read free <span class="d">&middot; ~14 hr</span></a><a class="take-btn" href="https://librivox.org/crime-and-punishment-version-2-by-fyodor-dostoyevsky/" target="_blank" rel="noopener">♪ Listen <span class="d">&middot; 19h 52m</span></a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -934,7 +940,7 @@
       <p class="focus">Two powerful, successful men, painted with every symbol of their worldly achievement. At their feet is an odd smear that makes no sense head-on. Step to the side, and it resolves into a skull.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors" target="_blank" rel="noopener">At the National Gallery</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors" target="_blank" rel="noopener">↗ View at the National Gallery</a></div>
         <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=900" alt="The Ambassadors by Hans Holbein the Younger" loading="lazy">
       </div>

@@ -567,6 +567,13 @@
     margin: 0 0 8px;
   }
   .zone .link-line { margin-bottom: 6px; }
+  .take-btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 8px; }
+  .take-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; box-sizing: border-box; padding: 0 16px; border: 1px solid var(--accent); border-radius: 22px; color: var(--accent); font-family: var(--mono); font-size: 13px; line-height: 1.2; text-decoration: none; background: transparent; }
+  .take-btn .d { color: var(--text-muted); }
+  .take-btn:hover { background: var(--accent); color: var(--bg); }
+  .take-btn:hover .d { color: var(--bg); }
+  .take-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 600px) { .take-btn { min-height: 44px; } }
   .src-row {
     display: flex;
     gap: 12px;
@@ -861,7 +868,7 @@
       <p class="focus">A man stuck in a wheelchair spies on his neighbors through a window, piecing together fragments into a theory: one of them is a murderer. He might be right, or he might just want it to be true.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=Rear%20Window%201954" target="_blank" rel="noopener">Find it (1h 52m)</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.justwatch.com/us/search?q=Rear%20Window%201954" target="_blank" rel="noopener">↗ Watch <span class="d">&middot; 1h 52m</span></a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -896,7 +903,7 @@
       <p class="focus">Prisoners chained in a cave mistake shadows on the wall for reality itself. This single chapter, the most famous part of the whole book, asks what happens the moment one of them turns around and sees the fire behind him. You don't need the rest of The Republic to get the idea.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/55201/55201-h/55201-h.htm" target="_blank" rel="noopener">Full free text, Book VII (~20 min read)</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.gutenberg.org/files/55201/55201-h/55201-h.htm" target="_blank" rel="noopener">↗ Read free <span class="d">&middot; Book VII · ~20 min</span></a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -960,7 +967,7 @@
       <p class="focus">Magritte paints a pipe, then writes underneath it: this is not a pipe. He's right: it's paint on canvas. The real pipe is somewhere else entirely, which is the whole point.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://collections.lacma.org/object/31931" target="_blank" rel="noopener">At LACMA</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://collections.lacma.org/object/31931" target="_blank" rel="noopener">↗ View at LACMA</a></div>
         <div class="art-image">
         <img src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="The Treachery of Images by Ren&eacute; Magritte" loading="lazy">
       </div>

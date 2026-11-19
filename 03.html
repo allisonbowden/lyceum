@@ -563,6 +563,13 @@
     margin: 0 0 8px;
   }
   .zone .link-line { margin-bottom: 6px; }
+  .take-btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 8px; }
+  .take-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; box-sizing: border-box; padding: 0 16px; border: 1px solid var(--accent); border-radius: 22px; color: var(--accent); font-family: var(--mono); font-size: 13px; line-height: 1.2; text-decoration: none; background: transparent; }
+  .take-btn .d { color: var(--text-muted); }
+  .take-btn:hover { background: var(--accent); color: var(--bg); }
+  .take-btn:hover .d { color: var(--bg); }
+  .take-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 600px) { .take-btn { min-height: 44px; } }
   .src-row {
     display: flex;
     gap: 12px;
@@ -845,7 +852,7 @@
       <p class="focus">A son takes over the family business and slowly becomes everything his father swore he'd never be. Watched together, the two films ask a harder question than the first one alone: how does a good man become a bad one, one reasonable decision at a time?</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Godfather" target="_blank" rel="noopener">Find it (2h 55m + 3h 22m)</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.justwatch.com/us/search?q=The%20Godfather" target="_blank" rel="noopener">↗ Watch <span class="d">&middot; 2h 55m + 3h 22m</span></a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -889,8 +896,7 @@
       <p class="focus">Machiavelli asks a blunt question: should a leader be good, or just look good? His answer: if you can't have both, choose feared over loved. Five hundred years later, ask yourself: does any leader you actually admire disagree?</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/1232/1232-h/1232-h.htm" target="_blank" rel="noopener">Full free text (~2 hr read)</a></div>
-        <div class="link-line"><span class="pill pill-accent">listen</span><a class="find-it" href="https://podcasts.apple.com/us/podcast/prince-version-2-the-by-niccol%C3%B2-machiavelli-1469-1527/id417999597" target="_blank" rel="noopener">Or the audiobook, narrated by Paul Adams (&asymp;5h 48m)</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.gutenberg.org/files/1232/1232-h/1232-h.htm" target="_blank" rel="noopener">↗ Read free <span class="d">&middot; ~2 hr</span></a><a class="take-btn" href="https://podcasts.apple.com/us/podcast/prince-version-2-the-by-niccol%C3%B2-machiavelli-1469-1527/id417999597" target="_blank" rel="noopener">♪ Listen <span class="d">&middot; 5h 48m</span></a></div>
       </div>
       <div class="zone">
         <div class="zone-label">Go further</div>
@@ -945,7 +951,7 @@
       <p class="focus">Socrates, tried and legally condemned by his own city for asking too many questions, reaches for the poison himself rather than renounce what he believes, while the men around him can barely watch. The state can make something legal, and that doesn't make it right.</p>
       <div class="zone">
         <div class="zone-label">Take it in</div>
-        <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.metmuseum.org/art/collection/search/436105" target="_blank" rel="noopener">At The Met</a></div>
+        <div class="take-btns"><a class="take-btn" href="https://www.metmuseum.org/art/collection/search/436105" target="_blank" rel="noopener">↗ View at The Met</a></div>
         <div class="art-image">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=900" alt="The Death of Socrates by Jacques-Louis David" loading="lazy">
         </div>
