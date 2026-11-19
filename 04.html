@@ -245,9 +245,10 @@
   }
   .glance-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 8px;
   }
+  .glance-label .gl-note { text-transform: none; letter-spacing: 0.02em; color: var(--text-muted); }
   .glance-tile {
     display: block;
     text-decoration: none;
@@ -775,16 +776,13 @@
   </div>
 
   <header class="hero">
-    <div class="eyebrow-row">
-      <span class="how-to">No set order, start wherever looks interesting.</span>
-    </div>
     <h1>Cosmic Awe &amp; Evolution</h1>
     <p class="core-question">Where does our behavior actually come from, and how do we find meaning in a universe this vast?</p>
     <p class="time-note">All five works &asymp; 26.5 hr, or &asymp; 4.5 hr if you skip the book</p>
   </header>
 
   <nav class="glance" aria-label="This theme at a glance">
-    <p class="glance-label">This theme at a glance</p>
+    <p class="glance-label">This theme at a glance<span class="gl-note"> &middot; no set order, start wherever looks interesting</span></p>
     <div class="glance-grid">
       <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/Y0Oa4Lp5fLE/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Behavioral Evolution</span></a>
       <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/2001_A_Space_Odyssey_%281968%29.png/250px-2001_A_Space_Odyssey_%281968%29.png" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">2001: A Space Odyssey</span></a>

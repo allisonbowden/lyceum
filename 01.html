@@ -245,9 +245,10 @@
   }
   .glance-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 8px;
   }
+  .glance-label .gl-note { text-transform: none; letter-spacing: 0.02em; color: var(--text-muted); }
   .glance-tile {
     display: block;
     text-decoration: none;
@@ -810,16 +811,13 @@
   </div>
 
   <header class="hero">
-    <div class="eyebrow-row">
-      <span class="how-to">No set order, start wherever looks interesting.</span>
-    </div>
     <h1>Truth, Illusion &amp; Deception</h1>
     <p class="core-question">How do we know what's real when someone else controls what we're shown, and how do we handle seeing things differently than we expected?</p>
     <p class="time-note">All five works &asymp; 4 hr</p>
   </header>
 
   <nav class="glance" aria-label="This theme at a glance">
-    <p class="glance-label">This theme at a glance</p>
+    <p class="glance-label">This theme at a glance<span class="gl-note"> &middot; no set order, start wherever looks interesting</span></p>
     <div class="glance-grid">
       <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/xTGc1Pyp-Jc/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">The Ring of Gyges: Morality and Hypocrisy</span></a>
       <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Rear_Window_film_poster.jpg/250px-Rear_Window_film_poster.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Rear Window</span></a>

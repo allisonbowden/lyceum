@@ -245,9 +245,10 @@
   }
   .glance-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 8px;
   }
+  .glance-label .gl-note { text-transform: none; letter-spacing: 0.02em; color: var(--text-muted); }
   .glance-tile {
     display: block;
     text-decoration: none;
@@ -796,16 +797,13 @@
   </div>
 
   <header class="hero">
-    <div class="eyebrow-row">
-      <span class="how-to">No set order, start wherever looks interesting.</span>
-    </div>
     <h1>The Stranger, The Self &amp; The Other</h1>
     <p class="core-question">Where do we draw the line between "us" and "them," and how do we react when someone crosses it?</p>
     <p class="time-note">All five works &asymp; 27 hr, or &asymp; 5 hr if you skip the book</p>
   </header>
 
   <nav class="glance" aria-label="This theme at a glance">
-    <p class="glance-label">This theme at a glance</p>
+    <p class="glance-label">This theme at a glance<span class="gl-note"> &middot; no set order, start wherever looks interesting</span></p>
     <div class="glance-grid">
       <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/EtVfoIkVSu8/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Aggression, III</span></a>
       <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Parasite_%282019_film%29.png/250px-Parasite_%282019_film%29.png" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Parasite</span></a>

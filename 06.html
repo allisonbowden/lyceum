@@ -245,9 +245,10 @@
   }
   .glance-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 8px;
   }
+  .glance-label .gl-note { text-transform: none; letter-spacing: 0.02em; color: var(--text-muted); }
   .glance-tile {
     display: block;
     text-decoration: none;
@@ -801,16 +802,13 @@
   </div>
 
   <header class="hero">
-    <div class="eyebrow-row">
-      <span class="how-to">No set order, start wherever looks interesting.</span>
-    </div>
     <h1>Hubris, Progress &amp; Nature</h1>
     <p class="core-question">What happens when our technology moves faster than our understanding of nature, and how far is too far when we start playing creator?</p>
     <p class="time-note">All five works &asymp; 8 hr, or &asymp; 3 hr if you skip the book</p>
   </header>
 
   <nav class="glance" aria-label="This theme at a glance">
-    <p class="glance-label">This theme at a glance</p>
+    <p class="glance-label">This theme at a glance<span class="gl-note"> &middot; no set order, start wherever looks interesting</span></p>
     <div class="glance-grid">
       <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/JX0uusVkJcI/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Industrial Revolutions</span></a>
       <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Ex-machina-uk-poster.jpg/250px-Ex-machina-uk-poster.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Ex Machina</span></a>
