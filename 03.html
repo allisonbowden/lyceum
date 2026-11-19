@@ -574,6 +574,81 @@
     display: block;
   }
 
+  .zone { margin-top: 18px; }
+  .zone-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin: 0 0 8px;
+  }
+  .zone .link-line { margin-bottom: 6px; }
+  .src-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 560px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .src-art {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--line);
+  }
+  .src-art-text {
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    box-sizing: border-box;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--dusk);
+  }
+  .src-body { min-width: 0; flex: 1; }
+  .src-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .src-show { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.03em; color: var(--text-muted); }
+  .src-ep { font-family: var(--serif); font-size: 15px; line-height: 1.25; margin: 5px 0 2px; }
+  .src-who { font-family: var(--sans); font-size: 12.5px; line-height: 1.4; }
+  .src-ctl { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; }
+  .src-play, .src-read {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .src-play::after, .src-read::after { content: ""; position: absolute; inset: -7px -4px; }
+  .src-play:hover, .src-read:hover { background: var(--accent); color: var(--bg); }
+  .src-play:focus-visible, .src-read:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .src-play-ic { font-size: 9px; line-height: 1; }
+  .src-sep { color: var(--text-muted); }
+  .src-meta { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+  .src-alt { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .src-loaded { max-width: 560px; margin-bottom: 10px; }
+  .src-loaded iframe { width: 100%; border: 0; border-radius: 10px; display: block; }
+  .src-loaded .vid { aspect-ratio: 16 / 9; height: auto; }
+  .src-loaded .src-head { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 6px; }
+
   .further {
     max-width: 760px;
     margin: 8px auto 0;
@@ -773,13 +848,38 @@
       <h2>The Godfather, Parts I &amp; II</h2>
       <div class="byline">Francis Ford Coppola</div>
       <p class="focus">A son takes over the family business and slowly becomes everything his father swore he'd never be. Watched together, the two films ask a harder question than the first one alone: how does a good man become a bad one, one reasonable decision at a time?</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=The%20Godfather" target="_blank" rel="noopener">Where to watch (2h 55m + 3h 22m)</a></div>
-        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-the-godfather-1972" target="_blank" rel="noopener">Roger Ebert's review, Part I</a>&nbsp;&middot;&nbsp;<a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-the-godfather-part-ii-1974" target="_blank" rel="noopener">Part II</a><span style="font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent);">&nbsp;(~7 min read each)</span></div>
-        <div class="podcast-embed" style="max-width: 620px;">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Jon Lewis (Oregon State) on The Godfather, from the Bloomsbury Academic Podcast. Part I looks at the first film's craft (29 min), Part II at the saga's legacy (34 min).</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/bloomsbury-academic-podcast/id1506067299?i=1000582651809" title="Jon Lewis on The Godfather Part I &mdash; 29 min" allow="autoplay *; encrypted-media *; clipboard-write" style="max-width: 480px;"></iframe>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/bloomsbury-academic-podcast/id1506067299?i=1000583029371" title="Jon Lewis on The Godfather Part II &mdash; 34 min" allow="autoplay *; encrypted-media *; clipboard-write" style="max-width: 480px; margin-top: 8px;"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <span class="src-art src-art-text" aria-hidden="true">RE</span>
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">RogerEbert.com</span></div>
+            <div class="src-ep">Review of Part I and Part II</div>
+            <div class="src-who">Roger Ebert, Pulitzer Prize-winning film critic</div>
+            <div class="src-ctl"><a class="src-read" href="https://www.rogerebert.com/reviews/great-movie-the-godfather-1972" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Part I</a> <span class="src-sep">&middot;</span> <a class="src-read" href="https://www.rogerebert.com/reviews/great-movie-the-godfather-part-ii-1974" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Part II</a> <span class="src-meta">&middot; ~7 min read each</span></div>
+          </div>
+        </div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/f2/41/c9/f241c9ef-4afd-12b8-2519-57e1c1f5dce1/mza_10400830380948785295.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Bloomsbury Academic Podcast</span></div>
+            <div class="src-ep">Part I: the first film&rsquo;s craft</div>
+            <div class="src-who">Jon Lewis, University Distinguished Professor of Film Studies, Oregon State University</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/bloomsbury-academic-podcast/id1506067299?i=1000582651809" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 29 min</button></div>
+          </div>
+        </div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/f2/41/c9/f241c9ef-4afd-12b8-2519-57e1c1f5dce1/mza_10400830380948785295.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Bloomsbury Academic Podcast</span></div>
+            <div class="src-ep">Part II: the saga&rsquo;s legacy</div>
+            <div class="src-who">Jon Lewis, University Distinguished Professor of Film Studies, Oregon State University</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/bloomsbury-academic-podcast/id1506067299?i=1000583029371" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 34 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -792,13 +892,21 @@
       <h2>The Prince</h2>
       <div class="byline">Niccol&ograve; Machiavelli</div>
       <p class="focus">Machiavelli asks a blunt question: should a leader be good, or just look good? His answer: if you can't have both, choose feared over loved. Five hundred years later, ask yourself: does any leader you actually admire disagree?</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/1232/1232-h/1232-h.htm" target="_blank" rel="noopener">Read it yourself: full free text (~2 hr read)</a></div>
-        <div class="link-line"><span class="pill pill-dusk">listen</span><a class="find-it" href="https://podcasts.apple.com/us/podcast/prince-version-2-the-by-niccol%C3%B2-machiavelli-1469-1527/id417999597" target="_blank" rel="noopener">Or listen to the audiobook: full text narrated by Paul Adams (&asymp;5h 48m)</a></div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Peter Adamson (King's College London) on Machiavelli, from the History of Philosophy Without Any Gaps podcast (21 min)</span>
-          <iframe src="https://embed.podcasts.apple.com/ie/podcast/hop-349-no-more-mr-nice-guy-machiavelli/id396903391?i=1000474848208" title="Peter Adamson on Machiavelli &mdash; 21 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
-          <div class="alt-line"><a href="https://open.spotify.com/episode/7fo5FgkuGEs7dcQXtcchqB" target="_blank" rel="noopener">Also on Spotify</a></div>
+        <div class="link-line"><span class="pill pill-accent">listen</span><a class="find-it" href="https://podcasts.apple.com/us/podcast/prince-version-2-the-by-niccol%C3%B2-machiavelli-1469-1527/id417999597" target="_blank" rel="noopener">Or the audiobook, narrated by Paul Adams (&asymp;5h 48m)</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/01/76/52/01765219-d70c-a243-1924-0c5651c8604d/mza_11881655681855403902.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">History of Philosophy Without Any Gaps</span></div>
+            <div class="src-ep">Machiavelli: No More Mr. Nice Guy</div>
+            <div class="src-who">Peter Adamson, Professor of Philosophy, LMU Munich and King&rsquo;s College London</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/ie/podcast/hop-349-no-more-mr-nice-guy-machiavelli/id396903391?i=1000474848208" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 21 min</button> <a class="src-alt" href="https://open.spotify.com/episode/7fo5FgkuGEs7dcQXtcchqB" target="_blank" rel="noopener">Also on Spotify</a></div>
+          </div>
         </div>
       </div>
     </article>
@@ -811,14 +919,23 @@
       <h2>Zombie</h2>
       <div class="byline">Fela Kuti &amp; Africa 70</div>
       <p class="focus">A song that compares Nigerian soldiers to mindless "zombies" blindly following orders, deliberately unsubtle. In response, the military raided Kuti's compound; his mother died from injuries she suffered in that raid. This is what it can cost to challenge power directly.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the track (12 min)</span>
           <iframe src="https://open.spotify.com/embed/track/2r0KlAVemiB1TyTqgCh5ve" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-                <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Listen to NPR Fresh Air on the politics behind the song (48 min)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/fela-kuti-and-the-music-of-political-resistance/id214089682?i=1000749472839" title="NPR Fresh Air on Fela Kuti &mdash; 48 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/68/35/32/683532c0-dd91-676a-eeef-3ace951cd6e9/mza_6896198885971355473.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">NPR Fresh Air</span></div>
+            <div class="src-ep">Fela Kuti and the music of political resistance</div>
+            <div class="src-who">NPR&rsquo;s long-running interview and culture program</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/fela-kuti-and-the-music-of-political-resistance/id214089682?i=1000749472839" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 48 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -831,18 +948,23 @@
       <h2>The Death of Socrates</h2>
       <div class="byline">Jacques-Louis David</div>
       <p class="focus">Socrates, tried and legally condemned by his own city for asking too many questions, reaches for the poison himself rather than renounce what he believes, while the men around him can barely watch. The state can make something legal, and that doesn't make it right.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.metmuseum.org/art/collection/search/436105" target="_blank" rel="noopener">At The Met</a></div>
+        <div class="art-image">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=900" alt="The Death of Socrates by Jacques-Louis David" loading="lazy">
+        </div>
       </div>
-      <div class="art-image">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=900" alt="The Death of Socrates by Jacques-Louis David" loading="lazy">
-      </div>
-      <div class="lecture-embed">
-        <span class="audio-caption"><span class="pill pill-dusk">review</span>Dr. Beth Harris &amp; Dr. Steven Zucker on The Death of Socrates, from Smarthistory (8 min)</span>
-        <div class="thumb-wrap" data-video-id="Fsd7X9ahy5Q">
-          <img src="https://img.youtube.com/vi/Fsd7X9ahy5Q/hqdefault.jpg" alt="" loading="lazy">
-          <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
-          <div class="thumb-label">Watch here &mdash; 8 min</div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://img.youtube.com/vi/Fsd7X9ahy5Q/hqdefault.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">Smarthistory</span></div>
+            <div class="src-ep">The Death of Socrates</div>
+            <div class="src-who">Dr. Beth Harris and Dr. Steven Zucker, art historians and founders of Smarthistory</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="video" data-src="Fsd7X9ahy5Q" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 8 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -921,6 +1043,36 @@
   });
 
 
+</script>
+
+<script>
+  document.querySelectorAll('.src-play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = b.closest('.src-row');
+      var title = row.querySelector('.src-ep').textContent;
+      var show = row.querySelector('.src-show').textContent;
+      var wrap = document.createElement('div');
+      wrap.className = 'src-loaded';
+      var head = document.createElement('div');
+      head.className = 'src-head';
+      head.textContent = show + ' \u00b7 ' + title;
+      var f = document.createElement('iframe');
+      if (b.dataset.kind === 'video') {
+        f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.src + '?autoplay=1';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture';
+        f.allowFullscreen = true;
+        f.className = 'vid';
+      } else {
+        f.src = b.dataset.src;
+        f.allow = 'autoplay *; encrypted-media *; clipboard-write';
+        f.style.height = b.dataset.h + 'px';
+      }
+      f.title = show + ': ' + title;
+      wrap.appendChild(head);
+      wrap.appendChild(f);
+      row.replaceWith(wrap);
+    });
+  });
 </script>
 
 <style>
