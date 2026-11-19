@@ -663,6 +663,23 @@
   .src-loaded .vid { aspect-ratio: 16 / 9; height: auto; }
   .src-loaded .src-head { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 6px; }
 
+  @media (max-width: 600px) {
+    .glance-grid { grid-template-columns: 1fr; gap: 6px; }
+    .glance-tile { display: grid; grid-template-columns: 52px 1fr; grid-template-rows: auto auto auto; column-gap: 12px; align-items: center; padding: 6px; }
+    .glance-tile img { grid-row: 1 / 4; width: 52px; height: 52px; margin: 0; aspect-ratio: auto; }
+    .glance-tile .g-kind { font-size: 10px; }
+    .glance-tile .g-title { font-size: 14.5px; margin: 1px 0; }
+    .glance-tile .g-dur { font-size: 11px; }
+    .glance-key { padding: 8px 10px; gap: 6px 14px; }
+    .src-row { display: grid; grid-template-columns: 48px 1fr; grid-template-areas: "art top" "art ep" "who who" "ctl ctl"; column-gap: 12px; row-gap: 0; padding: 10px; }
+    .src-body { display: contents; }
+    .src-art { grid-area: art; width: 48px; height: 48px; }
+    .src-top { grid-area: top; }
+    .src-ep { grid-area: ep; margin-top: 3px; }
+    .src-who { grid-area: who; margin-top: 8px; font-size: 12.5px; }
+    .src-ctl { grid-area: ctl; }
+    .src-show { font-size: 11px; }
+  }
   .further {
     max-width: 760px;
     margin: 8px auto 0;
@@ -878,7 +895,7 @@
             <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">RogerEbert.com</span></div>
             <div class="src-ep">Review of The Social Network</div>
             <div class="src-who">Roger Ebert, Pulitzer Prize-winning film critic</div>
-            <div class="src-ctl"><a class="src-read" href="https://www.rogerebert.com/reviews/the-social-network-2010" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~6 min read</span></div>
+            <div class="src-ctl"><a class="src-read" href="https://www.rogerebert.com/reviews/the-social-network-2010" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">~6 min read</span></div>
           </div>
         </div>
       </div>
@@ -933,7 +950,7 @@
             <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">Rolling Stone</span></div>
             <div class="src-ep">Review of The Dark Side of the Moon</div>
             <div class="src-who">One of the longest-running music magazines</div>
-            <div class="src-ctl"><a class="src-read" href="https://www.rollingstone.com/music/music-album-reviews/dark-side-of-the-moon-255381/" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~4 min read</span></div>
+            <div class="src-ctl"><a class="src-read" href="https://www.rollingstone.com/music/music-album-reviews/dark-side-of-the-moon-255381/" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">~4 min read</span></div>
           </div>
         </div>
       </div>
@@ -962,7 +979,7 @@
             <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">Smarthistory</span></div>
             <div class="src-ep">A Sunday on La Grande Jatte</div>
             <div class="src-who">Dr. Beth Harris and Dr. Steven Zucker, art historians and founders of Smarthistory</div>
-            <div class="src-ctl"><a class="src-read" href="https://smarthistory.org/georges-seurat-a-sunday-on-la-grande-jatte-1884/" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~5 min read</span></div>
+            <div class="src-ctl"><a class="src-read" href="https://smarthistory.org/georges-seurat-a-sunday-on-la-grande-jatte-1884/" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">~5 min read</span></div>
           </div>
         </div>
         <div class="src-row">
@@ -1122,9 +1139,11 @@
   .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
   .to-top:hover { background: #b5502e; color: #f4ede0; }
   .to-top:focus-visible { outline: 2px solid #b5502e; outline-offset: 3px; }
+  .to-top-t { margin-left: 4px; }
+  @media (max-width: 600px) { .to-top { width: 44px; padding: 0; border-radius: 50%; right: 12px; bottom: 12px; opacity: 0; } .to-top.show { opacity: 0.92; } .to-top-t { display: none; } }
   @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
 </style>
-<button class="to-top" id="to-top" type="button" aria-label="Back to top"><span aria-hidden="true">&uarr;</span> Top</button>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><span aria-hidden="true">&uarr;</span><span class="to-top-t">Top</span></button>
 <script>
   (function () {
     var b = document.getElementById('to-top');

@@ -544,9 +544,11 @@
   .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
   .to-top:hover { background: #b5502e; color: #f4ede0; }
   .to-top:focus-visible { outline: 2px solid #b5502e; outline-offset: 3px; }
+  .to-top-t { margin-left: 4px; }
+  @media (max-width: 600px) { .to-top { width: 44px; padding: 0; border-radius: 50%; right: 12px; bottom: 12px; opacity: 0; } .to-top.show { opacity: 0.92; } .to-top-t { display: none; } }
   @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
 </style>
-<button class="to-top" id="to-top" type="button" aria-label="Back to top"><span aria-hidden="true">&uarr;</span> Top</button>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><span aria-hidden="true">&uarr;</span><span class="to-top-t">Top</span></button>
 <script>
   (function () {
     var b = document.getElementById('to-top');
