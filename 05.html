@@ -577,6 +577,81 @@
     display: block;
   }
 
+  .zone { margin-top: 18px; }
+  .zone-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin: 0 0 8px;
+  }
+  .zone .link-line { margin-bottom: 6px; }
+  .src-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 560px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .src-art {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--line);
+  }
+  .src-art-text {
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    box-sizing: border-box;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--dusk);
+  }
+  .src-body { min-width: 0; flex: 1; }
+  .src-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .src-show { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.03em; color: var(--text-muted); }
+  .src-ep { font-family: var(--serif); font-size: 15px; line-height: 1.25; margin: 5px 0 2px; }
+  .src-who { font-family: var(--sans); font-size: 12.5px; line-height: 1.4; }
+  .src-ctl { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; }
+  .src-play, .src-read {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .src-play::after, .src-read::after { content: ""; position: absolute; inset: -7px -4px; }
+  .src-play:hover, .src-read:hover { background: var(--accent); color: var(--bg); }
+  .src-play:focus-visible, .src-read:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .src-play-ic { font-size: 9px; line-height: 1; }
+  .src-sep { color: var(--text-muted); }
+  .src-meta { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+  .src-alt { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .src-loaded { max-width: 560px; margin-bottom: 10px; }
+  .src-loaded iframe { width: 100%; border: 0; border-radius: 10px; display: block; }
+  .src-loaded .vid { aspect-ratio: 16 / 9; height: auto; }
+  .src-loaded .src-head { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 6px; }
+
   .further {
     max-width: 760px;
     margin: 8px auto 0;
@@ -780,9 +855,21 @@
       <h2>Ikiru</h2>
       <div class="byline">Akira Kurosawa</div>
       <p class="focus">A bureaucrat learns he has terminal cancer, months to live, after thirty years spent quietly stamping paperwork nobody needed stamped. What he does with the time left isn't a bucket list. It's one small, real thing, built for people he'll never meet.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=Ikiru%201952" target="_blank" rel="noopener">Where to watch (2h 23m)</a></div>
-        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-ikiru-1952" target="_blank" rel="noopener">Roger Ebert's review (~6 min read)</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <span class="src-art src-art-text" aria-hidden="true">RE</span>
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">RogerEbert.com</span></div>
+            <div class="src-ep">Review of Ikiru</div>
+            <div class="src-who">Roger Ebert, Pulitzer Prize-winning film critic</div>
+            <div class="src-ctl"><a class="src-read" href="https://www.rogerebert.com/reviews/great-movie-ikiru-1952" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~6 min read</span></div>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -794,11 +881,20 @@
       <h2>Crime and Punishment</h2>
       <div class="byline">Fyodor Dostoyevsky</div>
       <p class="focus">A psychological thriller following a young student as his mind collapses under the moral weight of a crime he was convinced was justified: the murder is only the beginning of what actually destroys him.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/2554/2554-h/2554-h.htm" target="_blank" rel="noopener">Read it yourself: full free text (~14 hr read)</a></div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Jessica Hooten Wilson (University of Dallas) on Crime and Punishment, from The Great Books podcast (31 min)</span>
-          <audio controls preload="none" src="https://locator.simplecastcdn.com/d2bfa057-89e7-4cfe-9fec-ae7b103b7c0e/a6945446-ce97-44fa-af4d-605d90cce989.mp3"></audio>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/00/2c/5a/002c5a28-1c2f-47a5-6c59-2b60ae8d5077/mza_16080497697942315754.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">The Great Books, National Review</span></div>
+            <div class="src-ep">Crime and Punishment</div>
+            <div class="src-who">Jessica Hooten Wilson, University of Dallas</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="audio" data-src="https://locator.simplecastcdn.com/d2bfa057-89e7-4cfe-9fec-ae7b103b7c0e/a6945446-ce97-44fa-af4d-605d90cce989.mp3" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 31 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -811,14 +907,23 @@
       <h2>Symphony No. 5</h2>
       <div class="byline">Ludwig van Beethoven</div>
       <p class="focus">Four notes, repeated relentlessly, like something pounding at the door. Beethoven wrote it while going deaf himself, unable to hear the very piece that would outlive him by centuries.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the recording, Karajan (~32 min)</span>
           <iframe src="https://open.spotify.com/embed/album/1xaLsBz0s2rPS6H4i7xuAb" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Joshua Weilerstein on Symphony No. 5, from Sticky Notes (65 min)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/beethoven-symphony-no-5/id1215386938?i=1000664005063" title="Joshua Weilerstein on Beethoven's Symphony No. 5 &mdash; 65 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/58/60/74/58607414-6263-9fa9-4fad-d5879c071643/mza_11208751241845350981.jpeg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Sticky Notes</span></div>
+            <div class="src-ep">Beethoven: Symphony No. 5</div>
+            <div class="src-who">Joshua Weilerstein, conductor and music director of the Orchestre National de Lille</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/beethoven-symphony-no-5/id1215386938?i=1000664005063" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 65 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -831,17 +936,32 @@
       <h2>The Ambassadors</h2>
       <div class="byline">Hans Holbein the Younger</div>
       <p class="focus">Two powerful, successful men, painted with every symbol of their worldly achievement. At their feet is an odd smear that makes no sense head-on. Step to the side, and it resolves into a skull.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.nationalgallery.org.uk/paintings/hans-holbein-the-younger-the-ambassadors" target="_blank" rel="noopener">At the National Gallery</a></div>
-      </div>
-      <div class="art-image">
+        <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=900" alt="The Ambassadors by Hans Holbein the Younger" loading="lazy">
       </div>
-      <div class="link-row">
-        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://smarthistory.org/hans-holbein-the-younger-the-ambassadors/" target="_blank" rel="noopener">Smarthistory on the painting (~5 min)</a></div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Historic Royal Palaces Podcast on The Ambassadors (36 min)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/historic-royal-palaces-podcast/id1065848261?i=1000717607711" title="Historic Royal Palaces Podcast on The Ambassadors &mdash; 36 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <span class="src-art src-art-text" aria-hidden="true">SH</span>
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">Smarthistory</span></div>
+            <div class="src-ep">The Ambassadors</div>
+            <div class="src-who">Dr. Beth Harris and Dr. Steven Zucker, art historians and founders of Smarthistory</div>
+            <div class="src-ctl"><a class="src-read" href="https://smarthistory.org/hans-holbein-the-younger-the-ambassadors/" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~5 min read</span></div>
+          </div>
+        </div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/6f/9b/c3/6f9bc33a-c62c-e50a-dda8-9f993cb24968/mza_17535987657692190579.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Historic Royal Palaces Podcast</span></div>
+            <div class="src-ep">The Ambassadors</div>
+            <div class="src-who">The UK charity that manages Hampton Court Palace and the Tower of London</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/historic-royal-palaces-podcast/id1065848261?i=1000717607711" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 36 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -922,6 +1042,46 @@
 
 
 </script>
+<script>
+  document.querySelectorAll('.src-play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = b.closest('.src-row');
+      var title = row.querySelector('.src-ep').textContent;
+      var show = row.querySelector('.src-show').textContent;
+      var wrap = document.createElement('div');
+      wrap.className = 'src-loaded';
+      var head = document.createElement('div');
+      head.className = 'src-head';
+      head.textContent = show + ' \u00b7 ' + title;
+      wrap.appendChild(head);
+      var kind = b.dataset.kind;
+      if (kind === 'audio') {
+        var a = document.createElement('audio');
+        a.controls = true;
+        a.autoplay = true;
+        a.src = b.dataset.src;
+        a.style.width = '100%';
+        wrap.appendChild(a);
+      } else {
+        var f = document.createElement('iframe');
+        if (kind === 'video') {
+          f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.src + '?autoplay=1';
+          f.allow = 'autoplay; encrypted-media; picture-in-picture';
+          f.allowFullscreen = true;
+          f.className = 'vid';
+        } else {
+          f.src = b.dataset.src;
+          f.allow = 'autoplay *; encrypted-media *; clipboard-write';
+          f.style.height = b.dataset.h + 'px';
+        }
+        f.title = show + ': ' + title;
+        wrap.appendChild(f);
+      }
+      row.replaceWith(wrap);
+    });
+  });
+</script>
+
 <style>
   .to-top {
     position: fixed;

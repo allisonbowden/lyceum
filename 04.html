@@ -551,6 +551,81 @@
     display: block;
   }
 
+  .zone { margin-top: 18px; }
+  .zone-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin: 0 0 8px;
+  }
+  .zone .link-line { margin-bottom: 6px; }
+  .src-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 560px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .src-art {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--line);
+  }
+  .src-art-text {
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    box-sizing: border-box;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--dusk);
+  }
+  .src-body { min-width: 0; flex: 1; }
+  .src-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .src-show { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.03em; color: var(--text-muted); }
+  .src-ep { font-family: var(--serif); font-size: 15px; line-height: 1.25; margin: 5px 0 2px; }
+  .src-who { font-family: var(--sans); font-size: 12.5px; line-height: 1.4; }
+  .src-ctl { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; }
+  .src-play, .src-read {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .src-play::after, .src-read::after { content: ""; position: absolute; inset: -7px -4px; }
+  .src-play:hover, .src-read:hover { background: var(--accent); color: var(--bg); }
+  .src-play:focus-visible, .src-read:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .src-play-ic { font-size: 9px; line-height: 1; }
+  .src-sep { color: var(--text-muted); }
+  .src-meta { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+  .src-alt { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .src-loaded { max-width: 560px; margin-bottom: 10px; }
+  .src-loaded iframe { width: 100%; border: 0; border-radius: 10px; display: block; }
+  .src-loaded .vid { aspect-ratio: 16 / 9; height: auto; }
+  .src-loaded .src-head { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 6px; }
+
   .further {
     max-width: 760px;
     margin: 8px auto 0;
@@ -750,9 +825,21 @@
       <h2>2001: A Space Odyssey</h2>
       <div class="byline">Stanley Kubrick</div>
       <p class="focus">A prehistoric man throws a bone into the air, and in the next shot, it's a spacecraft, millions of years later. One cut, the entire history of human tools. Kubrick spends the rest of the film, mostly in silence, wondering what comes next.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=2001%20A%20Space%20Odyssey" target="_blank" rel="noopener">Where to watch (2h 29m)</a></div>
-        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rogerebert.com/reviews/great-movie-2001-a-space-odyssey-1968" target="_blank" rel="noopener">Roger Ebert's review (~8 min read)</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <span class="src-art src-art-text" aria-hidden="true">RE</span>
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">RogerEbert.com</span></div>
+            <div class="src-ep">Review of 2001: A Space Odyssey</div>
+            <div class="src-who">Roger Ebert, Pulitzer Prize-winning film critic</div>
+            <div class="src-ctl"><a class="src-read" href="https://www.rogerebert.com/reviews/great-movie-2001-a-space-odyssey-1968" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~8 min read</span></div>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -764,11 +851,20 @@
       <h2>The Dawn of Everything</h2>
       <div class="byline">David Graeber &amp; David Wengrow</div>
       <p class="focus">The standard story goes hunter-gatherer, then farmer, then state, in that order. Graeber and Wengrow argue early societies actually experimented with far more political arrangements than that, and some of them worked.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://search.worldcat.org/search?q=The+Dawn+of+Everything+Graeber+Wengrow" target="_blank" rel="noopener">Find the book (~22 hr read)</a></div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>David Wengrow on The Michael Shermer Show (1h 33m)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/237-david-wengrow-on-the-dawn-of-everything-a/id1352860989?i=1000545682160" title="David Wengrow on The Dawn of Everything &mdash; 1h 33m" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/b1/1b/5a/b11b5ad4-b160-7284-5b7c-cdc8daf251d7/mza_556097899631146588.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">The Michael Shermer Show</span></div>
+            <div class="src-ep">David Wengrow on The Dawn of Everything</div>
+            <div class="src-who">David Wengrow, Professor of Comparative Archaeology, UCL, and co-author of the book</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/237-david-wengrow-on-the-dawn-of-everything-a/id1352860989?i=1000545682160" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 1h 33m</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -781,14 +877,23 @@
       <h2>Cello Suite No. 1 in G Major</h2>
       <div class="byline">Johann Sebastian Bach</div>
       <p class="focus">One cellist, one wooden instrument, pure mathematical structure, and it still holds up completely unchanged three hundred years later.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the recording, Yo-Yo Ma (~18 min)</span>
           <iframe src="https://open.spotify.com/embed/album/3cvjMNWg7t46NyDZzujfNg" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Soul Music on the Cello Suite No. 1, from BBC Radio 4 (27 min)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/bach-cello-suite-no-1-in-g-major/id558995745?i=1000340428321" title="Soul Music on Bach's Cello Suite No. 1 &mdash; 27 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/dc/3d/65/dc3d653d-576f-8e81-51ad-b649530954be/mza_16951113418466861190.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Soul Music, BBC Radio 4</span></div>
+            <div class="src-ep">Bach: Cello Suite No. 1 in G Major</div>
+            <div class="src-who">A BBC Radio 4 series on pieces of music with a powerful emotional impact, with cellist Steven Isserlis</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/bach-cello-suite-no-1-in-g-major/id558995745?i=1000340428321" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 27 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -801,15 +906,24 @@
       <h2>Wanderer above the Sea of Fog</h2>
       <div class="byline">Caspar David Friedrich</div>
       <p class="focus">A man stands with his back to us, looking out over a sea of fog toward mountains he can't fully see. Every generation stands at that same edge, staring at whatever version of the vast and unknown belongs to them.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://web.archive.org/web/20231003143751/https://www.hamburger-kunsthalle.de/sammlung-online/caspar-david-friedrich/wanderer-ueber-dem-nebelmeer" target="_blank" rel="noopener">At Hamburger Kunsthalle</a></div>
-      </div>
-      <div class="art-image">
+        <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=900" alt="Wanderer above the Sea of Fog by Caspar David Friedrich" loading="lazy">
       </div>
-      <div class="podcast-embed">
-        <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Phil Grabsky on Wanderer above the Sea of Fog, from Painting of the Week (32 min)</span>
-        <iframe src="https://embed.podcasts.apple.com/us/podcast/season-3-ep-3-caspar-david-friedrich-wanderer-above/id1573430649?i=1000581039158" title="Phil Grabsky on Wanderer above the Sea of Fog &mdash; 32 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/2f/1a/8b/2f1a8b9c-3224-eb9b-8280-90d0364e2071/mza_11624187548731824028.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Painting of the Week</span></div>
+            <div class="src-ep">Caspar David Friedrich, Wanderer above the Sea of Fog</div>
+            <div class="src-who">Phil Grabsky, BAFTA-winning documentarian behind Exhibition on Screen</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/season-3-ep-3-caspar-david-friedrich-wanderer-above/id1573430649?i=1000581039158" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 32 min</button></div>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -888,6 +1002,46 @@
 
 
 </script>
+<script>
+  document.querySelectorAll('.src-play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = b.closest('.src-row');
+      var title = row.querySelector('.src-ep').textContent;
+      var show = row.querySelector('.src-show').textContent;
+      var wrap = document.createElement('div');
+      wrap.className = 'src-loaded';
+      var head = document.createElement('div');
+      head.className = 'src-head';
+      head.textContent = show + ' \u00b7 ' + title;
+      wrap.appendChild(head);
+      var kind = b.dataset.kind;
+      if (kind === 'audio') {
+        var a = document.createElement('audio');
+        a.controls = true;
+        a.autoplay = true;
+        a.src = b.dataset.src;
+        a.style.width = '100%';
+        wrap.appendChild(a);
+      } else {
+        var f = document.createElement('iframe');
+        if (kind === 'video') {
+          f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.src + '?autoplay=1';
+          f.allow = 'autoplay; encrypted-media; picture-in-picture';
+          f.allowFullscreen = true;
+          f.className = 'vid';
+        } else {
+          f.src = b.dataset.src;
+          f.allow = 'autoplay *; encrypted-media *; clipboard-write';
+          f.style.height = b.dataset.h + 'px';
+        }
+        f.title = show + ': ' + title;
+        wrap.appendChild(f);
+      }
+      row.replaceWith(wrap);
+    });
+  });
+</script>
+
 <style>
   .to-top {
     position: fixed;

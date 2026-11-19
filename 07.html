@@ -564,6 +564,81 @@
     display: block;
   }
 
+  .zone { margin-top: 18px; }
+  .zone-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    margin: 0 0 8px;
+  }
+  .zone .link-line { margin-bottom: 6px; }
+  .src-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 560px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .src-art {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--line);
+  }
+  .src-art-text {
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    box-sizing: border-box;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--dusk);
+  }
+  .src-body { min-width: 0; flex: 1; }
+  .src-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .src-show { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.03em; color: var(--text-muted); }
+  .src-ep { font-family: var(--serif); font-size: 15px; line-height: 1.25; margin: 5px 0 2px; }
+  .src-who { font-family: var(--sans); font-size: 12.5px; line-height: 1.4; }
+  .src-ctl { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; }
+  .src-play, .src-read {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .src-play::after, .src-read::after { content: ""; position: absolute; inset: -7px -4px; }
+  .src-play:hover, .src-read:hover { background: var(--accent); color: var(--bg); }
+  .src-play:focus-visible, .src-read:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .src-play-ic { font-size: 9px; line-height: 1; }
+  .src-sep { color: var(--text-muted); }
+  .src-meta { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+  .src-alt { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .src-loaded { max-width: 560px; margin-bottom: 10px; }
+  .src-loaded iframe { width: 100%; border: 0; border-radius: 10px; display: block; }
+  .src-loaded .vid { aspect-ratio: 16 / 9; height: auto; }
+  .src-loaded .src-head { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 6px; }
+
   .further {
     max-width: 760px;
     margin: 8px auto 0;
@@ -771,9 +846,21 @@
       <h2>Parasite</h2>
       <div class="byline">Bong Joon Ho</div>
       <p class="focus">A poor family infiltrates a rich household, one lie at a time. What happens next uses the house itself, with its stairs, floors, and hidden spaces, to turn class conflict into physical space.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">watch</span><a class="find-it" href="https://www.justwatch.com/us/search?q=Parasite%202019" target="_blank" rel="noopener">Where to watch (2h 12m)</a></div>
-        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://www.rogerebert.com/reviews/parasite-movie-review-2019" target="_blank" rel="noopener">Brian Tallerico's review (~5 min read)</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <span class="src-art src-art-text" aria-hidden="true">RE</span>
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">RogerEbert.com</span></div>
+            <div class="src-ep">Review of Parasite</div>
+            <div class="src-who">Brian Tallerico, film critic and managing editor at RogerEbert.com</div>
+            <div class="src-ctl"><a class="src-read" href="https://www.rogerebert.com/reviews/parasite-movie-review-2019" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~5 min read</span></div>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -785,11 +872,20 @@
       <h2>Middlemarch</h2>
       <div class="byline">George Eliot</div>
       <p class="focus">A small English town quietly decides, over and over, who belongs and who doesn't. No one announces the verdict out loud, but everyone in town already knows it.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">read</span><a class="find-it" href="https://www.gutenberg.org/files/145/145-h/145-h.htm" target="_blank" rel="noopener">Read it yourself: full free text (~22 hr read)</a></div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Dwight Lindley (Hillsdale College) on Middlemarch, from The Great Books podcast (31 min)</span>
-          <audio controls preload="none" src="https://locator.simplecastcdn.com/d2bfa057-89e7-4cfe-9fec-ae7b103b7c0e/e0c6632e-8747-4282-b4f5-9f009374dab1.mp3"></audio>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/00/2c/5a/002c5a28-1c2f-47a5-6c59-2b60ae8d5077/mza_16080497697942315754.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">The Great Books, National Review</span></div>
+            <div class="src-ep">Middlemarch</div>
+            <div class="src-who">Dwight Lindley, Hillsdale College</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="audio" data-src="https://locator.simplecastcdn.com/d2bfa057-89e7-4cfe-9fec-ae7b103b7c0e/e0c6632e-8747-4282-b4f5-9f009374dab1.mp3" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 31 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -802,14 +898,23 @@
       <h2>To Pimp a Butterfly</h2>
       <div class="byline">Kendrick Lamar</div>
       <p class="focus">A concept album about escaping poverty into fame while the community that raised you stays exactly where it was. It's about what that guilt actually feels like from the inside.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="podcast-embed">
           <span class="pod-caption"><span class="pill pill-accent">listen</span>Listen to the album (1h 19m)</span>
           <iframe src="https://open.spotify.com/embed/album/7ycBtnsMtyVbbwTfJwRjSP" title="Listen on Spotify" allow="autoplay *; encrypted-media *; clipboard-write" style="height: 152px;"></iframe>
         </div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Dissect podcast, track-by-track, starting with Episode 1 (20+ episodes)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/wesleys-theory-by-kendrick-lamar/id1143845868?i=1000374732562" title="Dissect on To Pimp a Butterfly, Episode 1 &mdash; 30 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/3e/d8/f5/3ed8f5f4-4113-9049-ddf9-6900d2d2969d/mza_6863756797238193337.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">Dissect</span></div>
+            <div class="src-ep">Episode 1: Wesley&rsquo;s Theory (a 20+ episode, track-by-track season)</div>
+            <div class="src-who">A single podcast season devoted to one album, track by track</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/wesleys-theory-by-kendrick-lamar/id1143845868?i=1000374732562" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 30 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -822,17 +927,32 @@
       <h2>Olympia</h2>
       <div class="byline">&Eacute;douard Manet</div>
       <p class="focus">A nude woman stares back at the viewer instead of looking away. That alone caused a scandal in 1865. Standing beside her is Laure, a Black maid, painted into the background of someone else's story.</p>
-      <div class="link-row">
+      <div class="zone">
+        <div class="zone-label">Take it in</div>
         <div class="link-line"><span class="pill pill-accent">view</span><a class="find-it" href="https://www.musee-orsay.fr/en/artworks/olympia-712" target="_blank" rel="noopener">At Mus&eacute;e d'Orsay</a></div>
-      </div>
-      <div class="art-image">
+        <div class="art-image">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=900" alt="Olympia by &Eacute;douard Manet" loading="lazy">
       </div>
-      <div class="link-row">
-        <div class="link-line"><span class="pill pill-dusk">review</span><a class="find-it" href="https://smarthistory.org/edouard-manet-olympia/" target="_blank" rel="noopener">Smarthistory on the painting (~5 min)</a></div>
-        <div class="podcast-embed">
-          <span class="pod-caption"><span class="pill pill-dusk">deeper</span>Jennifer Dasal (NC Museum of Art) on Olympia, from ArtCurious &mdash; "Shock Art" (26 min)</span>
-          <iframe src="https://embed.podcasts.apple.com/us/podcast/artcurious-podcast/id1142736861?i=1000421850481" title="Jennifer Dasal on Olympia &mdash; 26 min" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+      </div>
+      <div class="zone">
+        <div class="zone-label">Go further</div>
+        <div class="src-row">
+          <span class="src-art src-art-text" aria-hidden="true">SH</span>
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">review</span><span class="src-show">Smarthistory</span></div>
+            <div class="src-ep">Olympia</div>
+            <div class="src-who">Dr. Beth Harris and Dr. Steven Zucker, art historians and founders of Smarthistory</div>
+            <div class="src-ctl"><a class="src-read" href="https://smarthistory.org/edouard-manet-olympia/" target="_blank" rel="noopener"><span class="src-play-ic" aria-hidden="true">&#8599;</span>Read</a> <span class="src-meta">&middot; ~5 min read</span></div>
+          </div>
+        </div>
+        <div class="src-row">
+          <img class="src-art" src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/69/da/ca/69daca0d-732e-4f7b-b473-7c559d18986c/mza_11770651931973323522.jpg/100x100bb.jpg" alt="" loading="lazy">
+          <div class="src-body">
+            <div class="src-top"><span class="pill pill-dusk">deeper</span><span class="src-show">ArtCurious</span></div>
+            <div class="src-ep">&ldquo;Shock Art&rdquo; (Manet&rsquo;s Olympia)</div>
+            <div class="src-who">Jennifer Dasal, curator, North Carolina Museum of Art</div>
+            <div class="src-ctl"><button type="button" class="src-play" data-kind="frame" data-src="https://embed.podcasts.apple.com/us/podcast/artcurious-podcast/id1142736861?i=1000421850481" data-h="175"><span class="src-play-ic" aria-hidden="true">&#9654;</span>Play &middot; 26 min</button></div>
+          </div>
         </div>
       </div>
     </article>
@@ -916,6 +1036,46 @@
 
 
 </script>
+<script>
+  document.querySelectorAll('.src-play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = b.closest('.src-row');
+      var title = row.querySelector('.src-ep').textContent;
+      var show = row.querySelector('.src-show').textContent;
+      var wrap = document.createElement('div');
+      wrap.className = 'src-loaded';
+      var head = document.createElement('div');
+      head.className = 'src-head';
+      head.textContent = show + ' \u00b7 ' + title;
+      wrap.appendChild(head);
+      var kind = b.dataset.kind;
+      if (kind === 'audio') {
+        var a = document.createElement('audio');
+        a.controls = true;
+        a.autoplay = true;
+        a.src = b.dataset.src;
+        a.style.width = '100%';
+        wrap.appendChild(a);
+      } else {
+        var f = document.createElement('iframe');
+        if (kind === 'video') {
+          f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.src + '?autoplay=1';
+          f.allow = 'autoplay; encrypted-media; picture-in-picture';
+          f.allowFullscreen = true;
+          f.className = 'vid';
+        } else {
+          f.src = b.dataset.src;
+          f.allow = 'autoplay *; encrypted-media *; clipboard-write';
+          f.style.height = b.dataset.h + 'px';
+        }
+        f.title = show + ': ' + title;
+        wrap.appendChild(f);
+      }
+      row.replaceWith(wrap);
+    });
+  });
+</script>
+
 <style>
   .to-top {
     position: fixed;
