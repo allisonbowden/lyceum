@@ -563,4 +563,17 @@
     });
   })();
 </script>
+
+<style>
+  /* tap-targets */
+  @media (max-width: 600px) {
+    .theme-nav-btn, .find-it, .src-alt, .alt-line a, .site-bar .mark a, .src-used a { position: relative; }
+    .src-used a, .alt-line a, .src-alt { display: inline-block; }
+    .src-name a { display: inline-block; padding: 10px 0; }
+    .theme-nav-btn::after { content: ""; position: absolute; inset: -14px -10px; }
+    .find-it::after, .src-alt::after, .alt-line a::after, .site-bar .mark a::after, .src-used a::after { content: ""; position: absolute; inset: -15px -4px; }
+    .flight-footer a { padding: 13px 0; min-height: 44px; box-sizing: border-box; }
+    .home-links a { padding: 8px 0; }
+  }
+</style>
 </body></html>

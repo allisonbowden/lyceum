@@ -161,12 +161,23 @@
   .m-title { display: block; font-family: var(--serif); font-size: 12.5px; line-height: 1.25; }
   .m-dur { display: block; font-family: var(--mono); font-size: 10px; color: var(--text-muted); margin-top: 3px; }
   .m-tiles li.dim .m-tile { opacity: 0.3; }
+
   @media (max-width: 860px) {
     .m-cols { display: none; }
     .m-row { grid-template-columns: 1fr; gap: 10px; padding: 18px 0; }
     .m-tiles { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); }
     .m-kind { display: block; margin-bottom: 2px; }
     .m-q { margin-left: 0; }
+  }
+  @media (max-width: 600px) {
+    .m-tiles { grid-template-columns: 1fr; gap: 6px; }
+    .m-tile { display: grid; grid-template-columns: 44px 1fr; grid-template-rows: auto auto auto; column-gap: 12px; align-items: center; padding: 6px; }
+    .m-tile img { grid-row: 1 / 4; width: 44px; height: 44px; margin: 0; aspect-ratio: auto; }
+    .m-kind { font-size: 10px; margin: 0; }
+    .m-title { font-size: 14.5px; margin: 1px 0; }
+    .m-dur { font-size: 11px; margin: 0; }
+    .m-row { padding: 14px 0; }
+    .m-theme { padding: 10px 0 4px; }
   }
   .hero {
     max-width: 700px;
@@ -510,5 +521,18 @@
     });
   })();
 </script>
+
+<style>
+  /* tap-targets */
+  @media (max-width: 600px) {
+    .theme-nav-btn, .find-it, .src-alt, .alt-line a, .site-bar .mark a, .src-used a { position: relative; }
+    .src-used a, .alt-line a, .src-alt { display: inline-block; }
+    .src-name a { display: inline-block; padding: 10px 0; }
+    .theme-nav-btn::after { content: ""; position: absolute; inset: -14px -10px; }
+    .find-it::after, .src-alt::after, .alt-line a::after, .site-bar .mark a::after, .src-used a::after { content: ""; position: absolute; inset: -15px -4px; }
+    .flight-footer a { padding: 13px 0; min-height: 44px; box-sizing: border-box; }
+    .home-links a { padding: 8px 0; }
+  }
+</style>
 </body>
 </html>
