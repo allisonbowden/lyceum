@@ -10,6 +10,6 @@ Apple Podcasts embeds support `&r=<seconds>` to start playback partway in; Spoti
 
 ## Done
 
-- **Clearer per-work link structure** — implemented as colored pill labels (watch/read/view/listen/review/deeper) beside each link, rolled out site-wide.
+- **Clearer per-work link structure** — first built as colored pill labels, since replaced by outlined action buttons (Watch, Read free, Listen, View) in the work itself and a "Go deeper" section for sources, rolled out site-wide.
 - **Sources page** — built `sources.html`, listing every podcast/video/review source used across the site with the host's credential and why it was chosen. Linked from every theme page's nav dropdown, the homepage, and the About page's Sourcing section.
 - **Artwork podcast candidates** — Holbein, Manet, and Turner all got dedicated podcast episodes added. Friedrich confirmed no credible match exists. Magritte and David both got Smarthistory videos embedded instead (no dedicated podcast exists for either).
