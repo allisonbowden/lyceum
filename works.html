@@ -112,6 +112,50 @@
     border-left: 2px solid var(--line);
   }
 
+  .filter-bar {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 8px;
+  }
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .filter-chips button {
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .filter-chips button:hover { border-color: var(--accent); }
+  .filter-chips button[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .filter-chips button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .filter-status {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--dusk);
+    margin: 0;
+    min-height: 18px;
+  }
+  .section[hidden] { display: none; }
+
   .section {
     max-width: 700px;
     margin: 0 auto;
@@ -254,7 +298,18 @@
     <p class="intro">35 works across seven themes.</p>
   </header>
 
-  <section class="section">
+  <div class="filter-bar" id="filter-bar" hidden>
+    <div class="filter-chips" role="group" aria-label="Filter by medium">
+      <button type="button" data-k="Lectures" aria-pressed="false">Lectures</button>
+      <button type="button" data-k="Films" aria-pressed="false">Films</button>
+      <button type="button" data-k="Books" aria-pressed="false">Books</button>
+      <button type="button" data-k="Music" aria-pressed="false">Music</button>
+      <button type="button" data-k="Art" aria-pressed="false">Art</button>
+    </div>
+    <p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
+  </div>
+
+  <section class="section" data-medium="Lectures">
     <div class="s-eyebrow">Lectures</div>
     <div class="w-list">
       <a href="01.html"><span class="w-num">01</span><span class="w-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b5502e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span class="w-thumb-tag">YALE</span></span><span class="w-text"><span class="w-title">The Ring of Gyges: Morality and Hypocrisy</span><span class="w-byline">Tamar Gendler</span></span></a>
@@ -267,7 +322,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-medium="Films">
     <div class="s-eyebrow">Films</div>
     <div class="w-list">
       <a href="01.html"><span class="w-num">01</span><img class="w-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Rear_Window_film_poster.jpg/250px-Rear_Window_film_poster.jpg" alt="" loading="lazy"><span class="w-text"><span class="w-title">Rear Window<span class="w-classic">classic</span></span><span class="w-byline">Alfred Hitchcock</span></span></a>
@@ -280,7 +335,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-medium="Books">
     <div class="s-eyebrow">Books</div>
     <div class="w-list">
       <a href="01.html"><span class="w-num">01</span><img class="w-thumb" src="https://covers.openlibrary.org/b/id/15223028-M.jpg" alt="" loading="lazy"><span class="w-text"><span class="w-title">The Republic (Book VII, "The Allegory of the Cave")<span class="w-classic">classic</span></span><span class="w-byline">Plato</span></span></a>
@@ -293,7 +348,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-medium="Music">
     <div class="s-eyebrow">Music</div>
     <div class="w-list">
       <a href="01.html"><span class="w-num">01</span><img class="w-thumb" src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="w-text"><span class="w-title">Random Access Memories</span><span class="w-byline">Daft Punk</span></span></a>
@@ -306,7 +361,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-medium="Art">
     <div class="s-eyebrow">Art</div>
     <div class="w-list">
       <a href="01.html"><span class="w-num">01</span><img class="w-thumb" src="https://collections-images.lacma.org/images/31931/31931-1-primary.webp" alt="" loading="lazy"><span class="w-text"><span class="w-title">The Treachery of Images<span class="w-classic">classic</span></span><span class="w-byline">Ren&eacute; Magritte</span></span></a>
@@ -328,4 +383,36 @@
   </div>
 
 </div>
+
+<script>
+  (function () {
+    var bar = document.getElementById('filter-bar');
+    var status = document.getElementById('filter-status');
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.section[data-medium]'));
+    var buttons = Array.prototype.slice.call(bar.querySelectorAll('button'));
+    var on = {};
+    function render() {
+      var picked = buttons.filter(function (b) { return on[b.dataset.k]; }).map(function (b) { return b.dataset.k; });
+      var shown = 0;
+      sections.forEach(function (s) {
+        var show = !picked.length || picked.indexOf(s.dataset.medium) !== -1;
+        s.hidden = !show;
+        if (show) shown += s.querySelectorAll('.w-list a').length;
+      });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', on[b.dataset.k] ? 'true' : 'false'); });
+      if (!picked.length) {
+        status.textContent = 'Showing every medium \u00b7 ' + shown + ' works';
+      } else {
+        var names = picked.map(function (k) { return k.toLowerCase(); });
+        var phrase = names.length > 1 ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] : names[0];
+        status.textContent = 'Showing ' + phrase + ' \u00b7 ' + shown + ' works';
+      }
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { on[b.dataset.k] = !on[b.dataset.k]; render(); });
+    });
+    bar.hidden = false;
+    render();
+  })();
+</script>
 </body></html>
