@@ -262,13 +262,15 @@
   .glance-tile img {
     display: block;
     width: 100%;
-    height: 56px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 30%;
     border-radius: 2px;
     margin-bottom: 7px;
     background: var(--line);
   }
+  .glance-tile[data-kind="Film"] img, .glance-tile[data-kind="Book"] img { object-position: center top; }
   .glance-tile .g-kind {
     display: block;
     font-family: var(--mono);
@@ -732,11 +734,11 @@
   <nav class="glance" aria-label="This theme at a glance">
     <p class="glance-label">This theme at a glance</p>
     <div class="glance-grid">
-      <a class="glance-tile" href="#w1"><img src="https://img.youtube.com/vi/yJVpJ588ASc/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Dying Alone; The Badness of Death</span><span class="g-dur">50 min</span></a>
-      <a class="glance-tile" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ikiru_poster.jpg/250px-Ikiru_poster.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Ikiru</span><span class="g-dur">2h 23m</span></a>
-      <a class="glance-tile" href="#w3"><img src="https://covers.openlibrary.org/b/id/13116014-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">Crime and Punishment</span><span class="g-dur">~14 hr read</span></a>
-      <a class="glance-tile" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/94/58/f2/9458f2e8-ea9d-b384-6a52-6d976d5ebc9c/00028943900423.rgb.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">Symphony No. 5</span><span class="g-dur">~32 min</span></a>
-      <a class="glance-tile" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">The Ambassadors</span><span class="g-dur">Look</span></a>
+      <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/yJVpJ588ASc/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Dying Alone; The Badness of Death</span><span class="g-dur">50 min</span></a>
+      <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ikiru_poster.jpg/250px-Ikiru_poster.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Ikiru</span><span class="g-dur">2h 23m</span></a>
+      <a class="glance-tile" data-kind="Book" href="#w3"><img src="https://covers.openlibrary.org/b/id/13116014-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">Crime and Punishment</span><span class="g-dur">~14 hr read</span></a>
+      <a class="glance-tile" data-kind="Music" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/94/58/f2/9458f2e8-ea9d-b384-6a52-6d976d5ebc9c/00028943900423.rgb.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">Symphony No. 5</span><span class="g-dur">~32 min</span></a>
+      <a class="glance-tile" data-kind="Art" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Holbein-ambassadors.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">The Ambassadors</span><span class="g-dur">Look</span></a>
     </div>
     <div class="glance-key">
       <span class="gk-label">How to read this page</span>

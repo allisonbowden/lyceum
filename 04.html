@@ -262,13 +262,15 @@
   .glance-tile img {
     display: block;
     width: 100%;
-    height: 56px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 30%;
     border-radius: 2px;
     margin-bottom: 7px;
     background: var(--line);
   }
+  .glance-tile[data-kind="Film"] img, .glance-tile[data-kind="Book"] img { object-position: center top; }
   .glance-tile .g-kind {
     display: block;
     font-family: var(--mono);
@@ -706,11 +708,11 @@
   <nav class="glance" aria-label="This theme at a glance">
     <p class="glance-label">This theme at a glance</p>
     <div class="glance-grid">
-      <a class="glance-tile" href="#w1"><img src="https://img.youtube.com/vi/Y0Oa4Lp5fLE/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Behavioral Evolution</span><span class="g-dur">1h 37m</span></a>
-      <a class="glance-tile" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/2001_A_Space_Odyssey_%281968%29.png/250px-2001_A_Space_Odyssey_%281968%29.png" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">2001: A Space Odyssey</span><span class="g-dur">2h 29m</span></a>
-      <a class="glance-tile" href="#w3"><img src="https://covers.openlibrary.org/b/id/11359192-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">The Dawn of Everything</span><span class="g-dur">~22 hr read</span></a>
-      <a class="glance-tile" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0c/f5/ed/0cf5ed24-02ba-03f4-8c83-ff41dcba5be3/884977621860.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">Cello Suite No. 1 in G Major</span><span class="g-dur">~18 min</span></a>
-      <a class="glance-tile" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">Wanderer above the Sea of Fog</span><span class="g-dur">Look</span></a>
+      <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/Y0Oa4Lp5fLE/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Behavioral Evolution</span><span class="g-dur">1h 37m</span></a>
+      <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/2001_A_Space_Odyssey_%281968%29.png/250px-2001_A_Space_Odyssey_%281968%29.png" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">2001: A Space Odyssey</span><span class="g-dur">2h 29m</span></a>
+      <a class="glance-tile" data-kind="Book" href="#w3"><img src="https://covers.openlibrary.org/b/id/11359192-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">The Dawn of Everything</span><span class="g-dur">~22 hr read</span></a>
+      <a class="glance-tile" data-kind="Music" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0c/f5/ed/0cf5ed24-02ba-03f4-8c83-ff41dcba5be3/884977621860.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">Cello Suite No. 1 in G Major</span><span class="g-dur">~18 min</span></a>
+      <a class="glance-tile" data-kind="Art" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">Wanderer above the Sea of Fog</span><span class="g-dur">Look</span></a>
     </div>
     <div class="glance-key">
       <span class="gk-label">How to read this page</span>

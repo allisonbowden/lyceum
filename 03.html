@@ -262,13 +262,15 @@
   .glance-tile img {
     display: block;
     width: 100%;
-    height: 56px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 30%;
     border-radius: 2px;
     margin-bottom: 7px;
     background: var(--line);
   }
+  .glance-tile[data-kind="Film"] img, .glance-tile[data-kind="Book"] img { object-position: center top; }
   .glance-tile .g-kind {
     display: block;
     font-family: var(--mono);
@@ -729,11 +731,11 @@
   <nav class="glance" aria-label="This theme at a glance">
     <p class="glance-label">This theme at a glance</p>
     <div class="glance-grid">
-      <a class="glance-tile" href="#w1"><img src="https://img.youtube.com/vi/kBdfcR-8hEY/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">The Moral Side of Murder</span><span class="g-dur">55 min</span></a>
-      <a class="glance-tile" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">The Godfather, Parts I &amp; II</span><span class="g-dur">6h 17m</span></a>
-      <a class="glance-tile" href="#w3"><img src="https://covers.openlibrary.org/b/id/12726168-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">The Prince</span><span class="g-dur">~2 hr read</span></a>
-      <a class="glance-tile" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6b/aa/9b/6baa9b5e-d508-63ac-7327-e29043205984/720841206194_Cover.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">Zombie</span><span class="g-dur">12 min</span></a>
-      <a class="glance-tile" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">The Death of Socrates</span><span class="g-dur">Look</span></a>
+      <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/kBdfcR-8hEY/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">The Moral Side of Murder</span><span class="g-dur">55 min</span></a>
+      <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">The Godfather, Parts I &amp; II</span><span class="g-dur">6h 17m</span></a>
+      <a class="glance-tile" data-kind="Book" href="#w3"><img src="https://covers.openlibrary.org/b/id/173984-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">The Prince</span><span class="g-dur">~2 hr read</span></a>
+      <a class="glance-tile" data-kind="Music" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6b/aa/9b/6baa9b5e-d508-63ac-7327-e29043205984/720841206194_Cover.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">Zombie</span><span class="g-dur">12 min</span></a>
+      <a class="glance-tile" data-kind="Art" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">The Death of Socrates</span><span class="g-dur">Look</span></a>
     </div>
     <div class="glance-key">
       <span class="gk-label">How to read this page</span>

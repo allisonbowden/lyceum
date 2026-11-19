@@ -155,7 +155,8 @@
   .m-tiles li { display: flex; }
   .m-tile { display: block; flex: 1; min-width: 0; text-decoration: none; color: var(--text); background: #faf5ea; border: 1px solid var(--line); border-radius: 4px; padding: 7px; transition: border-color 0.15s ease, opacity 0.15s ease; }
   .m-tile:hover { border-color: var(--accent); }
-  .m-tile img { display: block; width: 100%; height: 64px; object-fit: cover; object-position: center 20%; border-radius: 2px; margin-bottom: 6px; background: var(--line); }
+  .m-tile img { display: block; width: 100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; object-position: center 30%; border-radius: 2px; margin-bottom: 6px; background: var(--line); }
+  .m-tiles li[data-kind="Film"] img, .m-tiles li[data-kind="Book"] img { object-position: center top; }
   .m-kind { display: none; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
   .m-title { display: block; font-family: var(--serif); font-size: 12.5px; line-height: 1.25; }
   .m-dur { display: block; font-family: var(--mono); font-size: 10px; color: var(--text-muted); margin-top: 3px; }
@@ -348,7 +349,7 @@
         <ul class="m-tiles">
           <li data-kind="Lecture"><a class="m-tile" href="03.html#w1"><img src="https://img.youtube.com/vi/kBdfcR-8hEY/hqdefault.jpg" alt="" loading="lazy"><span class="m-kind">Lecture</span><span class="m-title">The Moral Side of Murder</span><span class="m-dur">55 min</span></a></li>
           <li data-kind="Film"><a class="m-tile" href="03.html#w2"><img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" alt="" loading="lazy"><span class="m-kind">Film</span><span class="m-title">The Godfather, Parts I &amp; II</span><span class="m-dur">6h 17m</span></a></li>
-          <li data-kind="Book"><a class="m-tile" href="03.html#w3"><img src="https://covers.openlibrary.org/b/id/12726168-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">The Prince</span><span class="m-dur">~2 hr read</span></a></li>
+          <li data-kind="Book"><a class="m-tile" href="03.html#w3"><img src="https://covers.openlibrary.org/b/id/173984-M.jpg" alt="" loading="lazy"><span class="m-kind">Book</span><span class="m-title">The Prince</span><span class="m-dur">~2 hr read</span></a></li>
           <li data-kind="Music"><a class="m-tile" href="03.html#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6b/aa/9b/6baa9b5e-d508-63ac-7327-e29043205984/720841206194_Cover.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="m-kind">Music</span><span class="m-title">Zombie</span><span class="m-dur">12 min</span></a></li>
           <li data-kind="Art"><a class="m-tile" href="03.html#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_Socrates_MET_DP-13139-001.jpg?width=200" alt="" loading="lazy"><span class="m-kind">Art</span><span class="m-title">The Death of Socrates</span><span class="m-dur">Look</span></a></li>
         </ul>

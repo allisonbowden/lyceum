@@ -262,13 +262,15 @@
   .glance-tile img {
     display: block;
     width: 100%;
-    height: 56px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 30%;
     border-radius: 2px;
     margin-bottom: 7px;
     background: var(--line);
   }
+  .glance-tile[data-kind="Film"] img, .glance-tile[data-kind="Book"] img { object-position: center top; }
   .glance-tile .g-kind {
     display: block;
     font-family: var(--mono);
@@ -732,11 +734,11 @@
   <nav class="glance" aria-label="This theme at a glance">
     <p class="glance-label">This theme at a glance</p>
     <div class="glance-grid">
-      <a class="glance-tile" href="#w1"><img src="https://img.youtube.com/vi/JX0uusVkJcI/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Industrial Revolutions</span><span class="g-dur">48 min</span></a>
-      <a class="glance-tile" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Ex-machina-uk-poster.jpg/250px-Ex-machina-uk-poster.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Ex Machina</span><span class="g-dur">1h 48m</span></a>
-      <a class="glance-tile" href="#w3"><img src="https://covers.openlibrary.org/b/id/12356249-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">Frankenstein</span><span class="g-dur">~5 hr read</span></a>
-      <a class="glance-tile" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/ea/cf/e4/eacfe414-f451-e251-d06c-94a544a60bf8/886443827165.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">The Rite of Spring</span><span class="g-dur">~34 min</span></a>
-      <a class="glance-tile" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">Rain, Steam and Speed</span><span class="g-dur">Look</span></a>
+      <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/JX0uusVkJcI/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Industrial Revolutions</span><span class="g-dur">48 min</span></a>
+      <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Ex-machina-uk-poster.jpg/250px-Ex-machina-uk-poster.jpg" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Ex Machina</span><span class="g-dur">1h 48m</span></a>
+      <a class="glance-tile" data-kind="Book" href="#w3"><img src="https://covers.openlibrary.org/b/id/12356249-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">Frankenstein</span><span class="g-dur">~5 hr read</span></a>
+      <a class="glance-tile" data-kind="Music" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/ea/cf/e4/eacfe414-f451-e251-d06c-94a544a60bf8/886443827165.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">The Rite of Spring</span><span class="g-dur">~34 min</span></a>
+      <a class="glance-tile" data-kind="Art" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">Rain, Steam and Speed</span><span class="g-dur">Look</span></a>
     </div>
     <div class="glance-key">
       <span class="gk-label">How to read this page</span>

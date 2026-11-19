@@ -262,13 +262,15 @@
   .glance-tile img {
     display: block;
     width: 100%;
-    height: 56px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 30%;
     border-radius: 2px;
     margin-bottom: 7px;
     background: var(--line);
   }
+  .glance-tile[data-kind="Film"] img, .glance-tile[data-kind="Book"] img { object-position: center top; }
   .glance-tile .g-kind {
     display: block;
     font-family: var(--mono);
@@ -727,11 +729,11 @@
   <nav class="glance" aria-label="This theme at a glance">
     <p class="glance-label">This theme at a glance</p>
     <div class="glance-grid">
-      <a class="glance-tile" href="#w1"><img src="https://img.youtube.com/vi/EtVfoIkVSu8/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Aggression, III</span><span class="g-dur">1h 41m</span></a>
-      <a class="glance-tile" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Parasite_%282019_film%29.png/250px-Parasite_%282019_film%29.png" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Parasite</span><span class="g-dur">2h 12m</span></a>
-      <a class="glance-tile" href="#w3"><img src="https://covers.openlibrary.org/b/id/252882-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">Middlemarch</span><span class="g-dur">~22 hr read</span></a>
-      <a class="glance-tile" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b5/a6/91/b5a69171-5232-3d5b-9c15-8963802f83dd/15UMGIM15814.rgb.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">To Pimp a Butterfly</span><span class="g-dur">1h 19m</span></a>
-      <a class="glance-tile" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">Olympia</span><span class="g-dur">Look</span></a>
+      <a class="glance-tile" data-kind="Lecture" href="#w1"><img src="https://img.youtube.com/vi/EtVfoIkVSu8/hqdefault.jpg" alt="" loading="lazy"><span class="g-kind">Lecture</span><span class="g-title">Aggression, III</span><span class="g-dur">1h 41m</span></a>
+      <a class="glance-tile" data-kind="Film" href="#w2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Parasite_%282019_film%29.png/250px-Parasite_%282019_film%29.png" alt="" loading="lazy"><span class="g-kind">Film</span><span class="g-title">Parasite</span><span class="g-dur">2h 12m</span></a>
+      <a class="glance-tile" data-kind="Book" href="#w3"><img src="https://covers.openlibrary.org/b/id/252882-M.jpg" alt="" loading="lazy"><span class="g-kind">Book</span><span class="g-title">Middlemarch</span><span class="g-dur">~22 hr read</span></a>
+      <a class="glance-tile" data-kind="Music" href="#w4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b5/a6/91/b5a69171-5232-3d5b-9c15-8963802f83dd/15UMGIM15814.rgb.jpg/200x200bb.jpg" alt="" loading="lazy"><span class="g-kind">Music</span><span class="g-title">To Pimp a Butterfly</span><span class="g-dur">1h 19m</span></a>
+      <a class="glance-tile" data-kind="Art" href="#w5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manet,_Edouard_-_Olympia,_1863.jpg?width=200" alt="" loading="lazy"><span class="g-kind">Art</span><span class="g-title">Olympia</span><span class="g-dur">Look</span></a>
     </div>
     <div class="glance-key">
       <span class="gk-label">How to read this page</span>
