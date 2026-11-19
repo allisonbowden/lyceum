@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://allisonbowden.github.io/lyceum/sitemap.xml
