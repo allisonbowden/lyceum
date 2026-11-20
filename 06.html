@@ -434,8 +434,16 @@
   }
 
   .lecture-embed + .take-btns { margin-top: 12px; }
-  .lec-audio { margin: 8px 0 0; }
-  .lec-audio audio { width: 100%; display: block; }
+  .lec-pill { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; box-sizing: border-box; max-width: 100%; padding: 0 16px; border: 1px solid var(--accent); border-radius: 22px; color: var(--accent); font-family: var(--mono); font-size: 13px; line-height: 1.2; }
+  .lec-pill .lp-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+  .lec-pill .lp-btn:focus-visible, .lec-pill .lp-seek:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .lec-pill .d { color: var(--text-muted); }
+  .lec-pill:not(.on):hover { background: var(--accent); color: var(--bg); }
+  .lec-pill:not(.on):hover .d { color: var(--bg); }
+  .lec-pill.on { display: flex; flex: 1 1 100%; padding-left: 14px; }
+  .lec-pill .lp-seek { flex: 1; min-width: 0; accent-color: var(--accent); height: 24px; margin: 0; cursor: pointer; }
+  .lec-pill .lp-time { color: var(--text-muted); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  @media (max-width: 600px) { .lec-pill { min-height: 44px; } .lec-pill .lp-btn { min-height: 44px; } }
   .art-audio {
     margin-top: 28px;
     max-width: 480px;
@@ -849,7 +857,7 @@
           <div class="thumb-label">Watch here &mdash; 48 min</div>
         </div>
       </div>
-      <div class="take-btns"><button type="button" class="take-btn lec-listen" data-src="https://oyc.yale.edu/sites/default/files/courses/fall08/hist202/mp3/hist202_08_092908.mp3">&#9654; Listen instead <span class="d">&middot; 48 min</span></button></div>
+      <div class="take-btns"><div class="lec-pill" data-src="https://oyc.yale.edu/sites/default/files/courses/fall08/hist202/mp3/hist202_08_092908.mp3"><button type="button" class="lp-btn" aria-label="Listen instead, 48 min"><span class="lp-ic" aria-hidden="true">&#9654;</span><span class="lp-txt">Listen instead <span class="d">&middot; 48 min</span></span></button><input type="range" class="lp-seek" min="0" max="100" step="0.1" value="0" aria-label="Seek" hidden><span class="lp-time" hidden></span></div></div>
     </article>
 
     <article class="work" id="w2">
@@ -1011,14 +1019,26 @@
 </div>
 
 <script>
-  document.querySelectorAll('.lec-listen').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var a = document.createElement('audio');
-      a.controls = true; a.autoplay = true; a.src = b.dataset.src;
-      var w = document.createElement('div'); w.className = 'lec-audio'; w.appendChild(a);
-      b.parentNode.parentNode.insertBefore(w, b.parentNode.nextSibling);
-      b.parentNode.hidden = true;
-      a.play && a.play().catch(function () {});
+  document.querySelectorAll('.lec-pill').forEach(function (p) {
+    var btn = p.querySelector('.lp-btn'), ic = p.querySelector('.lp-ic'), txt = p.querySelector('.lp-txt'),
+        seek = p.querySelector('.lp-seek'), time = p.querySelector('.lp-time'), a = null;
+    function f(t) { t = Math.floor(t || 0); var h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
+      return (h ? h + ':' + (m < 10 ? '0' : '') : '') + m + ':' + (s < 10 ? '0' : '') + s; }
+    function upd() {
+      if (a.duration) { seek.value = a.currentTime / a.duration * 100; }
+      time.textContent = f(a.currentTime) + (a.duration ? ' / ' + f(a.duration) : '');
+    }
+    btn.addEventListener('click', function () {
+      if (!a) {
+        a = new Audio(); a.preload = 'auto'; a.src = p.dataset.src;
+        a.addEventListener('timeupdate', upd); a.addEventListener('loadedmetadata', upd);
+        a.addEventListener('play', function () { ic.innerHTML = '&#10074;&#10074;'; btn.setAttribute('aria-label', 'Pause'); });
+        a.addEventListener('pause', function () { ic.innerHTML = '&#9654;'; btn.setAttribute('aria-label', 'Play'); });
+        seek.addEventListener('input', function () { if (a.duration) { a.currentTime = seek.value / 100 * a.duration; } });
+        p.classList.add('on'); txt.hidden = true; seek.hidden = false; time.hidden = false; time.textContent = '0:00';
+        btn.setAttribute('aria-label', 'Pause');
+      }
+      if (a.paused) { var r = a.play(); if (r && r.catch) { r.catch(function () {}); } } else { a.pause(); }
     });
   });
   document.querySelectorAll('.lecture-embed .thumb-wrap').forEach(function (el) {
