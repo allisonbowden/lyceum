@@ -441,9 +441,9 @@
   .lec-pill:not(.on):hover { background: var(--accent); color: var(--bg); }
   .lec-pill:not(.on):hover .d { color: var(--bg); }
   .lec-pill.on { display: flex; flex: 1 1 100%; padding-left: 14px; }
-  .lec-pill .lp-seek { flex: 1; min-width: 56px; accent-color: var(--accent); height: 24px; margin: 0; cursor: pointer; }
+  .lec-pill .lp-seek { flex: 1; min-width: 0; accent-color: var(--accent); height: 24px; margin: 0; cursor: pointer; }
   .lec-pill .lp-time { color: var(--text-muted); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  @media (max-width: 600px) { .lec-pill { min-height: 44px; } .lec-pill .lp-btn { min-height: 44px; } .lec-pill.on { flex-wrap: wrap; gap: 0 12px; padding: 0 16px 8px; } .lec-pill.on .lp-btn { flex: 1 1 100%; min-height: 44px; } .lec-pill.on .lp-seek { flex: 1 1 0; } }
+  @media (max-width: 600px) { .lec-pill { min-height: 44px; } .lec-pill .lp-btn { min-height: 44px; } }
   .art-audio {
     margin-top: 28px;
     max-width: 480px;
@@ -1035,7 +1035,7 @@
         a.addEventListener('play', function () { ic.innerHTML = '&#10074;&#10074;'; btn.setAttribute('aria-label', 'Pause'); });
         a.addEventListener('pause', function () { ic.innerHTML = '&#9654;'; btn.setAttribute('aria-label', 'Play'); });
         seek.addEventListener('input', function () { if (a.duration) { a.currentTime = seek.value / 100 * a.duration; } });
-        p.classList.add('on'); p.querySelector('.d').hidden = true; seek.hidden = false; time.hidden = false; time.textContent = '0:00';
+        p.classList.add('on'); txt.hidden = true; seek.hidden = false; time.hidden = false; time.textContent = '0:00';
         btn.setAttribute('aria-label', 'Pause');
       }
       if (a.paused) { var r = a.play(); if (r && r.catch) { r.catch(function () {}); } } else { a.pause(); }
