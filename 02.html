@@ -491,6 +491,9 @@
     display: block;
   }
 
+  .lecture-embed + .take-btns { margin-top: 12px; }
+  .lec-audio { margin: 8px 0 0; }
+  .lec-audio audio { width: 100%; display: block; }
   .art-audio {
     margin-top: 28px;
     max-width: 480px;
@@ -841,17 +844,13 @@
       <div class="byline">Tamar Gendler</div>
       <p class="focus">Why do free individuals agree to obey a state at all? Hobbes starts from a world with no collective rules, where life is "solitary, poor, nasty, brutish, and short," and builds to the social contract: what each of us gives up to be able to live with everyone else.</p>
       <div class="lecture-embed">
-        <span class="audio-caption">Watch here (46 min)</span>
         <div class="thumb-wrap" data-video-id="UTUDf7SYl1k">
           <img src="https://img.youtube.com/vi/UTUDf7SYl1k/hqdefault.jpg" alt="" loading="lazy">
           <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
           <div class="thumb-label">Watch here &mdash; 46 min</div>
         </div>
       </div>
-      <div class="art-audio">
-        <span class="audio-caption">Or, listen instead &mdash; same lecture (46 min)</span>
-        <audio controls preload="none" src="https://oyc.yale.edu/sites/default/files/courses/spring11/phil181/mp3/phil181_19_032911.mp3"></audio>
-      </div>
+      <div class="take-btns"><button type="button" class="take-btn lec-listen" data-src="https://oyc.yale.edu/sites/default/files/courses/spring11/phil181/mp3/phil181_19_032911.mp3">&#9654; Listen instead <span class="d">&middot; 46 min</span></button></div>
     </article>
 
     <article class="work" id="w2">
@@ -1013,6 +1012,16 @@
 </div>
 
 <script>
+  document.querySelectorAll('.lec-listen').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = document.createElement('audio');
+      a.controls = true; a.autoplay = true; a.src = b.dataset.src;
+      var w = document.createElement('div'); w.className = 'lec-audio'; w.appendChild(a);
+      b.parentNode.parentNode.insertBefore(w, b.parentNode.nextSibling);
+      b.parentNode.hidden = true;
+      a.play && a.play().catch(function () {});
+    });
+  });
   document.querySelectorAll('.lecture-embed .thumb-wrap').forEach(function (el) {
     el.addEventListener('click', function () {
       var id = el.getAttribute('data-video-id');

@@ -490,6 +490,9 @@
     display: block;
   }
 
+  .lecture-embed + .take-btns { margin-top: 12px; }
+  .lec-audio { margin: 8px 0 0; }
+  .lec-audio audio { width: 100%; display: block; }
   .art-audio {
     margin-top: 28px;
     max-width: 480px;
@@ -840,17 +843,13 @@
       <div class="byline">Shelly Kagan</div>
       <p class="focus">A warm, surprisingly accessible lecture on one of philosophy's stranger puzzles: can death be "bad" for you, if by the time it happens, there's no you left to be harmed by it?</p>
       <div class="lecture-embed">
-        <span class="audio-caption">Watch here (50 min)</span>
         <div class="thumb-wrap" data-video-id="yJVpJ588ASc">
           <img src="https://img.youtube.com/vi/yJVpJ588ASc/hqdefault.jpg" alt="" loading="lazy">
           <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg></div>
           <div class="thumb-label">Watch here &mdash; 50 min</div>
         </div>
       </div>
-      <div class="art-audio">
-        <span class="audio-caption">Or, listen instead &mdash; same lecture (50 min)</span>
-        <audio controls preload="none" src="https://oyc.yale.edu/sites/default/files/courses/spring07/phil176/mp3/phil176_16_030807.mp3"></audio>
-      </div>
+      <div class="take-btns"><button type="button" class="take-btn lec-listen" data-src="https://oyc.yale.edu/sites/default/files/courses/spring07/phil176/mp3/phil176_16_030807.mp3">&#9654; Listen instead <span class="d">&middot; 50 min</span></button></div>
     </article>
 
     <article class="work" id="w2">
@@ -1012,6 +1011,16 @@
 </div>
 
 <script>
+  document.querySelectorAll('.lec-listen').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = document.createElement('audio');
+      a.controls = true; a.autoplay = true; a.src = b.dataset.src;
+      var w = document.createElement('div'); w.className = 'lec-audio'; w.appendChild(a);
+      b.parentNode.parentNode.insertBefore(w, b.parentNode.nextSibling);
+      b.parentNode.hidden = true;
+      a.play && a.play().catch(function () {});
+    });
+  });
   document.querySelectorAll('.lecture-embed .thumb-wrap').forEach(function (el) {
     el.addEventListener('click', function () {
       var id = el.getAttribute('data-video-id');
