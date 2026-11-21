@@ -475,8 +475,10 @@
       });
       buttons.forEach(function (b) { b.setAttribute('aria-pressed', on[b.dataset.k] ? 'true' : 'false'); });
       if (!picked.length) {
-        status.textContent = 'Showing every medium \u00b7 ' + shown + ' works';
+        status.textContent = '';
+        status.hidden = true;
       } else {
+        status.hidden = false;
         var names = picked.map(function (k) { return k.toLowerCase(); });
         var phrase = names.length > 1 ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] : names[0];
         status.textContent = 'Showing ' + phrase + ' \u00b7 ' + shown + ' works';
